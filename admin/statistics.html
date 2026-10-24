@@ -1,0 +1,378 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      Thống kê khách hàng | FLORA PERFUME
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="logo" href="index.html">
+        FLORA
+        <span>
+          PERFUME
+        </span>
+      </a>
+      <p class="side-label">
+        CỬA HÀNG
+      </p>
+      <nav class="side-nav">
+        <a href="index.html">
+          <span class="nav-icon">
+            ⌂
+          </span>
+          Tổng quan
+        </a>
+        <a href="users.html">
+          <span class="nav-icon">
+            ♙
+          </span>
+          Khách hàng
+        </a>
+        <a href="products.html">
+          <span class="nav-icon">
+            ◇
+          </span>
+          Sản phẩm
+        </a>
+        <a href="orders.html">
+          <span class="nav-icon">
+            ▤
+          </span>
+          Đơn hàng
+        </a>
+        <a aria-current="page" href="statistics.html">
+          <span class="nav-icon">
+            ▥
+          </span>
+          Thống kê
+        </a>
+      </nav>
+      <div class="side-bottom">
+        <a href="login.html">
+          ↪ Đăng xuất
+        </a>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <header class="topbar">
+        <span>
+          Xin chào,
+          <strong>
+            Admin Flora
+          </strong>
+        </span>
+        <span class="avatar">
+          AF
+        </span>
+      </header>
+      <div class="admin-content">
+        <div class="page-title">
+          <div>
+            <p class="eyebrow">
+              PHÂN TÍCH DOANH THU
+            </p>
+            <h1>
+              Thống kê khách hàng
+            </h1>
+            <p>
+              Top 5 khách hàng theo tổng giá trị đơn hàng trong kỳ.
+            </p>
+          </div>
+        </div>
+        <section class="panel">
+          <form class="filter-row" action="statistics-filtered.html" method="get">
+            <div class="field">
+              <label for="statistics-from">Từ ngày</label>
+              <input id="statistics-from" type="date" name="from" value="2026-10-01">
+            </div>
+            <div class="field">
+              <label for="statistics-to">Đến ngày</label>
+              <input id="statistics-to" type="date" name="to" value="2026-10-23">
+            </div>
+            <button class="btn btn-primary" type="submit">Xem thống kê</button>
+            <a class="btn btn-outline" href="statistics.html">Làm mới</a>
+          </form>
+        </section>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span>
+              Tổng doanh thu kỳ này
+            </span>
+            <strong>
+              286,4 tr₫
+            </strong>
+            <small>
+              01/10/2026 – 23/10/2026
+            </small>
+          </article>
+          <article class="stat-card">
+            <span>
+              Khách hàng có đơn
+            </span>
+            <strong>
+              214
+            </strong>
+            <small>
+              Đã hoàn tất mua hàng
+            </small>
+          </article>
+          <article class="stat-card">
+            <span>
+              Giá trị trung bình
+            </span>
+            <strong>
+              1,34 tr₫
+            </strong>
+            <small>
+              Mỗi khách hàng
+            </small>
+          </article>
+          <article class="stat-card">
+            <span>
+              Top khách hàng
+            </span>
+            <strong>
+              5
+            </strong>
+            <small>
+              Sắp xếp theo tổng tiền giảm dần
+            </small>
+          </article>
+        </div>
+        <section class="panel">
+          <div class="table-tools">
+            <div>
+              <p class="eyebrow">
+                01/10/2026 – 23/10/2026
+              </p>
+              <h2>
+                5 khách hàng mua nhiều nhất
+              </h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>
+                    Hạng
+                  </th>
+                  <th>
+                    Khách hàng
+                  </th>
+                  <th>
+                    Đơn hàng trong kỳ
+                  </th>
+                  <th>
+                    Số đơn
+                  </th>
+                  <th>
+                    Tổng mua
+                  </th>
+                  <th>
+                    Chi tiết
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="rank">
+                    01
+                  </td>
+                  <td>
+                    <strong>
+                      Nguyễn Minh Anh
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      minhanh@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0046
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0042
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0047
+                    </span>
+                  </td>
+                  <td>
+                    8
+                  </td>
+                  <td>
+                    <strong>
+                      18.450.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td class="rank">
+                    02
+                  </td>
+                  <td>
+                    <strong>
+                      Lê Thu Hà
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      thuha@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0048
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0044
+                    </span>
+                  </td>
+                  <td>
+                    6
+                  </td>
+                  <td>
+                    <strong>
+                      14.980.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td class="rank">
+                    03
+                  </td>
+                  <td>
+                    <strong>
+                      Trần Hoàng Nam
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      nam.tran@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0049
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0043
+                    </span>
+                  </td>
+                  <td>
+                    5
+                  </td>
+                  <td>
+                    <strong>
+                      12.350.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td class="rank">
+                    04
+                  </td>
+                  <td>
+                    <strong>
+                      Đỗ Ngọc Lan
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      ngoclan@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0050
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0051
+                    </span>
+                  </td>
+                  <td>
+                    4
+                  </td>
+                  <td>
+                    <strong>
+                      9.720.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td class="rank">
+                    05
+                  </td>
+                  <td>
+                    <strong>
+                      Phạm Gia Bảo
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      giabao@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0042
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0045
+                    </span>
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    <strong>
+                      7.480.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="panel">
+          <p class="eyebrow">
+            TỔNG GIÁ TRỊ THEO NGÀY
+          </p>
+          <h2>
+            Doanh thu trong kỳ
+          </h2>
+          <div class="chart-bars" aria-label="Biểu đồ doanh thu minh họa">
+            <span style="height:38%" data-label="01/10">
+            </span>
+            <span style="height:60%" data-label="05/10">
+            </span>
+            <span style="height:47%" data-label="09/10">
+            </span>
+            <span style="height:75%" data-label="13/10">
+            </span>
+            <span style="height:55%" data-label="17/10">
+            </span>
+            <span style="height:92%" data-label="21/10">
+            </span>
+            <span style="height:68%" data-label="23/10">
+            </span>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+</body>
+</html>
+
+
+

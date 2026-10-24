@@ -1,0 +1,319 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      Sản phẩm | FLORA PERFUME
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="logo" href="index.html">
+        FLORA
+        <span>
+          PERFUME
+        </span>
+      </a>
+      <p class="side-label">
+        CỬA HÀNG
+      </p>
+      <nav class="side-nav">
+        <a href="index.html">
+          <span class="nav-icon">
+            ⌂
+          </span>
+          Tổng quan
+        </a>
+        <a href="users.html">
+          <span class="nav-icon">
+            ♙
+          </span>
+          Khách hàng
+        </a>
+        <a aria-current="page" href="products.html">
+          <span class="nav-icon">
+            ◇
+          </span>
+          Sản phẩm
+        </a>
+        <a href="orders.html">
+          <span class="nav-icon">
+            ▤
+          </span>
+          Đơn hàng
+        </a>
+        <a href="statistics.html">
+          <span class="nav-icon">
+            ▥
+          </span>
+          Thống kê
+        </a>
+      </nav>
+      <div class="side-bottom">
+        <a href="login.html">
+          ↪ Đăng xuất
+        </a>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <header class="topbar">
+        <span>
+          Xin chào,
+          <strong>
+            Admin Flora
+          </strong>
+        </span>
+        <span class="avatar">
+          AF
+        </span>
+      </header>
+      <div class="admin-content">
+        <div class="page-title">
+          <div>
+            <p class="eyebrow">
+              DANH MỤC CỬA HÀNG
+            </p>
+            <h1>
+              Sản phẩm
+            </h1>
+            <p>
+              Quản lý sản phẩm và phân loại hiển thị.
+            </p>
+          </div>
+          <button class="btn btn-primary" type="button" data-action="add-product">
+            ＋ Thêm sản phẩm
+          </button>
+        </div>
+        <section class="panel">
+          <form class="filter-row" action="products-filtered.html" method="get">
+            <div class="field">
+              <label>
+                Tìm sản phẩm
+              </label>
+              <input name="q" placeholder="Tên hoặc mã sản phẩm">
+            </div>
+            <div class="field">
+              <label>
+                Phân loại
+              </label>
+              <select name="category">
+                <option>
+                  Tất cả phân loại
+                </option>
+                <option>
+                  Nước hoa nam
+                </option>
+                <option>
+                  Nước hoa nữ
+                </option>
+                <option>
+                  Unisex
+                </option>
+                <option>
+                  Nước hoa cao cấp
+                </option>
+              </select>
+            </div>
+            <div class="field">
+              <label>
+                Trạng thái
+              </label>
+              <select name="status">
+                <option>
+                  Tất cả sản phẩm
+                </option>
+                <option>
+                  Đang bán
+                </option>
+                <option>
+                  Đã ẩn
+                </option>
+              </select>
+            </div>
+            <button class="btn btn-outline" type="submit">
+              Lọc sản phẩm
+            </button>
+            <a class="btn btn-outline" href="products.html">Làm mới</a>
+          </form>
+        </section>
+        <section class="panel">
+          <div class="table-tools"><h2>3 sản phẩm phù hợp</h2></div>
+          <div class="table-wrap" tabindex="0" aria-label="Bảng sản phẩm, cuộn ngang và dọc"><table class="admin-table product-table" id="product-list"><thead><tr><th>Mã sản phẩm</th><th>Ảnh</th><th>Phân loại</th><th>Tên sản phẩm</th><th>Thương hiệu</th><th>Giá tiền</th><th>Dung tích (ml)</th><th>Nhóm hương</th><th>Phong cách</th><th>Đối tượng</th><th>Xuất xứ</th><th>Mô tả</th><th>Tồn kho</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody><tr><td><strong>FP-001</strong></td><td><img class="product-table-image" src="../images/calvin-klein-ck-be_2-1.jpg" alt="Ảnh FP-001" loading="lazy"></td><td>Nước hoa nữ</td><td>Rosé Aurore</td><td>Maison Flora</td><td>1.890.000₫</td><td>50</td><td>Hoa cỏ, trái cây</td><td>Dịu dàng, tươi sáng, dùng ban ngày</td><td>Nữ độ tuổi 20-40</td><td>Pháp</td><td>null</td><td>24</td><td><span class="pill warn">Đã ẩn</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
+<tr><td><strong>FP-002</strong></td><td><img class="product-table-image" src="../images/calvin-klein-ck-one_2-1.jpg" alt="Ảnh FP-002" loading="lazy"></td><td>Nước hoa nam</td><td>Bois Ambré</td><td>Atelier Nord</td><td>2.350.000₫</td><td>100</td><td>Gỗ, hổ phách</td><td>Ấm áp, lịch lãm</td><td>Nam độ tuổi 25-45</td><td>Pháp</td><td>Hương gỗ trầm ấm cho buổi tối.</td><td>12</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
+<tr><td><strong>FP-003</strong></td><td><img class="product-table-image" src="../images/carolina-herrera-good-girl_2.jpg" alt="Ảnh FP-003" loading="lazy"></td><td>Unisex</td><td>Ciel Blanc</td><td>Maison Flora</td><td>1.650.000₫</td><td>50</td><td>Cam chanh, xạ hương</td><td>Thanh sạch, tối giản</td><td>Mọi đối tượng</td><td>Ý</td><td>Mùi hương nhẹ nhàng mỗi ngày.</td><td>8</td><td><span class="pill warn">Đã ẩn</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr></tbody></table></div>
+        </section>
+      </div>
+    </main>
+    
+<dialog class="admin-dialog edit-dialog" id="product-dialog">
+
+  <div class="dialog-head">
+    <h2 id="product-dialog-title">Sửa sản phẩm</h2>
+    <button class="icon-close" type="button" data-close aria-label="Đóng"></button>
+  </div>
+
+  <form id="product-edit-form" class="form-grid">
+    <div class="field">
+      <label>Phân loại</label>
+      <select name="category">
+        <option>Nước hoa nữ</option><option>Nước hoa nam</option>
+        <option>Unisex</option><option>Nước hoa cao cấp</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Tên sản phẩm</label>
+      <input name="name">
+    </div>
+    <div class="field">
+      <label>Thương hiệu</label>
+      <input name="brand">
+    </div>
+    <div class="field">
+      <label>Giá tiền</label>
+      <input name="price" type="number">
+    </div>
+    <div class="field">
+      <label>Dung tích (ml)</label>
+      <input name="volume" type="number">
+    </div>
+    <div class="field">
+      <label>Nhóm hương</label>
+      <input name="notes">
+    </div>
+    <div class="field">
+      <label>Phong cách</label>
+      <input name="style">
+    </div>
+    <div class="field">
+      <label>Đối tượng</label>
+      <input name="audience">
+    </div>
+    <div class="field">
+      <label>Xuất xứ</label>
+      <input name="origin">
+    </div>
+    <div class="field full">
+      <label>Mô tả</label>
+      <textarea name="description"></textarea>
+    </div>
+    <div class="field">
+      <label>Tồn kho</label>
+      <input name="stock" type="number">
+    </div>
+    <div class="field">
+      <label>Trạng thái</label>
+      <select name="status">
+        <option>Đang bán</option>
+        <option>Đã ẩn</option>
+        <option>Đã xóa</option>
+      </select>
+    </div>
+    <div class="field full upload-box">
+      <label>Hình ảnh cũ: Rosé Aurore</label>
+      <div class="product-image-stack">
+        <div class="preview-placeholder" id="product-image-placeholder">
+          <img id="product-image-old" src="../images/marc-jacob-daisy_2.jpg" alt="Ảnh cũ của Rosé Aurore">
+        </div>
+        <img id="product-image-preview" class="product-edit-preview" alt="Ảnh sản phẩm mới xem trước" hidden>
+      </div>
+      <label>Chọn ảnh mới</label>
+      <input id="product-image-input" type="file" accept="image/*">
+    </div>
+    <div class="field full dialog-actions">
+      <button class="btn btn-primary" type="submit">Lưu</button>
+      <button class="btn btn-outline" type="button" data-close>Hủy</button>
+    </div>
+  </form>
+
+</dialog>
+<div class="admin-toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+
+function showToast(message,type='success') {
+  const t=document.querySelector('.admin-toast');
+  t.textContent=message;t.className='admin-toast is-'+type;t.hidden=false;
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>t.hidden=true,3000)
+}
+let productDialogMode='edit',currentProductRow;
+document.addEventListener('click', (event) => {
+  const closeButton = event.target.closest('[data-close]');
+  if (closeButton) {
+    closeButton.closest('dialog').close();
+    return;
+  }
+
+  if (event.target.matches('dialog')) {
+    event.target.close();
+    return;
+  }
+
+  if (event.target.closest('[data-action="add-product"]')) {
+    productDialogMode = 'add';
+    currentProductRow = null;
+    const form = document.querySelector('#product-edit-form');
+    form.reset();
+    document.querySelector('#product-dialog-title').textContent = 'Thêm sản phẩm';
+    form.querySelector('button[type="submit"]').textContent = 'Thêm sản phẩm';
+    document.querySelector('.upload-box > label:first-child').textContent = 'Chọn hình ảnh sản phẩm';
+    document.querySelector('#product-image-old').hidden = true;
+    document.querySelector('#product-dialog').showModal();
+    return;
+  }
+
+  const editButton = event.target.closest('[data-action="edit-product"]');
+  if (editButton) {
+    productDialogMode = 'edit';
+    currentProductRow = editButton.closest('tr');
+    const form = document.querySelector('#product-edit-form');
+    const sample = {
+      category: 'Nước hoa nữ', name: 'Rosé Aurore', brand: 'Maison Flora',
+      price: '1890000', volume: '50', notes: 'Hoa cỏ, trái cây',
+      style: 'Dịu dàng, tươi sáng, dùng ban ngày', audience: 'Nữ độ tuổi 20-40',
+      origin: 'Pháp', description: 'null', stock: '24', status: 'Đã ẩn'
+    };
+    Object.entries(sample).forEach(([name, value]) => {
+      form.elements.namedItem(name).value = value;
+    });
+    document.querySelector('#product-dialog-title').textContent = 'Sửa sản phẩm';
+    form.querySelector('button[type="submit"]').textContent = 'Lưu';
+    document.querySelector('.upload-box > label:first-child').textContent = 'Hình ảnh cũ: Rosé Aurore';
+    document.querySelector('#product-image-old').hidden = false;
+    document.querySelector('#product-dialog').showModal();
+    return;
+  }
+
+  if (event.target.closest('[data-action="delete-product"]')) {
+    showToast('Đã xóa sản phẩm thành công!');
+  }
+});
+
+    document.querySelector('#product-edit-form').addEventListener('submit',e=>{e.preventDefault();document.querySelector('#product-dialog').close();
+    showToast(productDialogMode==='add'?'Thêm sản phẩm thành công!':'Đã sửa thành công!')});
+    const imageInput=document.querySelector('#product-image-input'),imagePreview=document.querySelector('#product-image-preview'),imagePlaceholder=document.querySelector('#product-image-placeholder');
+    imageInput.addEventListener('change',()=>{const file=imageInput.files&&imageInput.files[0];if(!file)return;
+    if(imagePreview.dataset.objectUrl)URL.revokeObjectURL(imagePreview.dataset.objectUrl);
+    const url=URL.createObjectURL(file);
+    imagePreview.dataset.objectUrl=url;
+    imagePreview.src=url;imagePreview.hidden=false;
+    imagePlaceholder.hidden=true});
+    document.querySelector('#product-dialog').addEventListener('close',()=>{imageInput.value='';imagePreview.removeAttribute('src');
+    imagePreview.hidden=true;imagePlaceholder.hidden=false;
+    document.querySelector('#product-image-old').hidden=productDialogMode==='add';
+    if(imagePreview.dataset.objectUrl){URL.revokeObjectURL(imagePreview.dataset.objectUrl);
+    delete imagePreview.dataset.objectUrl}});
+    document.querySelectorAll('.filter-row button').forEach(x=>x.addEventListener('click',()=>showToast('Lọc danh sách sản phẩm thành công!')));
+    
+</script>
+
+</body>
+</html>
+
+
+
+

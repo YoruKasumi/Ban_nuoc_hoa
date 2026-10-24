@@ -1,0 +1,257 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      Quản lý khách hàng | FLORA PERFUME
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="logo" href="index.html">
+        FLORA
+        <span>
+          PERFUME
+        </span>
+      </a>
+      <p class="side-label">
+        CỬA HÀNG
+      </p>
+      <nav class="side-nav">
+        <a href="index.html">
+          <span class="nav-icon">
+            ⌂
+          </span>
+          Tổng quan
+        </a>
+        <a aria-current="page" href="users.html">
+          <span class="nav-icon">
+            ♙
+          </span>
+          Khách hàng
+        </a>
+        <a href="products.html">
+          <span class="nav-icon">
+            ◇
+          </span>
+          Sản phẩm
+        </a>
+        <a href="orders.html">
+          <span class="nav-icon">
+            ▤
+          </span>
+          Đơn hàng
+        </a>
+        <a href="statistics.html">
+          <span class="nav-icon">
+            ▥
+          </span>
+          Thống kê
+        </a>
+      </nav>
+      <div class="side-bottom">
+        <a href="login.html">
+          ↪ Đăng xuất
+        </a>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <header class="topbar">
+        <span>
+          Xin chào,
+          <strong>
+            Admin Flora
+          </strong>
+        </span>
+        <span class="avatar">
+          AF
+        </span>
+      </header>
+      <div class="admin-content">
+        <div class="page-title">
+          <div>
+            <p class="eyebrow">
+              QUẢN LÝ TÀI KHOẢN
+            </p>
+            <h1>
+              Khách hàng
+            </h1>
+            <p>
+              Danh sách khách hàng và trạng thái tài khoản.
+            </p>
+          </div>
+          <button class="btn btn-primary" type="button" data-action="add-customer">
+            ＋ Thêm khách hàng
+          </button>
+        </div>
+        <section class="panel">
+          <form class="filter-row" action="users-filtered.html" method="get">
+            <div class="field">
+              <label for="user-search">
+                Tìm khách hàng
+              </label>
+              <input id="user-search" name="q" placeholder="Tên, email hoặc số điện thoại">
+            </div>
+            <div class="field">
+              <label for="user-state">
+                Trạng thái
+              </label>
+              <select id="user-state" name="status">
+                <option>
+                  Tất cả trạng thái
+                </option>
+                <option>
+                  Đang hoạt động
+                </option>
+                <option>
+                  Đã khóa
+                </option>
+              </select>
+            </div>
+            <button class="btn btn-outline" type="submit">
+              Lọc danh sách
+            </button>
+            <a class="btn btn-outline" href="users.html">Làm mới</a>
+          </form>
+        </section>
+        <section class="panel">
+          <div class="table-tools"><h2>3 khách hàng phù hợp</h2></div>
+          <div class="table-wrap" tabindex="0" aria-label="Bảng khách hàng, cuộn ngang và dọc"><table class="admin-table" id="customer-list"><thead><tr><th>Họ tên</th><th>Email</th><th>Số điện thoại</th><th>Địa chỉ</th><th>Tổng số đơn</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody>
+<tr><td><strong>Nguyễn Minh Anh</strong></td><td>minhanh@example.com</td><td>090 123 4567</td><td>21 Lê Lợi, Quận 1, TPHCM</td><td>8</td><td><span class="pill ok">Hoạt động</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="edit-customer">Sửa</button><button class="btn btn-outline small-btn" data-action="toggle-customer">Khóa</button></div></td></tr>
+<tr><td><strong>Trần Hoàng Nam</strong></td><td>nam.hoang@example.com</td><td>091 234 5678</td><td>18 Nguyễn Huệ, Quận 1, TPHCM</td><td>4</td><td><span class="pill ok">Hoạt động</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="edit-customer">Sửa</button><button class="btn btn-outline small-btn" data-action="toggle-customer">Khóa</button></div></td></tr>
+<tr><td><strong>Lê Thu Hà</strong></td><td>thuha@example.com</td><td>093 456 7890</td><td>52 Trần Phú, Hải Châu, Đà Nẵng</td><td>18</td><td><span class="pill danger">Khóa</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="edit-customer">Sửa</button><button class="btn btn-outline small-btn" data-action="toggle-customer">Mở khóa</button></div></td></tr>
+              </tbody></table></div>
+      </div>
+    </main>
+    
+<dialog class="admin-dialog edit-dialog" id="customer-dialog">
+  <div class="dialog-head">
+    <h2 id="customer-dialog-title">Sửa khách hàng</h2><button class="icon-close" type="button" data-close aria-label="Đóng">×</button>
+  </div>
+  <form id="customer-edit-form" class="form-grid">
+    <div class="field"><label>Họ tên</label><input name="name" required></div>
+    <div class="field"><label>Email</label><input name="email" type="email" required></div>
+    <div class="field"><label>Số điện thoại</label><input name="phone" required></div>
+    <div class="field full"><label>Địa chỉ</label><textarea name="address" required></textarea></div><div class="field"><label>Trạng thái</label><select name="status"><option>Hoạt động</option><option>Khóa</option></select></div>
+    <div class="field full dialog-actions"><button class="btn btn-primary" type="submit">Lưu</button><button class="btn btn-outline" type="button" data-close>Hủy</button></div>
+  </form>
+</dialog>
+<div class="admin-toast" role="status" aria-live="polite" hidden>
+  
+
+<script>
+function showToast(message, type = 'success') {
+    const t = document.querySelector('.admin-toast');
+    t.textContent = message;
+    t.className = 'admin-toast is-' + type;
+    t.hidden = false;
+
+    clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => {
+        t.hidden = true;
+    }, 3000);
+}
+
+let currentCustomerRow;
+let customerDialogMode = 'edit';
+
+// Thông tin cố định dùng cho form sửa khách hàng
+const demoCustomer = {
+    name: 'Nguyễn Văn An',
+    email: 'nguyenvanan@gmail.com',
+    phone: '0901234567',
+    address: 'TP. Hồ Chí Minh',
+    orders: 5,
+    status: 'Hoạt động'
+};
+
+document.addEventListener('click', function (e) {
+    // Đóng dialog khi nhấn nút Đóng hoặc Hủy
+    const closeButton = e.target.closest('[data-close]');
+
+    if (closeButton) {
+        closeButton.closest('dialog').close();
+        return;
+    }
+
+    // Đóng dialog khi nhấn ra vùng nền bên ngoài
+    if (e.target.matches('dialog')) {
+        e.target.close();
+        return;
+    }
+
+    const button = e.target.closest('[data-action]');
+
+    if (!button) return;
+
+    // Nhấn Sửa khách hàng
+    if (button.dataset.action === 'add-customer') {
+        customerDialogMode = 'add';
+        const form = document.querySelector('#customer-edit-form');
+        form.reset();
+        form.elements.namedItem('status').value = 'Hoạt động';
+        document.querySelector('#customer-dialog-title').textContent = 'Thêm khách hàng';
+        form.querySelector('button[type="submit"]').textContent = 'Thêm khách hàng';
+        document.querySelector('#customer-dialog').showModal();
+        return;
+    }
+
+    if (button.dataset.action === 'edit-customer') {
+        customerDialogMode = 'edit';
+        document.querySelector('#customer-dialog-title').textContent = 'Sửa khách hàng';
+        document.querySelector('#customer-edit-form').querySelector('button[type="submit"]').textContent = 'Lưu';
+        currentCustomerRow = button.closest('tr');
+
+        const form = document.querySelector('#customer-edit-form');
+
+        // Luôn hiển thị cùng một người, không lấy dữ liệu từ bảng
+        form.elements.namedItem('name').value = demoCustomer.name;
+        form.elements.namedItem('email').value = demoCustomer.email;
+        form.elements.namedItem('phone').value = demoCustomer.phone;
+        form.elements.namedItem('address').value = demoCustomer.address;
+        form.elements.namedItem('status').value = demoCustomer.status;
+
+        document.querySelector('#customer-dialog').showModal();
+        return;
+    }
+
+    // Nhấn Khóa / Mở khóa: chỉ hiện thông báo
+    if (button.dataset.action === 'toggle-customer') {
+        const row = button.closest('tr');
+        const status = row.querySelector('.pill').textContent.trim();
+
+        if (status === 'Hoạt động') {
+            showToast('Khóa tài khoản thành công!');
+        } else {
+            showToast('Mở khóa tài khoản thành công!');
+        }
+    }
+});
+
+// Nút Lưu chỉ đóng popup và báo thành công; không thay đổi dữ liệu bảng.
+document.querySelector('#customer-edit-form')
+    .addEventListener('submit', function (e) {
+        e.preventDefault();
+        document.querySelector('#customer-dialog').close();
+        showToast(customerDialogMode === 'add' ? 'Thêm khách hàng thành công!' : 'Đã sửa thành công!');
+    });
+
+// Bộ lọc minh họa
+document.querySelectorAll('.filter-row button').forEach(button => {
+    button.addEventListener('click', () => {
+        showToast('Lọc danh sách khách hàng thành công!');
+    });
+});
+
+
+</script>
+</body>
+</html>
+
+
+
+
