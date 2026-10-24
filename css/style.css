@@ -1,0 +1,97 @@
+/* ===== FLORA PERFUME — CSS dùng chung (khách hàng + quản trị) ===== */
+:root{
+  --coral:#FF9A86; --peach:#FFB399; --apricot:#FFD6A6; --cream:#FFF0BE;
+  --paper:#FFFBF0; --white:#fff;
+  --ink:#3A2519; --muted:#6B4B3C; --line:#EBCFA6; --coral-dark:#C4553E;
+  --ok:#2F6B4F; --warn:#9A5B00; --danger:#A63A2B;
+  --font-display:"Cormorant Garamond",Georgia,serif;
+  --font-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem; --s6:2.5rem; --s7:4rem; --s8:6rem;
+  --r-sm:8px; --r-md:14px; --r-lg:24px;
+  --shadow:0 6px 20px rgba(90,50,30,.08); --shadow-lg:0 14px 36px rgba(90,50,30,.14);
+  --wrap:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 1rem/1.65 var(--font-body)}
+img,svg{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.1;margin:0 0 var(--s3);letter-spacing:.005em}
+h1{font-size:clamp(2.6rem,6vw,4.6rem)} h2{font-size:clamp(1.9rem,3.6vw,2.7rem)} h3{font-size:1.4rem}
+p{margin:0 0 var(--s4)}
+a{color:inherit;text-underline-offset:3px}
+ul{margin:0;padding:0;list-style:none}
+.wrap{width:min(100% - 2rem,var(--wrap));margin-inline:auto}
+.muted{color:var(--muted)}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:var(--s4);top:-4rem;background:var(--ink);color:var(--cream);padding:var(--s2) var(--s4);border-radius:var(--r-sm);z-index:100}
+.skip-link:focus{top:var(--s3)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+/* Nút */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:46px;padding:.65rem 1.5rem;border:1.5px solid transparent;border-radius:999px;font:500 .95rem/1 var(--font-body);text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s}
+.btn-primary{background:var(--coral);color:var(--ink)} .btn-primary:hover{background:var(--peach)}
+.btn-outline{border-color:var(--ink);color:var(--ink);background:transparent} .btn-outline:hover{background:var(--apricot)}
+.btn-text{padding-inline:0;min-height:auto;border-radius:0;border-bottom:1.5px solid currentColor}
+.btn-block{width:100%}
+.btn[disabled],.btn.is-disabled{opacity:.5;cursor:not-allowed;pointer-events:none}
+
+/* Form */
+.field{display:grid;gap:var(--s2);margin-bottom:var(--s4)}
+.field label{font-weight:500;font-size:.9rem}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:.7rem .9rem;min-height:46px;width:100%}
+input:hover,select:hover,textarea:hover{border-color:var(--peach)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--coral);outline-offset:1px;border-color:var(--ink)}
+input:disabled{opacity:.55;cursor:not-allowed}
+
+/* Thông báo & nhãn */
+.notice{display:flex;gap:var(--s3);padding:var(--s4) var(--s5);border-radius:var(--r-md);background:var(--paper);border:1.5px solid var(--line);margin-bottom:var(--s5)}
+.notice-info{border-left:6px solid var(--coral)}
+.notice-demo{background:var(--apricot);border-color:var(--peach);font-size:.88rem;padding:var(--s3) var(--s4)}
+.badge{display:inline-block;padding:.15rem .7rem;border-radius:999px;background:var(--peach);font-size:.8rem;font-weight:500}
+.badge-ok{background:#CFE8D8;color:var(--ok)} .badge-out{background:#F3CFC8;color:var(--danger)}
+
+/* Chai nước hoa dựng bằng CSS (thay bằng ảnh thật trong assets/images/ khi có) */
+.thumb{container-type:inline-size;position:relative;display:grid;place-items:end center;aspect-ratio:4/5;background:radial-gradient(circle at 50% 52%,#FFF6D8 0,var(--apricot) 72%);overflow:hidden;padding-bottom:13%}
+.thumb::before{content:"";position:absolute;left:50%;top:48%;width:76%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:rgba(255,240,190,.7)}
+.thumb::after{content:"";position:absolute;inset:auto 20% 10% 20%;height:6%;border-radius:50%;background:rgba(58,37,25,.24);filter:blur(6px)}
+.bottle{--liquid:#FF9A86;position:relative;z-index:1;width:58%;display:flex;flex-direction:column;align-items:center;transition:translate .3s}
+.bottle.tall{width:50%}
+.card:hover .bottle,.card:focus-within .bottle{translate:0 -8px}
+.bottle .cap{width:34%;aspect-ratio:1/.8;background:linear-gradient(90deg,#2a170d,#5b3a27 45%,#2a170d);border-radius:5px 5px 2px 2px}
+.bottle .neck{width:20%;aspect-ratio:1/.35;background:linear-gradient(90deg,#b88a5e,#f1d3a6 50%,#b88a5e)}
+.bottle .glass{position:relative;width:100%;aspect-ratio:1/1.1;border-radius:9% / 7%;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.4));
+  box-shadow:0 0 0 2px rgba(255,255,255,.85),0 12px 26px rgba(90,50,30,.25),inset 0 0 0 1px rgba(58,37,25,.08)}
+.bottle .glass::before{content:"";position:absolute;inset:12% 6% 6%;border-radius:6% / 5%;background:linear-gradient(90deg,rgba(255,255,255,.3),transparent 35%,rgba(0,0,0,.14)),var(--liquid)}
+.bottle .glass::after{content:"";position:absolute;left:13%;top:10%;width:8%;height:76%;border-radius:999px;background:rgba(255,255,255,.6)}
+.bottle .label{position:relative;z-index:1;background:var(--paper);color:var(--ink);font:600 4.6cqw/1 var(--font-display);letter-spacing:.16em;padding:7% 10%;text-align:center;box-shadow:0 1px 4px rgba(58,37,25,.22)}
+.bottle.round .glass{aspect-ratio:1;border-radius:50%}
+.bottle.round .glass::before{border-radius:50%;inset:7%}
+.bottle.tall .glass{aspect-ratio:1/1.5;border-radius:8% / 5%}
+.liq-coral{--liquid:#FF9A86}.liq-amber{--liquid:#D9964B}.liq-cream{--liquid:#F7E3A1}.liq-deep{--liquid:#9A5240}.liq-peach{--liquid:#FFB399}.liq-sage{--liquid:#C9B27A}
+
+/* Card sản phẩm */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:var(--s5)}
+.card{display:flex;flex-direction:column;background:var(--paper);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s}
+.card:hover,.card:focus-within{box-shadow:var(--shadow-lg)}
+.card-media{display:block}
+.card-body{display:flex;flex-direction:column;flex:1;padding:var(--s4) var(--s5) var(--s5)}
+.card-actions{display:grid;gap:var(--s2);text-align:center}
+.card-actions .btn-text{justify-self:center;padding-block:var(--s2)}
+.card-cat{font-size:.82rem;color:var(--muted);margin:0 0 var(--s1)}
+.card h3{font-size:1.45rem;margin-bottom:var(--s1)} .card h3 a{text-decoration:none}
+.card h3 a:hover{text-decoration:underline}
+.card-meta{font-size:.9rem;color:var(--muted);margin-bottom:var(--s3)}
+.price{font:600 1.35rem/1.2 var(--font-display);margin:auto 0 var(--s4)}
+.price small{font:400 .85rem var(--font-body);color:var(--muted);text-decoration:line-through;margin-left:var(--s2)}
+
+/* Phân trang */
+.pagination{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s2);margin-top:var(--s6)}
+.pagination a,.pagination span{min-width:44px;min-height:44px;display:grid;place-items:center;padding:0 var(--s3);border-radius:999px;text-decoration:none;border:1.5px solid var(--line);background:var(--paper)}
+.pagination a:hover{background:var(--apricot)}
+.pagination [aria-current="page"]{background:var(--coral);border-color:var(--coral);font-weight:600}
+.pagination .is-disabled{opacity:.45}
+
+/* Bảng cuộn ngang trên màn hình nhỏ */
+.table-scroll{overflow-x:auto}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

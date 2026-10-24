@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đặt hàng | FLORA PERFUME</title>
+  <meta name="description" content="Chọn địa chỉ giao hàng và phương thức thanh toán.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Cormorant+Garamond:wght@500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/customer.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+  <header class="site-header">
+    <div class="wrap header-top">
+      <a class="logo" href="index.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
+      <form class="search-form" action="search.html" method="get" role="search">
+        <label class="visually-hidden" for="q-header">Tìm nước hoa theo tên</label>
+        <input id="q-header" type="search" name="q" placeholder="Tìm nước hoa theo tên…">
+        <button class="btn btn-primary" type="submit">Tìm</button>
+      </form>
+      <div class="header-actions">
+        <a class="hide-sm" href="login.html">Đăng nhập</a>
+        <a class="hide-sm" href="register.html">Đăng ký</a>
+        <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span
+            class="cart-count">3</span></a>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="Danh mục sản phẩm">
+      <div class="wrap">
+        <ul>
+          <li><a href="products.html">Tất cả sản phẩm</a></li>
+          <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
+          <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
+          <li><a href="products.html?loai=unisex">Unisex</a></li>
+          <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
+          <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <div class="page-head">
+        <ol class="breadcrumb" aria-label="Đường dẫn">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="cart.html">Giỏ hàng</a></li>
+          <li aria-current="page">Đặt hàng</li>
+        </ol>
+        <h1 style="font-size:clamp(2.2rem,5vw,3.4rem)">Đặt hàng</h1>
+      </div>
+      <form class="cart-layout" action="order-success.html" method="get">
+        <div>
+          <section class="panel" aria-labelledby="h-cus">
+            <h2 id="h-cus">Thông tin khách hàng</h2>
+            <dl class="readonly">
+              <dt>Họ và tên</dt>
+              <dd>Nguyễn Minh Anh</dd>
+              <dt>Email</dt>
+              <dd>minhanh@example.com</dd>
+              <dt>Số điện thoại</dt>
+              <dd>0901 234 567</dd>
+            </dl>
+            <p class="hint">Thông tin lấy từ tài khoản đã đăng nhập (dữ liệu mẫu).</p>
+            <fieldset class="group">
+              <legend>Địa chỉ giao hàng</legend>
+              <label class="option"><input type="radio" name="dia-chi" value="luu-1" checked>
+                <div><strong>Nhà riêng (mặc định)</strong><span>12 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí
+                    Minh</span></div>
+              </label>
+              <label class="option"><input type="radio" name="dia-chi" value="luu-2">
+                <div><strong>Văn phòng</strong><span>45 Lê Lợi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</span></div>
+              </label>
+              <label class="option"><input type="radio" name="dia-chi" value="moi">
+                <div><strong>Nhập địa chỉ giao hàng mới</strong><span>Điền các trường bên dưới</span></div>
+              </label>
+            </fieldset>
+            <fieldset class="group" style="margin-top:var(--s5)">
+              <legend style="font-size:1.15rem">Địa chỉ mới</legend>
+              <div class="form-grid cols-3">
+                <div class="field"><label for="tinh">Tỉnh/thành phố</label><select id="tinh" name="tinh">
+                    <option value="">Chọn tỉnh/thành phố</option>
+                    <option selected>TP. Hồ Chí Minh</option>
+                    <option>Hà Nội</option>
+                    <option>Đà Nẵng</option>
+                    <option>Cần Thơ</option>
+                  </select></div>
+                <div class="field"><label for="quan">Quận/huyện</label><select id="quan" name="quan">
+                    <option value="">Chọn quận/huyện</option>
+                    <option selected>Quận 1</option>
+                    <option>Quận 3</option>
+                    <option>Bình Thạnh</option>
+                    <option>Thủ Đức</option>
+                  </select></div>
+                <div class="field"><label for="phuong">Phường/xã</label><select id="phuong" name="phuong">
+                    <option value="">Chọn phường/xã</option>
+                    <option selected>Bến Nghé</option>
+                    <option>Bến Thành</option>
+                    <option>Đa Kao</option>
+                  </select></div>
+                <div class="field full"><label for="chitiet">Địa chỉ chi tiết</label><input id="chitiet" name="chitiet"
+                    type="text" placeholder="Số nhà, tên đường"></div>
+                <div class="field full"><label for="sdt-nhan">Số điện thoại nhận hàng</label><input id="sdt-nhan"
+                    name="sdt-nhan" type="tel" placeholder="0901234567"></div>
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="panel" aria-labelledby="h-pay">
+            <fieldset class="group">
+              <legend id="h-pay">Phương thức thanh toán</legend>
+              <label class="option"><input type="radio" name="thanh-toan" value="truc-tuyen">
+                <div><strong>Thanh toán trực tuyến</strong><span>Bạn chỉ chọn phương thức ở bước này, không nhập thẻ hay
+                    mã OTP tại đây.</span></div>
+              </label>
+              <label class="option"><input type="radio" name="thanh-toan" value="tien-mat" checked>
+                <div><strong>Thanh toán tiền mặt khi nhận hàng</strong><span>Trả tiền cho nhân viên giao hàng khi nhận
+                    sản phẩm.</span></div>
+              </label>
+            </fieldset>
+          </section>
+        </div>
+
+        <aside class="summary" aria-labelledby="h-sum">
+          <h2 id="h-sum" style="font-size:1.6rem">Tóm tắt đơn hàng</h2>
+          <ul class="order-lines">
+            <li>
+              <div class="thumb">
+                <div class="bottle round liq-coral" role="img" aria-label="Chai nước hoa Rosé Aurore"><span
+                    class="cap"></span><span class="neck"></span><span class="glass"><span
+                      class="label">FLORA</span></span></div>
+              </div>
+              <div>
+                <p>Rosé Aurore</p>
+                <p class="muted">50ml · Số lượng 1 × 1.890.000₫</p>
+              </div><strong>1.890.000₫</strong>
+            </li>
+            <li>
+              <div class="thumb">
+                <div class="bottle tall liq-amber" role="img" aria-label="Chai nước hoa Bois Ambré"><span
+                    class="cap"></span><span class="neck"></span><span class="glass"><span
+                      class="label">FLORA</span></span></div>
+              </div>
+              <div>
+                <p>Bois Ambré</p>
+                <p class="muted">100ml · Số lượng 2 × 2.350.000₫</p>
+              </div><strong>4.700.000₫</strong>
+            </li>
+          </ul>
+          <dl style="margin-top:var(--s4)">
+            <div class="row">
+              <dt>Tạm tính</dt>
+              <dd>6.590.000₫</dd>
+            </div>
+            <div class="row">
+              <dt>Phí vận chuyển (mẫu)</dt>
+              <dd>30.000₫</dd>
+            </div>
+            <div class="row total">
+              <dt>Tổng tiền</dt>
+              <dd>6.620.000₫</dd>
+            </div>
+          </dl>
+          <button class="btn btn-primary btn-block" type="submit">Xác nhận đặt hàng</button>
+          <a class="btn btn-text" style="margin-top:var(--s4)" href="cart.html">Quay lại giỏ hàng</a>
+          <p class="backend-note">Nút xác nhận chỉ chuyển sang trang thành công mẫu. Lưu đơn hàng, trừ tồn kho và tính
+            tổng tiền cần backend.</p>
+        </aside>
+      </form>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
+          <p>Cửa hàng nước hoa chọn lọc cho mọi phong cách. Mỗi chai đều được kiểm tra nguồn gốc trước khi giao.</p>
+        </div>
+        <div>
+          <h2>Mua sắm</h2>
+          <ul>
+            <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
+            <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
+            <li><a href="products.html?loai=unisex">Unisex</a></li>
+            <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Hỗ trợ</h2>
+          <ul>
+            <li><a href="index.html#chinh-sach">Chính sách giao hàng</a></li>
+            <li><a href="index.html#chinh-sach">Chính sách đổi trả</a></li>
+            <li><a href="order-history.html">Lịch sử mua hàng</a></li>
+            <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Liên hệ</h2>
+          <address style="font-style:normal">
+            12 Đồng Khởi, Quận 1<br>TP. Hồ Chí Minh<br>
+            <a href="tel:+842812345678">028 1234 5678</a><br>
+            <a href="mailto:hello@floraperfume.example">hello@floraperfume.example</a>
+          </address>
+        </div>
+      </div>
+      <p class="footer-bottom">© 2026 FLORA PERFUME. Website minh họa bằng HTML/CSS thuần, toàn bộ dữ liệu là dữ liệu
+        mẫu.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
