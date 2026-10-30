@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>
-      Thống kê khách hàng | FLORA PERFUME
+      Đơn hàng | FLORA PERFUME
     </title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
@@ -40,13 +40,13 @@
           </span>
           Sản phẩm
         </a>
-        <a href="orders.html">
+        <a aria-current="page" href="orders.html">
           <span class="nav-icon">
             ▤
           </span>
           Đơn hàng
         </a>
-        <a aria-current="page" href="statistics.html">
+        <a href="statistics.html">
           <span class="nav-icon">
             ▥
           </span>
@@ -75,184 +75,164 @@
         <div class="page-title">
           <div>
             <p class="eyebrow">
-              PHÂN TÍCH DOANH THU
+              XỬ LÝ VÀ THEO DÕI
             </p>
             <h1>
-              Thống kê khách hàng
+              Đơn hàng
             </h1>
             <p>
-              Top 5 khách hàng theo tổng giá trị đơn hàng trong kỳ.
+              Cập nhật tiến trình và xem thông tin giao hàng.
             </p>
           </div>
         </div>
         <section class="panel">
-          <form class="filter-row" action="statistics-filtered.html" method="get">
+          <form class="filter-row orders-filter-row" action="orders-filtered.html" method="get">
             <div class="field">
-              <label for="statistics-from">Từ ngày</label>
-              <input id="statistics-from" type="date" name="from" value="2026-10-01">
+              <label>
+                Trạng thái đơn
+              </label>
+              <select name="status">
+                <option>
+                  Tất cả trạng thái
+                </option>
+                <option>
+                  Chưa xác nhận
+                </option>
+                <option>
+                  Đã xác nhận
+                </option>
+                <option>
+                  Đang giao
+                </option>
+                <option>
+                  Đã giao thành công
+                </option>
+                <option>
+                  Đã hủy
+                </option>
+              </select>
             </div>
             <div class="field">
-              <label for="statistics-to">Đến ngày</label>
-              <input id="statistics-to" type="date" name="to" value="2026-10-23">
+              <label for="order-customer-search">
+                Tìm khách hàng
+              </label>
+              <input id="order-customer-search" name="customer" type="search" value="Nguyễn Minh Anh" placeholder="Tên hoặc email khách hàng">
             </div>
-            <button class="btn btn-primary" type="submit">Xem thống kê</button>
-            <a class="btn btn-outline" href="statistics.html">Làm mới</a>
+            <div class="field">
+              <label>
+                Từ ngày đặt
+              </label>
+              <input type="date" name="from" value="2026-10-01">
+            </div>
+            <div class="field">
+              <label>
+                Đến ngày
+              </label>
+              <input type="date" name="to" value="2026-10-23">
+            </div>
+            <div class="field">
+              <label>
+                Địa điểm giao hàng
+              </label>
+              <input name="destination" placeholder="Quận, huyện, thành phố">
+            </div>
+            <div class="orders-filter-actions">
+              <button class="btn btn-outline" type="submit">
+                Lọc đơn hàng
+              </button>
+              <a class="btn btn-outline" href="orders.html">Làm mới</a>
+            </div>
           </form>
         </section>
-        <div class="stats-grid">
-          <article class="stat-card">
-            <span>
-              Tổng doanh thu kỳ này
-            </span>
-            <strong>
-              286,4 tr₫
-            </strong>
-            <small>
-              01/10/2026 – 23/10/2026
-            </small>
-          </article>
-          <article class="stat-card">
-            <span>
-              Khách hàng có đơn
-            </span>
-            <strong>
-              214
-            </strong>
-            <small>
-              Đã hoàn tất mua hàng
-            </small>
-          </article>
-          <article class="stat-card">
-            <span>
-              Giá trị trung bình
-            </span>
-            <strong>
-              1,34 tr₫
-            </strong>
-            <small>
-              Mỗi khách hàng
-            </small>
-          </article>
-          <article class="stat-card">
-            <span>
-              Top khách hàng
-            </span>
-            <strong>
-              5
-            </strong>
-            <small>
-              Sắp xếp theo tổng tiền giảm dần
-            </small>
-          </article>
-        </div>
         <section class="panel">
           <div class="table-tools">
-            <div>
-              <p class="eyebrow">
-                01/10/2026 – 23/10/2026
-              </p>
-              <h2>
-                5 khách hàng mua nhiều nhất
-              </h2>
-            </div>
+            <h2>
+              4 đơn hàng của Nguyễn Minh Anh
+            </h2>
           </div>
-          <div class="table-wrap">
-            <table class="admin-table">
+          <div class="table-wrap" tabindex="0" aria-label="Bảng đơn hàng, cuộn ngang và dọc">
+            <table class="admin-table" id="orders-table">
               <thead>
-                <tr>
-                  <th>
-                    Hạng
-                  </th>
-                  <th>
-                    Khách hàng
-                  </th>
-                  <th>
-                    Đơn hàng trong kỳ
-                  </th>
-                  <th>
-                    Số đơn
-                  </th>
-                  <th>
-                    Tổng mua
-                  </th>
-                  <th>
-                    Chi tiết
-                  </th>
-                </tr>
+                <tr><th>Mã đơn</th><th>Khách hàng</th><th>Ngày đặt</th><th>Địa điểm giao</th><th>Tổng tiền</th><th>Phương thức thanh toán</th><th>Trạng thái</th><th>Cập nhật</th><th>Chi tiết</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="rank">01</td>
-                  <td><strong>Võ Ngọc Linh</strong><br><span class="muted">ngoclinh@example.com</span></td>
-                  <td><span>FL-2026-0046</span>, <span>FL-2026-0048</span></td>
-                  <td>7</td>
-                  <td><strong>16.800.000₫</strong></td>
-                  <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td>
-                </tr>
-                <tr>
-                  <td class="rank">02</td>
-                  <td><strong>Đặng Quốc Huy</strong><br><span class="muted">quochuy@example.com</span></td>
-                  <td><span>FL-2026-0047</span>, <span>FL-2026-0050</span></td>
-                  <td>6</td>
-                  <td><strong>14.250.000₫</strong></td>
-                  <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td>
-                </tr>
-                <tr>
-                  <td class="rank">03</td>
-                  <td><strong>Bùi Khánh Vy</strong><br><span class="muted">khanhvy@example.com</span></td>
-                  <td><span>FL-2026-0048</span>, <span>FL-2026-0051</span></td>
-                  <td>5</td>
-                  <td><strong>12.980.000₫</strong></td>
-                  <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td>
-                </tr>
-                <tr>
-                  <td class="rank">04</td>
-                  <td><strong>Hoàng Đức Anh</strong><br><span class="muted">ducanh@example.com</span></td>
-                  <td><span>FL-2026-0049</span>, <span>FL-2026-0046</span></td>
-                  <td>4</td>
-                  <td><strong>10.400.000₫</strong></td>
-                  <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td>
-                </tr>
-                <tr>
-                  <td class="rank">05</td>
-                  <td><strong>Ngô Tuấn Kiệt</strong><br><span class="muted">tuankiet@example.com</span></td>
-                  <td><span>FL-2026-0051</span>, <span>FL-2026-0047</span></td>
-                  <td>4</td>
-                  <td><strong>9.760.000₫</strong></td>
-                  <td><a class="btn btn-outline small-btn" href="orders-filtered.html">Xem chi tiết</a></td>
-                </tr>
+<tr><td><strong>FL-2026-0042</strong></td><td>Nguyễn Minh Anh</td><td>23/10/2026</td><td>Quận 1, TP. HCM</td><td>3.780.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0042"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
+<tr><td><strong>FL-2026-0046</strong></td><td>Nguyễn Minh Anh</td><td>20/10/2026</td><td>Quận 1, TP. HCM</td><td>2.100.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0046"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
+<tr><td><strong>FL-2026-0047</strong></td><td>Nguyễn Minh Anh</td><td>19/10/2026</td><td>Quận 1, TP. HCM</td><td>2.750.000₫</td><td>Tiền mặt khi nhận hàng</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0047"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
+<tr><td><strong>FL-2026-0038</strong></td><td>Nguyễn Minh Anh</td><td>14/10/2026</td><td>Quận 1, TP. HCM</td><td>1.850.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0038"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
               </tbody>
             </table>
           </div>
         </section>
-        <section class="panel">
-          <p class="eyebrow">
-            TỔNG GIÁ TRỊ THEO NGÀY
-          </p>
-          <h2>
-            Doanh thu trong kỳ
-          </h2>
-          <div class="chart-bars" aria-label="Biểu đồ doanh thu minh họa">
-            <span style="height:38%" data-label="01/10">
-            </span>
-            <span style="height:60%" data-label="05/10">
-            </span>
-            <span style="height:47%" data-label="09/10">
-            </span>
-            <span style="height:75%" data-label="13/10">
-            </span>
-            <span style="height:55%" data-label="17/10">
-            </span>
-            <span style="height:92%" data-label="21/10">
-            </span>
-            <span style="height:68%" data-label="23/10">
-            </span>
-          </div>
-        </section>
+
       </div>
     </main>
+    <dialog class="admin-dialog" id="order-dialog">
+      <div class="dialog-head">
+        <h2>
+          Chi tiết đơn hàng
+        </h2>
+        <button class="icon-close" data-close aria-label="Đóng">
+          ×
+        </button>
+      </div>
+      <p>
+        <strong id="order-number">FL-2026-0042</strong>
+        ·
+        <span id="order-customer">Nguyễn Minh Anh</span>
+        ·
+        <span id="order-date">23/10/2026</span>
+      </p>
+      <p id="order-address">Quận 1, TP. HCM</p>
+      <div class="table-wrap">
+        <table class="admin-table order-detail-table">
+          <thead>
+            <tr><th>Sản phẩm</th><th>Phân loại</th><th>Số lượng</th><th>Thành tiền</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Rosé Aurore</td><td>Nước hoa nữ · 50ml</td><td>2</td><td>3.780.000₫</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </dialog>
     
-</body>
+<div class="admin-toast" role="status" aria-live="polite" hidden></div>
+    <script>
+function showToast(message) {
+  const toast = document.querySelector('.admin-toast');
+  toast.textContent = message;
+  toast.hidden = false;
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    toast.hidden = true;
+  }, 3000);
+}
+
+document.addEventListener('click', (event) => {
+  if (event.target.closest('[data-close]')) {
+    event.target.closest('dialog').close();
+    return;
+  }
+
+  if (event.target.matches('dialog')) {
+    event.target.close();
+    return;
+  }
+
+  if (!event.target.closest('[data-order-detail]')) return;
+
+  document.querySelector('#order-dialog').showModal();
+});
+
+document.querySelectorAll('.filter-row button').forEach((button) => {
+  button.addEventListener('click', () => showToast('Lọc danh sách đơn hàng thành công!'));
+});
+
+document.querySelectorAll('tbody select').forEach((select) => {
+  select.addEventListener('change', () => showToast('Đã cập nhật trạng thái đơn hàng.'));
+});
+    </script>
+  </body>
 </html>
 
 
