@@ -13,96 +13,30 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
-<header class="site-header">
-  <div class="wrap header-top">
-    <a class="logo" href="index.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
-    <form class="search-form" action="search.html" method="get" role="search">
-      <label class="visually-hidden" for="q-header">Tìm nước hoa theo tên</label>
-      <input id="q-header" type="search" name="q" placeholder="Tìm nước hoa theo tên…">
-      <button class="btn btn-primary" type="submit">Tìm</button>
-    </form>
-    <div class="header-actions">
-      <a class="hide-sm" href="login.html">Đăng nhập</a>
-      <a class="hide-sm" href="register.html">Đăng ký</a>
-      <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span class="cart-count">3</span></a>
-    </div>
-  </div>
-  <nav class="main-nav" aria-label="Danh mục sản phẩm">
-    <div class="wrap"><ul>
-      <li><a href="products.html">Tất cả sản phẩm</a></li>
-      <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
-      <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
-      <li><a href="products.html?loai=unisex">Unisex</a></li>
-      <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
-      <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
-    </ul></div>
-  </nav>
-</header>
+
 <main id="main">
 <div class="wrap auth">
-  <aside class="auth-art" aria-label="Giới thiệu">
-    <div class="arch" role="group" aria-label="Chai nước hoa">
-      <div class="a1"><div class="bottle round liq-peach" role="img" aria-label="Chai nước hoa Pêche Velours"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div class="a2"><div class="bottle tall liq-coral" role="img" aria-label="Chai nước hoa Rosé Aurore"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div class="a3"><div class="bottle  liq-amber" role="img" aria-label="Chai nước hoa Bois Ambré"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div>
-    </div>
-    <p>Lưu địa chỉ giao hàng và xem lại lịch sử đơn hàng mỗi lần mua.</p>
-  </aside>
+  
   <section class="auth-card" aria-labelledby="h-reg">
     <h1 id="h-reg">Tạo tài khoản</h1>
     <form action="login.html" method="post">
       <div class="form-grid">
-        <div class="field full"><label for="hoten">Họ và tên</label><input id="hoten" name="hoten" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="sdt">Số điện thoại</label><input id="sdt" name="sdt" type="tel" autocomplete="tel" pattern="0[0-9]{9}" placeholder="0901234567" required></div>
-        <div class="field"><label for="mk">Mật khẩu</label><input id="mk" name="mk" type="password" minlength="8" autocomplete="new-password" required><span class="hint">Tối thiểu 8 ký tự.</span></div>
-        <div class="field"><label for="mk2">Xác nhận mật khẩu</label><input id="mk2" name="mk2" type="password" minlength="8" autocomplete="new-password" required></div>
-        <div class="field full"><label for="diachi">Địa chỉ mặc định</label><input id="diachi" name="diachi" type="text" autocomplete="street-address" placeholder="Số nhà, tên đường" required></div>
-        <div class="field full"><label for="tinh">Tỉnh/thành phố</label><select id="tinh" name="tinh" required><option value="">Chọn tỉnh/thành phố</option><option selected>TP. Hồ Chí Minh</option><option>Hà Nội</option><option>Đà Nẵng</option><option>Cần Thơ</option></select></div>
-        <div class="field"><label for="quan">Quận/huyện</label><select id="quan" name="quan" required><option value="">Chọn quận/huyện</option><option selected>Quận 1</option><option>Quận 3</option><option>Bình Thạnh</option><option>Thủ Đức</option></select></div>
-        <div class="field"><label for="phuong">Phường/xã</label><select id="phuong" name="phuong" required><option value="">Chọn phường/xã</option><option selected>Bến Nghé</option><option>Bến Thành</option><option>Đa Kao</option></select></div>
+        <div class="field full"><label for="hoten">Họ và tên</label><input id="hoten" name="hoten" type="text" autocomplete="name"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="sdt">Số điện thoại</label><input id="sdt" name="sdt" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="mk">Mật khẩu</label><input id="mk" name="mk" type="password" minlength="8" autocomplete="new-password"><span class="hint">Tối thiểu 8 ký tự.</span></div>
+        <div class="field"><label for="mk2">Xác nhận mật khẩu</label><input id="mk2" name="mk2" type="password" minlength="8" autocomplete="new-password"><span class="hint">Nhập lại mật khẩu.</span></div>
+        <div class="field full"><label for="diachi">Địa chỉ mặc định</label><input id="diachi" name="diachi" type="text" autocomplete="street-address" placeholder="Số nhà, tên đường"></div>
+        <div class="field full"><label for="tinh">Tỉnh/thành phố</label><select id="tinh" name="tinh"><option value="">Chọn tỉnh/thành phố</option><option selected>TP. Hồ Chí Minh</option><option>Hà Nội</option><option>Đà Nẵng</option><option>Cần Thơ</option></select></div>
+        <div class="field"><label for="quan">Quận/huyện</label><select id="quan" name="quan" ><option value="">Chọn quận/huyện</option><option selected>Quận 1</option><option>Quận 3</option><option>Bình Thạnh</option><option>Thủ Đức</option></select></div>
+        <div class="field"><label for="phuong">Phường/xã</label><select id="phuong" name="phuong" ><option value="">Chọn phường/xã</option><option selected>Bến Nghé</option><option>Bến Thành</option><option>Đa Kao</option></select></div>
       </div>
       <button class="btn btn-primary btn-block" type="submit">Đăng ký</button>
     </form>
     <p class="auth-switch">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
-    <p class="backend-note">Kiểm tra trùng email, so khớp mật khẩu, mã hóa mật khẩu và danh sách quận/huyện, phường/xã theo tỉnh đều cần backend. Thuộc tính <code>action</code> của form cần đổi thành địa chỉ xử lý thật.</p>
   </section>
 </div>
 </main>
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
-        <p>Cửa hàng nước hoa chọn lọc cho mọi phong cách. Mỗi chai đều được kiểm tra nguồn gốc trước khi giao.</p>
-      </div>
-      <div>
-        <h2>Mua sắm</h2>
-        <ul>
-          <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
-          <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
-          <li><a href="products.html?loai=unisex">Unisex</a></li>
-          <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Hỗ trợ</h2>
-        <ul>
-          <li><a href="index.html#chinh-sach">Chính sách giao hàng</a></li>
-          <li><a href="index.html#chinh-sach">Chính sách đổi trả</a></li>
-          <li><a href="order-history.html">Lịch sử mua hàng</a></li>
-          <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Liên hệ</h2>
-        <address style="font-style:normal">
-          12 Đồng Khởi, Quận 1<br>TP. Hồ Chí Minh<br>
-          <a href="tel:+842812345678">028 1234 5678</a><br>
-          <a href="mailto:hello@floraperfume.example">hello@floraperfume.example</a>
-        </address>
-      </div>
-    </div>
-    <p class="footer-bottom">© 2026 FLORA PERFUME. Website minh họa bằng HTML/CSS thuần, toàn bộ dữ liệu là dữ liệu mẫu.</p>
-  </div>
-</footer>
+
 </body>
 </html>

@@ -1,98 +1,37 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Đăng nhập | FLORA PERFUME</title>
-<meta name="description" content="Đăng nhập tài khoản khách hàng FLORA PERFUME.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/customer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng nhập | FLORA PERFUME</title>
+  <meta name="description" content="Đăng nhập tài khoản khách hàng FLORA PERFUME.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Cormorant+Garamond:wght@500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/customer.css">
 </head>
+
 <body>
-<a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
-<header class="site-header">
-  <div class="wrap header-top">
-    <a class="logo" href="index.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
-    <form class="search-form" action="search.html" method="get" role="search">
-      <label class="visually-hidden" for="q-header">Tìm nước hoa theo tên</label>
-      <input id="q-header" type="search" name="q" placeholder="Tìm nước hoa theo tên…">
-      <button class="btn btn-primary" type="submit">Tìm</button>
-    </form>
-    <div class="header-actions">
-      <a class="hide-sm" href="login.html">Đăng nhập</a>
-      <a class="hide-sm" href="register.html">Đăng ký</a>
-      <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span class="cart-count">3</span></a>
+  <main id="main">
+    <div class="wrap auth narrow">
+      <section class="auth-card" aria-labelledby="h-login">
+        <h1 id="h-login">Đăng nhập</h1>
+        <form action="index.html" method="post">
+          <div class="field"><label for="tk">Email hoặc tên đăng nhập</label><input id="tk" name="tk" type="text"
+              autocomplete="username"></div>
+          <div class="field"><label for="mk">Mật khẩu</label><input id="mk" name="mk" type="password"
+              autocomplete="current-password"></div>
+          <div class="check"><input id="nho" name="nho" type="checkbox"><label for="nho">Ghi nhớ đăng nhập</label></div>
+          <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
+        </form>
+        <p class="auth-switch">Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+      </section>
     </div>
-  </div>
-  <nav class="main-nav" aria-label="Danh mục sản phẩm">
-    <div class="wrap"><ul>
-      <li><a href="products.html">Tất cả sản phẩm</a></li>
-      <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
-      <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
-      <li><a href="products.html?loai=unisex">Unisex</a></li>
-      <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
-      <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
-    </ul></div>
-  </nav>
-</header>
-<main id="main">
-<div class="wrap auth narrow">
-  <aside class="auth-art" aria-label="Giới thiệu">
-    <div class="arch" role="group" aria-label="Chai nước hoa"><div class="a1"><div class="bottle round liq-cream" role="img" aria-label="Chai nước hoa Ciel Blanc"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div class="a2"><div class="bottle tall liq-deep" role="img" aria-label="Chai nước hoa Oud Impérial"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div class="a3"><div class="bottle  liq-coral" role="img" aria-label="Chai nước hoa Rosé Aurore"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div></div>
-    <p>Đăng nhập để đặt hàng nhanh hơn và theo dõi đơn của bạn.</p>
-  </aside>
-  <section class="auth-card" aria-labelledby="h-login">
-    <h1 id="h-login">Đăng nhập</h1>
-    <form action="index.html" method="post">
-      <div class="field"><label for="tk">Email hoặc tên đăng nhập</label><input id="tk" name="tk" type="text" autocomplete="username" required></div>
-      <div class="field"><label for="mk">Mật khẩu</label><input id="mk" name="mk" type="password" autocomplete="current-password" required></div>
-      <div class="check"><input id="nho" name="nho" type="checkbox"><label for="nho">Ghi nhớ đăng nhập</label></div>
-      <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
-    </form>
-    <p class="auth-switch">Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
-    <p class="backend-note">Xác thực tài khoản, duy trì phiên và chức năng ghi nhớ đăng nhập cần backend. Đây chỉ là giao diện.</p>
-  </section>
-</div>
-</main>
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
-        <p>Cửa hàng nước hoa chọn lọc cho mọi phong cách. Mỗi chai đều được kiểm tra nguồn gốc trước khi giao.</p>
-      </div>
-      <div>
-        <h2>Mua sắm</h2>
-        <ul>
-          <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
-          <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
-          <li><a href="products.html?loai=unisex">Unisex</a></li>
-          <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Hỗ trợ</h2>
-        <ul>
-          <li><a href="index.html#chinh-sach">Chính sách giao hàng</a></li>
-          <li><a href="index.html#chinh-sach">Chính sách đổi trả</a></li>
-          <li><a href="order-history.html">Lịch sử mua hàng</a></li>
-          <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Liên hệ</h2>
-        <address style="font-style:normal">
-          12 Đồng Khởi, Quận 1<br>TP. Hồ Chí Minh<br>
-          <a href="tel:+842812345678">028 1234 5678</a><br>
-          <a href="mailto:hello@floraperfume.example">hello@floraperfume.example</a>
-        </address>
-      </div>
-    </div>
-    <p class="footer-bottom">© 2026 FLORA PERFUME. Website minh họa bằng HTML/CSS thuần, toàn bộ dữ liệu là dữ liệu mẫu.</p>
-  </div>
-</footer>
+  </main>
 </body>
+
 </html>

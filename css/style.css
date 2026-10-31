@@ -1,6 +1,6 @@
 /* ===== FLORA PERFUME — CSS dùng chung (khách hàng + quản trị) ===== */
 :root{
-  --coral:#FF9A86; --peach:#FFB399; --apricot:#FFD6A6; --cream:#FFF0BE;
+  --coral:#FFCED8; --peach:#FFDDDD; --apricot:#FFF4DE; --cream:#FFE8C4;
   --paper:#FFFBF0; --white:#fff;
   --ink:#3A2519; --muted:#6B4B3C; --line:#EBCFA6; --coral-dark:#C4553E;
   --ok:#2F6B4F; --warn:#9A5B00; --danger:#A63A2B;
@@ -19,7 +19,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.1;marg
 h1{font-size:clamp(2.6rem,6vw,4.6rem)} h2{font-size:clamp(1.9rem,3.6vw,2.7rem)} h3{font-size:1.4rem}
 p{margin:0 0 var(--s4)}
 a{color:inherit;text-underline-offset:3px}
-ul{margin:0;padding:0;list-style:none}
+ul,ol{margin:0;padding:0;list-style:none}
 .wrap{width:min(100% - 2rem,var(--wrap));margin-inline:auto}
 .muted{color:var(--muted)}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
