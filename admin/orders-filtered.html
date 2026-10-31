@@ -207,6 +207,17 @@ function showToast(message) {
   }, 3000);
 }
 
+if (new URLSearchParams(location.search).get('source') === 'dashboard') {
+  const dashboardSource = document.createElement('input');
+  dashboardSource.type = 'hidden';
+  dashboardSource.name = 'source';
+  dashboardSource.value = 'dashboard';
+  document.querySelector('.orders-filter-row').append(dashboardSource);
+  document.querySelector('#order-customer-search').value = 'Trần Hoàng Nam';
+  document.querySelector('.table-tools h2').textContent = '1 đơn hàng phù hợp';
+  document.querySelector('#orders-table tbody').innerHTML = '<tr><td><strong>FL-2026-0043</strong></td><td>Trần Hoàng Nam</td><td>23/10/2026</td><td>Quận Hải Châu, Đà Nẵng</td><td>2.350.000₫</td><td>Tiền mặt khi nhận hàng</td><td><span class="pill warn">Chờ xác nhận</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0043"><option selected>Chờ xác nhận</option><option>Đã xác nhận</option><option>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>';
+}
+
 document.addEventListener('click', (event) => {
   if (event.target.closest('[data-close]')) {
     event.target.closest('dialog').close();
@@ -219,6 +230,12 @@ document.addEventListener('click', (event) => {
   }
 
   if (!event.target.closest('[data-order-detail]')) return;
+
+  const row = event.target.closest('tr');
+  document.querySelector('#order-number').textContent = row.cells[0].textContent.trim();
+  document.querySelector('#order-customer').textContent = row.cells[1].textContent.trim();
+  document.querySelector('#order-date').textContent = row.cells[2].textContent.trim();
+  document.querySelector('#order-address').textContent = row.cells[3].textContent.trim();
 
   document.querySelector('#order-dialog').showModal();
 });
