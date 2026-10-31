@@ -23,10 +23,10 @@
       <nav class="main-nav" aria-label="Danh mục sản phẩm">
         <ul>
           <li><a href="products.html">Tất cả sản phẩm</a></li>
-          <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
-          <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
-          <li><a href="products.html?loai=unisex">Unisex</a></li>
-          <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
+          <li><a href="products-nam.html">Nước hoa nam</a></li>
+          <li><a href="products-nu.html">Nước hoa nữ</a></li>
+          <li><a href="products-unisex.html">Unisex</a></li>
+          <li><a href="products-cao-cap.html">Nước hoa cao cấp</a></li>
         </ul>
       </nav>
       <div class="header-actions">
@@ -39,21 +39,36 @@
     <div class="header-search">
       <div class="wrap">
         <form class="adv-bar" action="advanced-search.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
-          <div class="field"><label for="hs-ten">Tên sản phẩm</label><input id="hs-ten" type="search" name="ten"
-              placeholder="Ví dụ: Dior, Chanel..."></div>
-          <div class="field"><label for="hs-loai">Phân loại</label><select id="hs-loai" name="loai">
+          <div class="field">
+            <label for="hs-ten">Tên sản phẩm</label>
+            <input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
+          </div>
+          <div class="field">
+            <label for="hs-loai">Phân loại</label>
+            <select id="hs-loai" name="loai">
               <option value="">Tất cả phân loại</option>
               <option value="nam">Nước hoa nam</option>
               <option value="nu">Nước hoa nữ</option>
               <option value="unisex">Unisex</option>
               <option value="cao-cap">Nước hoa cao cấp</option>
-            </select></div>
-          <div class="field"><label for="hs-min">Giá từ (₫)</label><input id="hs-min" type="number" name="gia-min"
-              min="0" step="10000" placeholder="0"></div>
-          <div class="field"><label for="hs-max">Giá đến (₫)</label><input id="hs-max" type="number" name="gia-max"
-              min="0" step="10000" placeholder="Không giới hạn"></div>
-          <div class="adv-actions"><button class="btn btn-primary" type="submit">Tìm kiếm</button><a
-              class="btn btn-outline" href="advanced-search.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
+            </select>
+          </div>
+          <div class="field">
+            <label for="hs-min">Giá từ (VNĐ)</label>
+            <div class="input-vnd">
+              <input id="hs-min" type="text" inputmode="numeric" pattern="[0-9.]*" name="gia-min" placeholder="0">
+            </div>
+          </div>
+          <div class="field">
+            <label for="hs-max">Giá đến (VNĐ)</label>
+            <div class="input-vnd">
+              <input id="hs-max" type="text" inputmode="numeric" pattern="[0-9.]*" name="gia-max"
+                placeholder="10.000.000">
+            </div>
+          </div>
+          <div class="adv-actions">
+            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+            <a class="btn btn-outline" href="advanced-search.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
           </div>
         </form>
       </div>
@@ -73,10 +88,6 @@
       <div class="notice notice-info" role="status">
         <p style="margin:0"><strong>Bạn chưa đăng nhập.</strong> Hãy <a href="login.html">đăng nhập</a> hoặc <a
             href="register.html">tạo tài khoản</a> trước khi đặt hàng.</p>
-      </div>
-      <div class="account-box">
-        <p><strong>Nguyễn Minh Anh</strong><br><span class="muted">minhanh@example.com · 0901 234 567</span></p>
-        <span class="badge">Giao diện khi đã đăng nhập (minh họa)</span>
       </div>
 
       <div class="cart-layout">
@@ -125,8 +136,7 @@
             </ul>
             <div class="cart-foot">
               <a class="btn btn-outline" href="products.html">Tiếp tục mua sắm</a>
-              <span class="muted" style="align-self:center;font-size:.88rem">Nút tăng, giảm, xóa chỉ là giao diện
-                mẫu</span>
+
             </div>
           </div>
         </section>
@@ -148,8 +158,7 @@
             </div>
           </dl>
           <a class="btn btn-primary btn-block" href="checkout.html">Tiến hành đặt hàng</a>
-          <p class="backend-note">Tạm tính, phí giao hàng và tổng tiền là số mẫu. Tính tiền động và lưu giỏ hàng qua
-            nhiều trang cần backend.</p>
+
         </aside>
       </div>
     </div>
@@ -188,8 +197,7 @@
           </address>
         </div>
       </div>
-      <p class="footer-bottom">© 2026 FLORA PERFUME. Website minh họa bằng HTML/CSS thuần, toàn bộ dữ liệu là dữ liệu
-        mẫu.</p>
+      <p class="footer-bottom">© 2026 FLORA PERFUME.</p>
     </div>
   </footer>
 </body>

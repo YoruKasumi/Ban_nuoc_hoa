@@ -338,10 +338,11 @@ fieldset.group legend{font:600 1.35rem var(--font-display);margin-bottom:var(--s
   padding-top: .6rem;
 }
 
-/* ===== Hiển thị ảnh thật trong khung sản phẩm (.thumb & .arch) ===== */
+/* ===== 1. Hiển thị toàn vẹn hình ảnh sản phẩm, không bị cắt xén ===== */
 .thumb:has(img) {
-  padding-bottom: 0;
+  padding: var(--s3);
   place-items: center;
+  background: var(--white);
 }
 .thumb:has(img)::before,
 .thumb:has(img)::after {
@@ -352,7 +353,7 @@ fieldset.group legend{font:600 1.35rem var(--font-display);margin-bottom:var(--s
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Giữ nguyên toàn bộ hình ảnh, không cắt xén */
   transition: transform .3s;
 }
 .card:hover .thumb img,
@@ -364,7 +365,74 @@ fieldset.group legend{font:600 1.35rem var(--font-display);margin-bottom:var(--s
   z-index: 1;
   width: 100%;
   aspect-ratio: 3/4;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--white);
+  padding: var(--s2);
   border-radius: var(--r-sm);
   box-shadow: var(--shadow);
+}
+
+/* ===== 2. Bỏ bo tròn vòm & bấm xem ảnh thu nhỏ ở trang Chi tiết sản phẩm ===== */
+.detail-media .thumb {
+  border-radius: 0; /* Bỏ hoàn toàn bo tròn (đổi thành var(--r-sm) nếu muốn bo góc nhẹ 8px) */
+}
+
+/* Ẩn/hiện ảnh lớn khi nhấn vào ảnh thu nhỏ bên dưới bằng CSS thuần */
+.detail-main-thumb img {
+  display: none;
+}
+#gal-1:checked ~ .detail-main-thumb .gal-img-1,
+#gal-2:checked ~ .detail-main-thumb .gal-img-2,
+#gal-3:checked ~ .detail-main-thumb .gal-img-3 {
+  display: block;
+}
+
+.thumb-row label.thumb {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color .2s;
+}
+.thumb-row label.thumb:hover {
+  border-color: var(--peach);
+}
+#gal-1:checked ~ .thumb-row label[for="gal-1"],
+#gal-2:checked ~ .thumb-row label[for="gal-2"],
+#gal-3:checked ~ .thumb-row label[for="gal-3"] {
+  border-color: var(--coral-dark);
+}
+
+/* ===== Định dạng ô nhập tiền tệ VNĐ ===== */
+.input-vnd {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-vnd input {
+  padding-right: 2.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.input-vnd::after {
+  content: "₫";
+  position: absolute;
+  right: .85rem;
+  font-weight: 600;
+  color: var(--muted);
+  pointer-events: none;
+  font-size: .92rem;
+}
+
+/* ===== Đồng bộ khung ảnh thật ở trang chi tiết, giỏ hàng, đơn hàng ===== */
+.detail-media .thumb,
+.cart-item .thumb,
+.order-lines .thumb {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.detail-media .thumb img,
+.cart-item .thumb img,
+.order-lines .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }

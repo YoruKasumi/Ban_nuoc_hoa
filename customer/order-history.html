@@ -1,151 +1,233 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lịch sử mua hàng | FLORA PERFUME</title>
-<meta name="description" content="Các đơn hàng bạn đã đặt tại FLORA PERFUME.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/customer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lịch sử mua hàng | FLORA PERFUME</title>
+  <meta name="description" content="Các đơn hàng bạn đã đặt tại FLORA PERFUME.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Cormorant+Garamond:wght@500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/customer.css">
 </head>
+
 <body>
-<a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
-<header class="site-header">
-  <div class="wrap header-top">
-    <a class="logo" href="home-log.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
-    <nav class="main-nav" aria-label="Danh mục sản phẩm">
-      <ul>
-        <li><a href="products-log.html">Tất cả sản phẩm</a></li>
-        <li><a href="products-log.html?loai=nam">Nước hoa nam</a></li>
-        <li><a href="products-log.html?loai=nu">Nước hoa nữ</a></li>
-        <li><a href="products-log.html?loai=unisex">Unisex</a></li>
-        <li><a href="products-log.html?loai=cao-cap">Nước hoa cao cấp</a></li>
-      </ul>
-    </nav>
-    <div class="header-actions">
-      <details class="user-menu">
-        <summary aria-label="Tài khoản người dùng">Nguyễn Minh Anh</summary>
-        <div class="user-box">
-          <div class="user-box-info">
-            <strong>Nguyễn Minh Anh</strong>
-            <span>minhanh@example.com</span>
-            <span>SĐT: 0901 234 567</span>
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+  <header class="site-header">
+    <div class="wrap header-top">
+      <a class="logo" href="home-log.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
+      <nav class="main-nav" aria-label="Danh mục sản phẩm">
+        <ul>
+          <li><a href="products-log.html">Tất cả sản phẩm</a></li>
+          <li><a href="products-nam-log.html">Nước hoa nam</a></li>
+          <li><a href="products-nu-log.html">Nước hoa nữ</a></li>
+          <li><a href="products-unisex-log.html">Unisex</a></li>
+          <li><a href="products-cao-cap-log.html">Nước hoa cao cấp</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <details class="user-menu">
+          <summary aria-label="Tài khoản người dùng">Nguyễn Minh Anh</summary>
+          <div class="user-box">
+            <div class="user-box-info">
+              <strong>Nguyễn Minh Anh</strong>
+              <span>minhanh@example.com</span>
+              <span>SĐT: 0901 234 567</span>
+            </div>
+            <nav class="user-box-links" aria-label="Menu tài khoản">
+              <a href="#thong-tin-ca-nhan">Thông tin cá nhân</a>
+              <a href="order-history.html">Lịch sử đơn hàng</a>
+              <a class="logout-link" href="index.html">Đăng xuất</a>
+            </nav>
           </div>
-          <nav class="user-box-links" aria-label="Menu tài khoản">
-            <a href="#thong-tin-ca-nhan">Thông tin cá nhân</a>
-            <a href="order-history.html">Lịch sử đơn hàng</a>
-            <a class="logout-link" href="index.html">Đăng xuất</a>
-          </nav>
+        </details>
+        <a class="cart-link" href="cart-log.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span
+            class="cart-count">3</span></a>
+      </div>
+    </div>
+    <div class="header-search">
+      <div class="wrap">
+        <form class="adv-bar" action="advanced-search.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
+          <div class="field">
+            <label for="hs-ten">Tên sản phẩm</label>
+            <input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
+          </div>
+          <div class="field">
+            <label for="hs-loai">Phân loại</label>
+            <select id="hs-loai" name="loai">
+              <option value="">Tất cả phân loại</option>
+              <option value="nam">Nước hoa nam</option>
+              <option value="nu">Nước hoa nữ</option>
+              <option value="unisex">Unisex</option>
+              <option value="cao-cap">Nước hoa cao cấp</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="hs-min">Giá từ (VNĐ)</label>
+            <div class="input-vnd">
+              <input id="hs-min" type="text" name="gia-min" inputmode="numeric" spellcheck="false" placeholder="0"
+                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
+            </div>
+          </div>
+
+          <!-- Ô Giá đến trên Header -->
+          <div class="field">
+            <label for="hs-max">Giá đến (VNĐ)</label>
+            <div class="input-vnd">
+              <input id="hs-max" type="text" name="gia-max" inputmode="numeric" spellcheck="false"
+                placeholder="Không giới hạn"
+                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
+            </div>
+          </div>
+          <div class="adv-actions">
+            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+            <a class="btn btn-outline" href="advanced-search.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap narrow-col">
+      <div class="page-head">
+        <ol class="breadcrumb" aria-label="Đường dẫn">
+          <li><a href="home-log.html">Trang chủ</a></li>
+          <li aria-current="page">Lịch sử mua hàng</li>
+        </ol>
+        <h1 style="font-size:clamp(2.2rem,5vw,3.4rem)">Lịch sử mua hàng</h1>
+        <p class="muted">Khách hàng: Nguyễn Minh Anh</p>
+      </div>
+      <article class="order">
+        <div class="order-head">
+          <p><strong>Đơn FL-2026-0042</strong><br><span class="muted">Đặt ngày 23/10/2026</span></p>
+          <span class="st st-pending">Chờ xác nhận</span>
         </div>
-      </details>
-      <a class="cart-link" href="cart-log.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span class="cart-count">3</span></a>
+        <ul class="order-lines">
+          <li>
+            <div class="thumb"><img src="../images/dior-miss-dior-edp-2021_2.jpg" alt="Dior Miss Dior EDP"></div>
+            <div>
+              <p>Dior Miss Dior EDP</p>
+              <p class="muted">Số lượng 1 · 1.890.000₫</p>
+            </div><strong>1.890.000₫</strong>
+          </li>
+          <li>
+            <div class="thumb"><img src="../images/chanel-bleu-de-chanel-edp_2.jpg" alt="Chanel Bleu De Chanel EDP">
+            </div>
+            <div>
+              <p>Chanel Bleu De Chanel EDP</p>
+              <p class="muted">Số lượng 2 · 2.350.000₫</p>
+            </div><strong>4.700.000₫</strong>
+          </li>
+        </ul>
+        <div class="order-foot">
+          <p class="price">6.620.000₫</p><a class="btn btn-outline" href="order-detail.html">Xem chi tiết</a>
+        </div>
+      </article>
+      <article class="order">
+        <div class="order-head">
+          <p><strong>Đơn FL-2026-0031</strong><br><span class="muted">Đặt ngày 08/10/2026</span></p>
+          <span class="st st-confirmed">Đã xác nhận</span>
+        </div>
+        <ul class="order-lines">
+          <li>
+            <div class="thumb"><img src="../images/calvin-klein-ck-one_2-1.jpg" alt="Calvin Klein CK One"></div>
+            <div>
+              <p>Calvin Klein CK One</p>
+              <p class="muted">Số lượng 1</p>
+            </div><strong>1.650.000₫</strong>
+          </li>
+        </ul>
+        <div class="order-foot">
+          <p class="price">1.680.000₫</p><a class="btn btn-outline" href="order-detail.html">Xem chi tiết</a>
+        </div>
+      </article>
+      <article class="order">
+        <div class="order-head">
+          <p><strong>Đơn FL-2026-0017</strong><br><span class="muted">Đặt ngày 21/09/2026</span></p>
+          <span class="st st-done">Đã giao thành công</span>
+        </div>
+        <ul class="order-lines">
+          <li>
+            <div class="thumb"><img src="../images/gucci-bloom-edp_2.jpg" alt="Gucci Bloom EDP"></div>
+            <div>
+              <p>Gucci Bloom EDP</p>
+              <p class="muted">Số lượng 2</p>
+            </div><strong>2.580.000₫</strong>
+          </li>
+        </ul>
+        <div class="order-foot">
+          <p class="price">2.610.000₫</p><a class="btn btn-outline" href="order-detail.html">Xem chi tiết</a>
+        </div>
+      </article>
+      <article class="order">
+        <div class="order-head">
+          <p><strong>Đơn FL-2026-0009</strong><br><span class="muted">Đặt ngày 02/09/2026</span></p>
+          <span class="st st-cancel">Đã hủy</span>
+        </div>
+        <ul class="order-lines">
+          <li>
+            <div class="thumb"><img src="../images/dior-sauvage-edp_2.jpg" alt="Dior Sauvage EDP"></div>
+            <div>
+              <p>Dior Sauvage EDP</p>
+              <p class="muted">Số lượng 1</p>
+            </div><strong>2.150.000₫</strong>
+          </li>
+        </ul>
+        <div class="order-foot">
+          <p class="price">2.180.000₫</p><a class="btn btn-outline" href="order-detail.html">Xem chi tiết</a>
+        </div>
+      </article>
+      <nav class="pagination" aria-label="Phân trang">
+        <span class="is-disabled" aria-disabled="true">Trước</span>
+        <a href="order-history.html?trang=1" aria-current="page">1</a>
+        <a href="order-history.html?trang=2">2</a>
+        <a href="order-history.html?trang=3">3</a>
+        <a href="order-history.html?trang=2">Sau</a>
+      </nav>
     </div>
-  </div>
-  <div class="header-search">
+  </main>
+  <footer class="site-footer">
     <div class="wrap">
-      <form class="adv-bar" action="advanced-search.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
-        <div class="field"><label for="hs-ten">Tên sản phẩm</label><input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel..."></div>
-        <div class="field"><label for="hs-loai">Phân loại</label><select id="hs-loai" name="loai"><option value="">Tất cả phân loại</option><option value="nam">Nước hoa nam</option><option value="nu">Nước hoa nữ</option><option value="unisex">Unisex</option><option value="cao-cap">Nước hoa cao cấp</option></select></div>
-        <div class="field"><label for="hs-min">Giá từ (₫)</label><input id="hs-min" type="number" name="gia-min" min="0" step="10000" placeholder="0"></div>
-        <div class="field"><label for="hs-max">Giá đến (₫)</label><input id="hs-max" type="number" name="gia-max" min="0" step="10000" placeholder="Không giới hạn"></div>
-        <div class="adv-actions"><button class="btn btn-primary" type="submit">Tìm kiếm</button><a class="btn btn-outline" href="advanced-search.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a></div>
-      </form>
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
+          <p>Cửa hàng nước hoa chọn lọc cho mọi phong cách. Mỗi chai đều được kiểm tra nguồn gốc trước khi giao.</p>
+        </div>
+        <div>
+          <h2>Mua sắm</h2>
+          <ul>
+            <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
+            <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
+            <li><a href="products.html?loai=unisex">Unisex</a></li>
+            <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Hỗ trợ</h2>
+          <ul>
+            <li><a href="index.html#chinh-sach">Chính sách giao hàng</a></li>
+            <li><a href="index.html#chinh-sach">Chính sách đổi trả</a></li>
+            <li><a href="order-history.html">Lịch sử mua hàng</a></li>
+            <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Liên hệ</h2>
+          <address style="font-style:normal">
+            12 Đồng Khởi, Quận 1<br>TP. Hồ Chí Minh<br>
+            <a href="tel:+842812345678">028 1234 5678</a><br>
+            <a href="mailto:hello@floraperfume.example">hello@floraperfume.example</a>
+          </address>
+        </div>
+      </div>
+      <p class="footer-bottom">© 2026 FLORA PERFUME. Website minh họa bằng HTML/CSS thuần, toàn bộ dữ liệu là dữ liệu
+        mẫu.</p>
     </div>
-  </div>
-</header>
-<main id="main">
-<div class="wrap narrow-col">
-  <div class="page-head">
-    <ol class="breadcrumb" aria-label="Đường dẫn"><li><a href="index.html">Trang chủ</a></li><li aria-current="page">Lịch sử mua hàng</li></ol>
-    <h1 style="font-size:clamp(2.2rem,5vw,3.4rem)">Lịch sử mua hàng</h1>
-    <p class="muted">Dành cho khách hàng đã đăng nhập: Nguyễn Minh Anh.</p>
-  </div>
-  <p class="notice notice-demo">Danh sách đơn hàng là dữ liệu mẫu. Lấy đơn theo tài khoản cần backend.</p>
-  <article class="order">
-  <div class="order-head">
-    <p><strong>Đơn FL-2026-0042</strong><br><span class="muted">Đặt ngày 23/10/2026</span></p>
-    <span class="st st-pending">Chưa xác nhận</span>
-  </div>
-  <ul class="order-lines"><li><div class="thumb"><div class="bottle round liq-coral" role="img" aria-label="Chai nước hoa Rosé Aurore"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div><p>Rosé Aurore</p><p class="muted">50ml · Số lượng 1 × 1.890.000₫</p></div><strong>1.890.000₫</strong></li>
-<li><div class="thumb"><div class="bottle tall liq-amber" role="img" aria-label="Chai nước hoa Bois Ambré"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div><p>Bois Ambré</p><p class="muted">100ml · Số lượng 2 × 2.350.000₫</p></div><strong>4.700.000₫</strong></li></ul>
-  <div class="order-foot"><p class="price">6.620.000₫</p><a class="btn btn-outline" href="order-detail.html">Xem chi tiết</a></div>
-</article>
-  <article class="order">
-  <div class="order-head">
-    <p><strong>Đơn FL-2026-0031</strong><br><span class="muted">Đặt ngày 08/10/2026</span></p>
-    <span class="st st-confirmed">Đã xác nhận</span>
-  </div>
-  <ul class="order-lines"><li><div class="thumb"><div class="bottle  liq-cream" role="img" aria-label="Chai nước hoa Ciel Blanc"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div><p>Ciel Blanc</p><p class="muted">50ml · Số lượng 1</p></div><strong>1.650.000₫</strong></li></ul>
-  <div class="order-foot"><p class="price">1.680.000₫</p><a class="btn btn-outline" href="order-detail.html">Xem chi tiết</a></div>
-</article>
-  <article class="order">
-  <div class="order-head">
-    <p><strong>Đơn FL-2026-0017</strong><br><span class="muted">Đặt ngày 21/09/2026</span></p>
-    <span class="st st-done">Đã giao thành công</span>
-  </div>
-  <ul class="order-lines"><li><div class="thumb"><div class="bottle round liq-peach" role="img" aria-label="Chai nước hoa Pêche Velours"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div><p>Pêche Velours</p><p class="muted">30ml · Số lượng 2</p></div><strong>2.580.000₫</strong></li></ul>
-  <div class="order-foot"><p class="price">2.610.000₫</p><a class="btn btn-outline" href="order-detail.html">Xem chi tiết</a></div>
-</article>
-  <article class="order">
-  <div class="order-head">
-    <p><strong>Đơn FL-2026-0009</strong><br><span class="muted">Đặt ngày 02/09/2026</span></p>
-    <span class="st st-cancel">Đã hủy</span>
-  </div>
-  <ul class="order-lines"><li><div class="thumb"><div class="bottle  liq-sage" role="img" aria-label="Chai nước hoa Vétiver Noir"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><div><p>Vétiver Noir</p><p class="muted">100ml · Số lượng 1</p></div><strong>2.150.000₫</strong></li></ul>
-  <div class="order-foot"><p class="price">2.180.000₫</p><a class="btn btn-outline" href="order-detail.html">Xem chi tiết</a></div>
-</article>
-  <nav class="pagination" aria-label="Phân trang">
-  <span class="is-disabled" aria-disabled="true">Trước</span>
-  <a href="order-history.html?trang=1" aria-current="page">1</a>
-  <a href="order-history.html?trang=2">2</a>
-  <a href="order-history.html?trang=3">3</a>
-  <a href="order-history.html?trang=2">Sau</a>
-</nav>
-  <section style="margin-top:var(--s7)" aria-labelledby="h-noord">
-    <h2 id="h-noord" style="font-size:1.5rem">Giao diện khi chưa có đơn hàng (minh họa)</h2>
-    <div class="empty"><div class="thumb"><div class="bottle round liq-cream" role="img" aria-label="Chai nước hoa rỗng"><span class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span></div></div><h3>Bạn chưa có đơn hàng nào</h3><p>Khi đặt hàng, đơn của bạn sẽ xuất hiện ở đây cùng trạng thái xử lý.</p><a class="btn btn-primary" href="products.html">Bắt đầu mua sắm</a></div>
-  </section>
-</div>
-</main>
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
-        <p>Cửa hàng nước hoa chọn lọc cho mọi phong cách. Mỗi chai đều được kiểm tra nguồn gốc trước khi giao.</p>
-      </div>
-      <div>
-        <h2>Mua sắm</h2>
-        <ul>
-          <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
-          <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
-          <li><a href="products.html?loai=unisex">Unisex</a></li>
-          <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Hỗ trợ</h2>
-        <ul>
-          <li><a href="index.html#chinh-sach">Chính sách giao hàng</a></li>
-          <li><a href="index.html#chinh-sach">Chính sách đổi trả</a></li>
-          <li><a href="order-history.html">Lịch sử mua hàng</a></li>
-          <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Liên hệ</h2>
-        <address style="font-style:normal">
-          12 Đồng Khởi, Quận 1<br>TP. Hồ Chí Minh<br>
-          <a href="tel:+842812345678">028 1234 5678</a><br>
-          <a href="mailto:hello@floraperfume.example">hello@floraperfume.example</a>
-        </address>
-      </div>
-    </div>
-    <p class="footer-bottom">© 2026 FLORA PERFUME. Website minh họa bằng HTML/CSS thuần, toàn bộ dữ liệu là dữ liệu mẫu.</p>
-  </div>
-</footer>
+  </footer>
 </body>
+
 </html>
