@@ -1,0 +1,137 @@
+/* ===== Trang Thông tin tài khoản & Sổ địa chỉ (profile.html) ===== */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  margin-bottom: var(--s4);
+}
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.btn-sm {
+  min-height: 36px;
+  padding: 0.35rem 1rem;
+  font-size: 0.88rem;
+}
+.text-danger {
+  color: var(--danger) !important;
+}
+
+/* Danh sách Sổ địa chỉ */
+.address-list {
+  display: grid;
+  gap: var(--s4);
+}
+.address-card {
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s4) var(--s5);
+}
+/* Style nổi bật cho địa chỉ mặc định */
+.address-card.is-default {
+  border: 2px solid var(--ink);
+  background: var(--paper);
+}
+.address-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--s3);
+  margin-bottom: var(--s2);
+}
+.address-name {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  flex-wrap: wrap;
+}
+.address-name strong {
+  font-size: 1.15rem;
+}
+.address-actions {
+  display: flex;
+  gap: var(--s2);
+}
+.address-phone {
+  color: var(--muted);
+  margin: 0 0 var(--s1);
+  font-size: 0.95rem;
+}
+.address-desc {
+  margin: 0;
+  font-size: 0.95rem;
+}
+/* Đường kẻ phân cách cho nút "Đặt làm mặc định" ở dưới */
+.address-foot {
+  margin-top: var(--s3);
+  padding-top: var(--s3);
+  border-top: 1px dashed var(--line);
+}
+
+/* ===== Trang Tài Khoản (profile.html) ===== */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--s3);
+  margin-bottom: var(--s4);
+}
+.profile-header h2 { 
+  margin: 0; 
+  font-size: 1.6rem; 
+}
+
+/* Sổ địa chỉ */
+.address-list { 
+  display: grid; 
+  gap: var(--s4); 
+}
+.address-card {
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--white);
+  overflow: hidden;
+}
+.address-card.is-default {
+  border-color: var(--ink);
+}
+.address-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--s3) var(--s4);
+  border-bottom: 1px solid var(--line);
+}
+.address-name strong { 
+  font-size: 1.1rem; 
+}
+.address-actions a {
+  margin-left: var(--s3);
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.address-actions a:hover { 
+  color: var(--coral-dark); 
+}
+.address-actions a.text-danger { 
+  color: var(--danger); 
+}
+.address-body { 
+  padding: var(--s4); 
+  font-size: 0.95rem; 
+}
+.address-body p { 
+  margin: 0 0 var(--s1); 
+}
+.address-body p:last-child { 
+  margin: 0; 
+}
+.address-foot {
+  padding: 0 var(--s4) var(--s4);
+}

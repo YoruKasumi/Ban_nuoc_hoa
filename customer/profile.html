@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tài khoản của tôi | FLORA PERFUME</title>
+<meta name="description" content="Quản lý thông tin cá nhân và sổ địa chỉ giao hàng tại FLORA PERFUME.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/customer.css">
+<style>
+  /* Cấu trúc các khối panel */
+  .profile-panel {
+    background: var(--paper);
+    border-radius: var(--r-md);
+    padding: var(--s5);
+    margin-bottom: var(--s5);
+    box-shadow: var(--shadow);
+  }
+  .profile-content {
+    width: min(820px, calc(100% - 2rem));
+    margin-inline: auto;
+  }
+  .profile-head-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid var(--line);
+    padding-bottom: var(--s3);
+    margin-bottom: var(--s4);
+  }
+  .profile-head-flex h2 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+  .address-card {
+    border: 1.5px solid var(--line);
+    border-radius: var(--r-md);
+    padding: var(--s4) var(--s5);
+    background: var(--white);
+    margin-bottom: var(--s4);
+  }
+  .address-card.is-default {
+    border-color: var(--ink);
+    background: var(--apricot); 
+  }
+  .address-head-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--s2);
+  }
+  .address-name {
+    display: flex;
+    align-items: center;
+    gap: var(--s2);
+    flex-wrap: wrap;
+  }
+  .address-name strong {
+    font-size: 1.15rem;
+  }
+  .address-actions {
+    display: flex;
+    gap: var(--s3);
+  }
+  .address-actions a {
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    color: var(--ink);
+  }
+  .address-actions a:hover {
+    color: var(--coral-dark);
+  }
+  .address-actions a.text-danger {
+    color: var(--danger);
+    border-color: var(--danger);
+  }
+  .address-body {
+    font-size: 0.95rem;
+  }
+  .address-body p {
+    margin: 0 0 var(--s1);
+  }
+  .address-foot {
+    margin-top: var(--s3);
+    padding-top: var(--s3);
+    border-top: 1px dashed var(--line);
+  }
+  .profile-header-compact {
+    display: flex;
+    align-items: center;
+    gap: var(--s4);
+    white-space: nowrap;
+  }
+  .profile-header-compact .search-form {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .profile-header-compact .search-form input {
+    min-height: 52px;
+    border-radius: 999px 0 0 999px;
+    border-right: 0;
+  }
+  .profile-header-compact .search-form button {
+    min-height: 52px;
+    border-radius: 0 999px 999px 0;
+  }
+  .profile-category-nav ul {
+    width: min(100%, 600px);
+    margin-inline: auto;
+    justify-content: center;
+    gap: var(--s4);
+    transform: translateX(-80px);
+  }
+  @media (max-width: 960px) {
+    .profile-header-compact {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .profile-header-compact .search-form {
+      order: 3;
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 720px) {
+    .profile-category-nav ul {
+      justify-content: flex-start;
+      transform: none;
+    }
+  }
+
+  /* Giao diện Cửa sổ nhập liệu (Modal Popup) */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(58, 37, 25, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: var(--s4);
+  }
+  .modal-overlay:target {
+    display: flex; 
+  }
+  .modal-box {
+    background: var(--cream);
+    padding: var(--s6) var(--s5);
+    border-radius: var(--r-md);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+  }
+  .modal-box h2 {
+    margin-top: 0;
+    margin-bottom: var(--s4);
+  }
+  .close-btn {
+    position: absolute;
+    top: var(--s3);
+    right: var(--s4);
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--muted);
+    line-height: 1;
+  }
+  .close-btn:hover {
+    color: var(--danger);
+  }
+
+  /* Giao diện Thông báo (Toast) */
+  .toast-msg {
+    display: none;
+    position: fixed;
+    bottom: var(--s4);
+    right: var(--s4);
+    background: var(--ink);
+    color: var(--cream);
+    padding: var(--s4) var(--s5);
+    border-radius: var(--r-md);
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    gap: var(--s3);
+    align-items: flex-start;
+  }
+  .toast-msg:target {
+    display: flex;
+    animation: slideUpFade 0.3s ease-out forwards;
+  }
+  .toast-dismiss-target {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .toast-close {
+    color: var(--apricot);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  @keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+<header class="site-header">
+  <div class="wrap header-top profile-header-compact">
+    <a class="logo" href="home-log.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
+
+    <form class="search-form" action="search-log.html" method="get" role="search" aria-label="Tìm kiếm nước hoa theo tên">
+      <label class="visually-hidden" for="q-header">Tìm nước hoa theo tên</label>
+      <input id="q-header" type="search" name="q" placeholder="Tìm nước hoa theo tên…">
+      <button class="btn btn-primary" type="submit">Tìm</button>
+    </form>
+
+    <div class="header-actions">
+      <details class="user-menu">
+        <summary aria-label="Tài khoản Nguyễn Minh Anh">Nguyễn Minh Anh</summary>
+        <div class="user-box">
+          <div class="user-box-info">
+            <strong>Nguyễn Minh Anh</strong>
+            <span>minhanh@example.com</span>
+            <span>SĐT: 0901 234 567</span>
+          </div>
+          <nav class="user-box-links" aria-label="Menu tài khoản">
+            <a href="profile.html" aria-current="page">Thông tin cá nhân</a>
+            <a href="order-history.html">Lịch sử đơn hàng</a>
+            <a class="logout-link" href="index.html">Đăng xuất</a>
+          </nav>
+        </div>
+      </details>
+      <a class="cart-link" href="cart-log.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span class="cart-count">3</span></a>
+    </div>
+  </div>
+  <nav class="main-nav profile-category-nav" aria-label="Danh mục sản phẩm">
+    <div class="wrap">
+      <ul>
+        <li><a href="products-log.html">Tất cả sản phẩm</a></li>
+        <li><a href="products-log.html?loai=nam">Nước hoa nam</a></li>
+        <li><a href="products-log.html?loai=nu">Nước hoa nữ</a></li>
+        <li><a href="products-log.html?loai=unisex">Unisex</a></li>
+        <li><a href="products-log.html?loai=cao-cap">Nước hoa cao cấp</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id="main">
+<div class="profile-content">
+  <div class="page-head">
+    <ol class="breadcrumb" aria-label="Đường dẫn">
+      <li><a href="home-log.html">Trang chủ</a></li>
+      <li aria-current="page">Thông tin tài khoản</li>
+    </ol>
+    <h1 style="font-size:clamp(2.2rem,5vw,3.4rem)">Tài khoản của tôi</h1>
+    <p class="muted">Quản lý thông tin cá nhân và danh sách địa chỉ nhận hàng.</p>
+  </div>
+
+  <!-- Phần 1: Thông tin cá nhân -->
+  <section class="profile-panel" aria-labelledby="h-profile">
+    <div class="profile-head-flex">
+      <h2 id="h-profile">Thông tin cá nhân</h2>
+      <a class="btn btn-outline" style="min-height: 36px; padding: 0.3rem 1rem;" href="#modal-edit-profile">Chỉnh sửa</a>
+    </div>
+    <dl class="readonly">
+      <dt>Họ và tên</dt>
+      <dd>Nguyễn Minh Anh</dd>
+      <dt>Email</dt>
+      <dd>minhanh@example.com</dd>
+      <dt>Số điện thoại</dt>
+      <dd>0901 234 567</dd>
+    </dl>
+  </section>
+
+  <!-- Phần 2: Sổ địa chỉ -->
+  <section class="profile-panel" aria-labelledby="h-address">
+    <div class="profile-head-flex">
+      <h2 id="h-address">Sổ địa chỉ</h2>
+      <a class="btn btn-primary" style="min-height: 36px; padding: 0.3rem 1rem;" href="#modal-add-address">+ Thêm địa chỉ mới</a>
+    </div>
+
+    <div class="address-list">
+      <!-- Địa chỉ 1: Mặc định -->
+      <article class="address-card is-default">
+        <div class="address-head-flex">
+          <div class="address-name">
+            <strong>Nguyễn Minh Anh</strong>
+            <span class="badge badge-ok">Mặc định</span>
+          </div>
+          <div class="address-actions">
+            <a href="#modal-edit-address">Sửa</a>
+            <a href="#modal-delete-address" class="text-danger">Xóa</a>
+          </div>
+        </div>
+        <div class="address-body">
+          <p class="muted">Số điện thoại: 0901 234 567</p>
+          <p>12 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</p>
+        </div>
+      </article>
+
+      <!-- Địa chỉ 2: Địa chỉ phụ -->
+      <article class="address-card">
+        <div class="address-head-flex">
+          <div class="address-name">
+            <strong>Nguyễn Minh Anh (Văn phòng)</strong>
+          </div>
+          <div class="address-actions">
+            <a href="#modal-edit-address">Sửa</a>
+            <a href="#modal-delete-address" class="text-danger">Xóa</a>
+          </div>
+        </div>
+        <div class="address-body">
+          <p class="muted" style="margin-bottom: var(--s2);">Số điện thoại: 0909 888 777</p>
+          <p style="margin-bottom: var(--s3);">45 Lê Lợi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</p>
+        </div>
+        <div class="address-foot">
+          <a class="btn btn-outline" style="min-height: 34px; padding: 0.25rem 1rem; font-size: 0.88rem;" href="#toast-success">Đặt làm mặc định</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="center-actions" style="margin-top: var(--s6);">
+    <a class="btn btn-outline" href="home-log.html">Quay lại trang chủ</a>
+    <a class="btn btn-text" href="index.html">Đăng xuất</a>
+  </div>
+</div>
+
+<!-- ================= CỬA SỔ ĐIỀN THÔNG TIN (MODALS) ================= -->
+<!-- 1. Sửa thông tin cá nhân -->
+<div class="modal-overlay" id="modal-edit-profile">
+  <div class="modal-box">
+    <a href="#" class="close-btn">&times;</a>
+    <h2>Sửa thông tin cá nhân</h2>
+    <form action="#toast-success">
+      <div class="field">
+        <label>Họ và tên</label>
+        <input type="text" value="Nguyễn Minh Anh" required>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" value="minhanh@example.com" required>
+      </div>
+      <div class="field">
+        <label>Số điện thoại</label>
+        <input type="tel" value="0901 234 567" required>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: var(--s4);">
+        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+        <a href="#" class="btn btn-outline">Hủy</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 2. Thêm địa chỉ mới -->
+<div class="modal-overlay" id="modal-add-address">
+  <div class="modal-box">
+    <a href="#" class="close-btn">&times;</a>
+    <h2>Thêm địa chỉ mới</h2>
+    <form action="#toast-success">
+      <div class="field">
+        <label>Tên người nhận</label>
+        <input type="text" placeholder="Nhập họ và tên" required>
+      </div>
+      <div class="field">
+        <label>Số điện thoại</label>
+        <input type="tel" placeholder="Nhập số điện thoại" required>
+      </div>
+      <div class="field">
+        <label>Địa chỉ cụ thể</label>
+        <textarea rows="3" placeholder="Số nhà, tên đường, phường/xã, quận/huyện..." required></textarea>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: var(--s4);">
+        <button type="submit" class="btn btn-primary">Lưu địa chỉ</button>
+        <a href="#" class="btn btn-outline">Hủy</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 3. Sửa địa chỉ -->
+<div class="modal-overlay" id="modal-edit-address">
+  <div class="modal-box">
+    <a href="#" class="close-btn">&times;</a>
+    <h2>Sửa địa chỉ</h2>
+    <form action="#toast-success">
+      <div class="field">
+        <label>Tên người nhận</label>
+        <input type="text" value="Nguyễn Minh Anh" required>
+      </div>
+      <div class="field">
+        <label>Số điện thoại</label>
+        <input type="tel" value="0901 234 567" required>
+      </div>
+      <div class="field">
+        <label>Địa chỉ cụ thể</label>
+        <textarea rows="3" required>12 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</textarea>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: var(--s4);">
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
+        <a href="#" class="btn btn-outline">Hủy</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 4. Xác nhận Xóa địa chỉ -->
+<div class="modal-overlay" id="modal-delete-address">
+  <div class="modal-box">
+    <a href="#" class="close-btn">&times;</a>
+    <h2>Xóa địa chỉ</h2>
+    <p>Bạn có chắc chắn muốn xóa địa chỉ này khỏi sổ địa chỉ không?</p>
+    <div style="display: flex; gap: 10px; margin-top: var(--s5);">
+      <a href="#toast-success" class="btn btn-primary" style="background: var(--danger); border-color: var(--danger); color: white;">Xác nhận xóa</a>
+      <a href="#" class="btn btn-outline">Hủy</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= THÔNG BÁO THÀNH CÔNG (TOAST) ================= -->
+<div class="toast-msg" id="toast-success">
+  <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
+  <div>
+    <p style="margin: 0; font-weight: bold; font-size: 1.1rem;">Thành công!</p>
+    <p style="margin: 5px 0 10px; font-size: 0.95rem;">Thao tác của bạn đã được thực hiện thành công.</p>
+    <a href="#toast-dismissed" class="toast-close">Đóng</a>
+  </div>
+</div>
+<span id="toast-dismissed" class="toast-dismiss-target" aria-hidden="true"></span>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-bottom">© 2026 FLORA PERFUME.</p>
+  </div>
+</footer>
+</body>
+</html>
