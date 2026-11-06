@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="utf-8">
@@ -121,16 +121,16 @@
         <section class="panel">
           <div class="table-tools"><h2>3 khách hàng phù hợp</h2></div>
           <div class="table-wrap" tabindex="0" aria-label="Bảng khách hàng, cuộn ngang và dọc"><table class="admin-table" id="customer-list"><thead><tr><th>Họ tên</th><th>Email</th><th>Số điện thoại</th><th>Địa chỉ</th><th>Tổng số đơn</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody>
-<tr><td><strong>Nguyễn Minh Anh</strong></td><td>minhanh@example.com</td><td>090 123 4567</td><td>21 Lê Lợi, Quận 1, TPHCM</td><td>8</td><td><span class="pill ok">Hoạt động</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="edit-customer">Sửa</button><button class="btn btn-outline small-btn" data-action="toggle-customer">Khóa</button></div></td></tr>
-<tr><td><strong>Trần Hoàng Nam</strong></td><td>nam.hoang@example.com</td><td>091 234 5678</td><td>18 Nguyễn Huệ, Quận 1, TPHCM</td><td>4</td><td><span class="pill ok">Hoạt động</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="edit-customer">Sửa</button><button class="btn btn-outline small-btn" data-action="toggle-customer">Khóa</button></div></td></tr>
-<tr><td><strong>Lê Thu Hà</strong></td><td>thuha@example.com</td><td>093 456 7890</td><td>52 Trần Phú, Hải Châu, Đà Nẵng</td><td>18</td><td><span class="pill danger">Khóa</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="edit-customer">Sửa</button><button class="btn btn-outline small-btn" data-action="toggle-customer">Mở khóa</button></div></td></tr>
+<tr><td><strong>Nguyễn Minh Anh</strong></td><td>minhanh@example.com</td><td>090 123 4567</td><td>21 Lê Lợi, Quận 1, TPHCM</td><td>8</td><td><span class="pill ok">Hoạt động</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="toggle-customer">Khóa</button></div></td></tr>
+<tr><td><strong>Trần Hoàng Nam</strong></td><td>nam.hoang@example.com</td><td>091 234 5678</td><td>18 Nguyễn Huệ, Quận 1, TPHCM</td><td>4</td><td><span class="pill ok">Hoạt động</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="toggle-customer">Khóa</button></div></td></tr>
+<tr><td><strong>Lê Thu Hà</strong></td><td>thuha@example.com</td><td>093 456 7890</td><td>52 Trần Phú, Hải Châu, Đà Nẵng</td><td>18</td><td><span class="pill danger">Khóa</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" data-action="toggle-customer">Mở khóa</button></div></td></tr>
               </tbody></table></div>
       </div>
     </main>
     
 <dialog class="admin-dialog edit-dialog" id="customer-dialog">
   <div class="dialog-head">
-    <h2 id="customer-dialog-title">Sửa khách hàng</h2><button class="icon-close" type="button" data-close aria-label="Đóng">×</button>
+    <h2 id="customer-dialog-title">Thêm khách hàng</h2><button class="icon-close" type="button" data-close aria-label="Đóng">×</button>
   </div>
   <form id="customer-edit-form" class="form-grid">
     <div class="field"><label>Họ tên</label><input name="name" required></div>
@@ -155,9 +155,6 @@ function showToast(message, type = 'success') {
         t.hidden = true;
     }, 3000);
 }
-
-let currentCustomerRow;
-let customerDialogMode = 'edit';
 
 // Thông tin cố định dùng cho form sửa khách hàng
 const demoCustomer = {
@@ -188,33 +185,12 @@ document.addEventListener('click', function (e) {
 
     if (!button) return;
 
-    // Nhấn Sửa khách hàng
     if (button.dataset.action === 'add-customer') {
-        customerDialogMode = 'add';
         const form = document.querySelector('#customer-edit-form');
         form.reset();
         form.elements.namedItem('status').value = 'Hoạt động';
         document.querySelector('#customer-dialog-title').textContent = 'Thêm khách hàng';
         form.querySelector('button[type="submit"]').textContent = 'Thêm khách hàng';
-        document.querySelector('#customer-dialog').showModal();
-        return;
-    }
-
-    if (button.dataset.action === 'edit-customer') {
-        customerDialogMode = 'edit';
-        document.querySelector('#customer-dialog-title').textContent = 'Sửa khách hàng';
-        document.querySelector('#customer-edit-form').querySelector('button[type="submit"]').textContent = 'Lưu';
-        currentCustomerRow = button.closest('tr');
-
-        const form = document.querySelector('#customer-edit-form');
-
-        // Luôn hiển thị cùng một người, không lấy dữ liệu từ bảng
-        form.elements.namedItem('name').value = demoCustomer.name;
-        form.elements.namedItem('email').value = demoCustomer.email;
-        form.elements.namedItem('phone').value = demoCustomer.phone;
-        form.elements.namedItem('address').value = demoCustomer.address;
-        form.elements.namedItem('status').value = demoCustomer.status;
-
         document.querySelector('#customer-dialog').showModal();
         return;
     }
@@ -237,7 +213,7 @@ document.querySelector('#customer-edit-form')
     .addEventListener('submit', function (e) {
         e.preventDefault();
         document.querySelector('#customer-dialog').close();
-        showToast(customerDialogMode === 'add' ? 'Thêm khách hàng thành công!' : 'Đã sửa thành công!');
+        showToast('Thêm khách hàng thành công!');
     });
 
 // Bộ lọc minh họa

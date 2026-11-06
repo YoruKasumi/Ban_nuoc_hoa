@@ -156,9 +156,9 @@
                 <tr><th>Mã đơn</th><th>Khách hàng</th><th>Ngày đặt</th><th>Địa điểm giao</th><th>Tổng tiền</th><th>Phương thức thanh toán</th><th>Trạng thái</th><th>Cập nhật</th><th>Chi tiết</th></tr>
               </thead>
               <tbody>
-<tr><td><strong>FL-2026-0042</strong></td><td>Nguyễn Minh Anh</td><td>23/10/2026</td><td>Quận 1, TP. HCM</td><td>3.780.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill warn">Chưa xác nhận</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0042"><option selected>Chưa xác nhận</option><option>Đã xác nhận</option><option>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
-<tr><td><strong>FL-2026-0043</strong></td><td>Trần Hoàng Nam</td><td>23/10/2026</td><td>Quận Hải Châu, Đà Nẵng</td><td>2.350.000₫</td><td>Tiền mặt khi nhận hàng</td><td><span class="pill ">Đang giao</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0043"><option selected>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
-<tr><td><strong>FL-2026-0044</strong></td><td>Lê Thu Hà</td><td>22/10/2026</td><td>Quận Ba Đình, Hà Nội</td><td>4.980.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0044"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
+<tr><td><strong>FL-2026-0042</strong></td><td>Nguyễn Minh Anh</td><td>23/10/2026</td><td>Quận 1, TP. HCM</td><td>3.780.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill warn">Chưa xác nhận</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0042"><option selected>Chưa xác nhận</option><option>Đã xác nhận</option><option>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><a class="btn btn-outline small-btn" href="order-view.html?order=FL-2026-0042">Xem chi tiết</a></td></tr>
+<tr><td><strong>FL-2026-0043</strong></td><td>Trần Hoàng Nam</td><td>23/10/2026</td><td>Quận Hải Châu, Đà Nẵng</td><td>2.350.000₫</td><td>Tiền mặt khi nhận hàng</td><td><span class="pill ">Đang giao</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0043"><option selected>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><a class="btn btn-outline small-btn" href="order-view.html?order=FL-2026-0043">Xem chi tiết</a></td></tr>
+<tr><td><strong>FL-2026-0044</strong></td><td>Lê Thu Hà</td><td>22/10/2026</td><td>Quận Ba Đình, Hà Nội</td><td>4.980.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0044"><option selected>Đã giao thành công</option></select></td><td><a class="btn btn-outline small-btn" href="order-view.html?order=FL-2026-0044">Xem chi tiết</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -166,34 +166,6 @@
 
       </div>
     </main>
-    <dialog class="admin-dialog" id="order-dialog">
-      <div class="dialog-head">
-        <h2>
-          Chi tiết đơn hàng
-        </h2>
-        <button class="icon-close" data-close aria-label="Đóng">
-          ×
-        </button>
-      </div>
-      <p>
-        <strong id="order-number">FL-2026-0042</strong>
-        ·
-        <span id="order-customer">Nguyễn Minh Anh</span>
-        ·
-        <span id="order-date">23/10/2026</span>
-      </p>
-      <p id="order-address">Quận 1, TP. HCM</p>
-      <div class="table-wrap">
-        <table class="admin-table order-detail-table">
-          <thead>
-            <tr><th>Sản phẩm</th><th>Phân loại</th><th>Số lượng</th><th>Thành tiền</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Rosé Aurore</td><td>Nước hoa nữ · 50ml</td><td>2</td><td>3.780.000₫</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </dialog>
     
 <div class="admin-toast" role="status" aria-live="polite" hidden></div>
     <script>
@@ -207,21 +179,16 @@ function showToast(message) {
   }, 3000);
 }
 
-document.addEventListener('click', (event) => {
-  if (event.target.closest('[data-close]')) {
-    event.target.closest('dialog').close();
-    return;
-  }
-
-  if (event.target.matches('dialog')) {
-    event.target.close();
-    return;
-  }
-
-  if (!event.target.closest('[data-order-detail]')) return;
-
-  document.querySelector('#order-dialog').showModal();
-});
+if (new URLSearchParams(location.search).get('source') === 'dashboard') {
+  const dashboardSource = document.createElement('input');
+  dashboardSource.type = 'hidden';
+  dashboardSource.name = 'source';
+  dashboardSource.value = 'dashboard';
+  document.querySelector('.orders-filter-row').append(dashboardSource);
+  document.querySelector('#order-customer-search').value = 'Trần Hoàng Nam';
+  document.querySelector('.table-tools h2').textContent = '1 đơn hàng phù hợp';
+  document.querySelector('#orders-table tbody').innerHTML = '<tr><td><strong>FL-2026-0043</strong></td><td>Trần Hoàng Nam</td><td>23/10/2026</td><td>Quận Hải Châu, Đà Nẵng</td><td>2.350.000₫</td><td>Tiền mặt khi nhận hàng</td><td><span class="pill warn">Chờ xác nhận</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0043"><option selected>Chờ xác nhận</option><option>Đã xác nhận</option><option>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><a class="btn btn-outline small-btn" href="order-view.html?order=FL-2026-0043">Xem chi tiết</a></td></tr>';
+}
 
 document.querySelectorAll('.filter-row button').forEach((button) => {
   button.addEventListener('click', () => showToast('Lọc danh sách đơn hàng thành công!'));
