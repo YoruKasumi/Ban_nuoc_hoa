@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>
-      Đơn hàng | FLORA PERFUME
+      Thống kê khách hàng | FLORA PERFUME
     </title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
@@ -40,13 +40,13 @@
           </span>
           Sản phẩm
         </a>
-        <a aria-current="page" href="orders.html">
+        <a href="orders.html">
           <span class="nav-icon">
             ▤
           </span>
           Đơn hàng
         </a>
-        <a href="statistics.html">
+        <a aria-current="page" href="statistics.html">
           <span class="nav-icon">
             ▥
           </span>
@@ -75,164 +75,349 @@
         <div class="page-title">
           <div>
             <p class="eyebrow">
-              XỬ LÝ VÀ THEO DÕI
+              PHÂN TÍCH DOANH THU
             </p>
             <h1>
-              Đơn hàng
+              Thống kê khách hàng
             </h1>
             <p>
-              Cập nhật tiến trình và xem thông tin giao hàng.
+              Top 5 khách hàng theo tổng giá trị đơn hàng trong kỳ.
             </p>
           </div>
         </div>
         <section class="panel">
-          <form class="filter-row orders-filter-row" action="orders-filtered.html" method="get">
+          <form class="filter-row" action="statistics-filtered.html" method="get">
             <div class="field">
-              <label>
-                Trạng thái đơn
-              </label>
-              <select name="status">
-                <option>
-                  Tất cả trạng thái
-                </option>
-                <option>
-                  Chưa xác nhận
-                </option>
-                <option>
-                  Đã xác nhận
-                </option>
-                <option>
-                  Đang giao
-                </option>
-                <option>
-                  Đã giao thành công
-                </option>
-                <option>
-                  Đã hủy
-                </option>
-              </select>
+              <label for="statistics-from">Từ ngày</label>
+              <input id="statistics-from" type="date" name="from" value="2026-10-10">
             </div>
             <div class="field">
-              <label for="order-customer-search">
-                Tìm khách hàng
-              </label>
-              <input id="order-customer-search" name="customer" type="search" value="Nguyễn Minh Anh" placeholder="Tên hoặc email khách hàng">
+              <label for="statistics-to">Đến ngày</label>
+              <input id="statistics-to" type="date" name="to" value="2026-10-31">
             </div>
-            <div class="field">
-              <label>
-                Từ ngày đặt
-              </label>
-              <input type="date" name="from" value="2026-10-01">
-            </div>
-            <div class="field">
-              <label>
-                Đến ngày
-              </label>
-              <input type="date" name="to" value="2026-10-23">
-            </div>
-            <div class="field">
-              <label>
-                Địa điểm giao hàng
-              </label>
-              <input name="destination" placeholder="Quận, huyện, thành phố">
-            </div>
-            <div class="orders-filter-actions">
-              <button class="btn btn-outline" type="submit">
-                Lọc đơn hàng
-              </button>
-              <a class="btn btn-outline" href="orders.html">Làm mới</a>
-            </div>
+            <button class="btn btn-primary" type="submit">Xem thống kê</button>
+            <a class="btn btn-outline" href="statistics.html">Làm mới</a>
           </form>
         </section>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span>
+              Tổng doanh thu kỳ này
+            </span>
+            <strong>
+              198,7 tr₫
+            </strong>
+            <small>
+              <span id="statistics-period">10/10/2026 – 31/10/2026</span>
+            </small>
+          </article>
+          <article class="stat-card">
+            <span>
+              Khách hàng có đơn
+            </span>
+            <strong>
+              172
+            </strong>
+            <small>
+              Đã hoàn tất mua hàng
+            </small>
+          </article>
+          <article class="stat-card">
+            <span>
+              Giá trị trung bình
+            </span>
+            <strong>
+              1,15 tr₫
+            </strong>
+            <small>
+              Mỗi khách hàng
+            </small>
+          </article>
+          <article class="stat-card">
+            <span>
+              Top khách hàng
+            </span>
+            <strong>
+              5
+            </strong>
+            <small>
+              Sắp xếp theo tổng tiền giảm dần
+            </small>
+          </article>
+        </div>
         <section class="panel">
           <div class="table-tools">
-            <h2>
-              4 đơn hàng của Nguyễn Minh Anh
-            </h2>
+            <div>
+              <p class="eyebrow">
+                10/10/2026 – 31/10/2026
+              </p>
+              <h2>
+                5 khách hàng mua nhiều nhất
+              </h2>
+            </div>
           </div>
-          <div class="table-wrap" tabindex="0" aria-label="Bảng đơn hàng, cuộn ngang và dọc">
-            <table class="admin-table" id="orders-table">
+          <div class="table-wrap">
+            <table class="admin-table">
               <thead>
-                <tr><th>Mã đơn</th><th>Khách hàng</th><th>Ngày đặt</th><th>Địa điểm giao</th><th>Tổng tiền</th><th>Phương thức thanh toán</th><th>Trạng thái</th><th>Cập nhật</th><th>Chi tiết</th></tr>
+                <tr>
+                  <th>
+                    Hạng
+                  </th>
+                  <th>
+                    Khách hàng
+                  </th>
+                  <th>
+                    Đơn hàng trong kỳ
+                  </th>
+                  <th>
+                    Số đơn
+                  </th>
+                  <th>
+                    Tổng mua
+                  </th>
+                  <th>
+                    Chi tiết
+                  </th>
+                </tr>
               </thead>
-              <tbody>
-<tr><td><strong>FL-2026-0042</strong></td><td>Nguyễn Minh Anh</td><td>23/10/2026</td><td>Quận 1, TP. HCM</td><td>3.780.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0042"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
-<tr><td><strong>FL-2026-0046</strong></td><td>Nguyễn Minh Anh</td><td>20/10/2026</td><td>Quận 1, TP. HCM</td><td>2.100.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0046"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
-<tr><td><strong>FL-2026-0047</strong></td><td>Nguyễn Minh Anh</td><td>19/10/2026</td><td>Quận 1, TP. HCM</td><td>2.750.000₫</td><td>Tiền mặt khi nhận hàng</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0047"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
-<tr><td><strong>FL-2026-0038</strong></td><td>Nguyễn Minh Anh</td><td>14/10/2026</td><td>Quận 1, TP. HCM</td><td>1.850.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0038"><option selected>Đã giao thành công</option></select></td><td><button class="btn btn-outline small-btn" data-order-detail>Xem chi tiết</button></td></tr>
+              <tbody id="statistics-results">
+                <tr>
+                  <td class="rank">
+                    01
+                  </td>
+                  <td>
+                    <strong>
+                      Nguyễn Minh Anh
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      minhanh@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0046
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0042
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0047
+                    </span>
+                  </td>
+                  <td>
+                    8
+                  </td>
+                  <td>
+                    <strong>
+                      18.450.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="order-detail.html">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td class="rank">
+                    02
+                  </td>
+                  <td>
+                    <strong>
+                      Lê Thu Hà
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      thuha@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0048
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0044
+                    </span>
+                  </td>
+                  <td>
+                    6
+                  </td>
+                  <td>
+                    <strong>
+                      14.980.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="order-detail.html">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td class="rank">
+                    03
+                  </td>
+                  <td>
+                    <strong>
+                      Trần Hoàng Nam
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      nam.tran@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0049
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0043
+                    </span>
+                  </td>
+                  <td>
+                    5
+                  </td>
+                  <td>
+                    <strong>
+                      12.350.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="order-detail.html">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td class="rank">
+                    04
+                  </td>
+                  <td>
+                    <strong>
+                      Đỗ Ngọc Lan
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      ngoclan@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0050
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0051
+                    </span>
+                  </td>
+                  <td>
+                    4
+                  </td>
+                  <td>
+                    <strong>
+                      9.720.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="order-detail.html">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td class="rank">
+                    05
+                  </td>
+                  <td>
+                    <strong>
+                      Phạm Gia Bảo
+                    </strong>
+                    <br>
+                    <span class="muted">
+                      giabao@email.vn
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      FL-2026-0042
+                    </span>
+                    ,
+                    <span>
+                      FL-2026-0045
+                    </span>
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    <strong>
+                      7.480.000₫
+                    </strong>
+                  </td>
+                <td><a class="btn btn-outline small-btn" href="order-detail.html">Xem chi tiết</a></td></tr>
               </tbody>
             </table>
           </div>
+          <nav class="pagination" id="statistics-pagination" aria-label="Phân trang kết quả thống kê"></nav>
         </section>
-
+        <section class="panel">
+          <p class="eyebrow">
+            TỔNG GIÁ TRỊ THEO NGÀY
+          </p>
+          <h2>
+            Doanh thu trong kỳ
+          </h2>
+          <div class="chart-bars" aria-label="Biểu đồ doanh thu minh họa">
+            <span style="height:38%" data-label="01/10">
+            </span>
+            <span style="height:60%" data-label="05/10">
+            </span>
+            <span style="height:47%" data-label="09/10">
+            </span>
+            <span style="height:75%" data-label="13/10">
+            </span>
+            <span style="height:55%" data-label="17/10">
+            </span>
+            <span style="height:92%" data-label="21/10">
+            </span>
+            <span style="height:68%" data-label="23/10">
+            </span>
+          </div>
+        </section>
       </div>
     </main>
-    <dialog class="admin-dialog" id="order-dialog">
-      <div class="dialog-head">
-        <h2>
-          Chi tiết đơn hàng
-        </h2>
-        <button class="icon-close" data-close aria-label="Đóng">
-          ×
-        </button>
-      </div>
-      <p>
-        <strong id="order-number">FL-2026-0042</strong>
-        ·
-        <span id="order-customer">Nguyễn Minh Anh</span>
-        ·
-        <span id="order-date">23/10/2026</span>
-      </p>
-      <p id="order-address">Quận 1, TP. HCM</p>
-      <div class="table-wrap">
-        <table class="admin-table order-detail-table">
-          <thead>
-            <tr><th>Sản phẩm</th><th>Phân loại</th><th>Số lượng</th><th>Thành tiền</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Rosé Aurore</td><td>Nước hoa nữ · 50ml</td><td>2</td><td>3.780.000₫</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </dialog>
     
-<div class="admin-toast" role="status" aria-live="polite" hidden></div>
-    <script>
-function showToast(message) {
-  const toast = document.querySelector('.admin-toast');
-  toast.textContent = message;
-  toast.hidden = false;
-  clearTimeout(window.toastTimer);
-  window.toastTimer = setTimeout(() => {
-    toast.hidden = true;
-  }, 3000);
+<script>
+const statisticCustomers = [
+  ['Võ Ngọc Linh','ngoclinh@example.com','FL-2026-0046, FL-2026-0048','7','16.800.000₫'],
+  ['Đặng Quốc Huy','quochuy@example.com','FL-2026-0047, FL-2026-0050','6','14.250.000₫'],
+  ['Bùi Khánh Vy','khanhvy@example.com','FL-2026-0048, FL-2026-0051','5','12.980.000₫'],
+  ['Hoàng Đức Anh','ducanh@example.com','FL-2026-0049, FL-2026-0046','4','10.400.000₫'],
+  ['Ngô Tuấn Kiệt','tuankiet@example.com','FL-2026-0051, FL-2026-0047','4','9.760.000₫'],
+  ['Phạm Thu Trang','trang.pham@example.com','FL-2026-0052, FL-2026-0054','4','9.200.000₫'],
+  ['Lê Quốc Bảo','quocbao@example.com','FL-2026-0055, FL-2026-0056','3','8.850.000₫'],
+  ['Trần Ngọc Mai','ngocmai@example.com','FL-2026-0057, FL-2026-0059','3','8.100.000₫'],
+  ['Vũ Hoàng Yến','yen.vu@example.com','FL-2026-0060, FL-2026-0062','3','7.940.000₫'],
+  ['Phan Minh Khoa','khoa.phan@example.com','FL-2026-0063, FL-2026-0064','2','7.500.000₫']
+];
+const resultsBody = document.querySelector('#statistics-results');
+const pagination = document.querySelector('#statistics-pagination');
+const pageSize = 5;
+let currentPage = 1;
+const params = new URLSearchParams(location.search);
+const fromInput = document.querySelector('#statistics-from');
+const toInput = document.querySelector('#statistics-to');
+if (params.get('from')) fromInput.value = params.get('from');
+if (params.get('to')) toInput.value = params.get('to');
+const formatDate = value => value ? new Date(`${value}T00:00:00`).toLocaleDateString('vi-VN') : '';
+if (params.get('from') || params.get('to')) {
+  document.querySelector('#statistics-period').textContent = `${formatDate(fromInput.value)} – ${formatDate(toInput.value)}`;
 }
-
-document.addEventListener('click', (event) => {
-  if (event.target.closest('[data-close]')) {
-    event.target.closest('dialog').close();
-    return;
-  }
-
-  if (event.target.matches('dialog')) {
-    event.target.close();
-    return;
-  }
-
-  if (!event.target.closest('[data-order-detail]')) return;
-
-  document.querySelector('#order-dialog').showModal();
+function renderStatistics() {
+  const pageCount = Math.max(1, Math.ceil(statisticCustomers.length / pageSize));
+  currentPage = Math.min(currentPage, pageCount);
+  resultsBody.innerHTML = statisticCustomers.slice((currentPage - 1) * pageSize, currentPage * pageSize).map((customer, index) => {
+    const rank = (currentPage - 1) * pageSize + index + 1;
+    return `<tr><td class="rank">${String(rank).padStart(2,'0')}</td><td><strong>${customer[0]}</strong><br><span class="muted">${customer[1]}</span></td><td>${customer[2]}</td><td>${customer[3]}</td><td><strong>${customer[4]}</strong></td><td><a class="btn btn-outline small-btn" href="order-detail.html">Xem chi tiết</a></td></tr>`;
+  }).join('');
+  const pageLink = (label, target, disabled = false, active = false) => disabled ? `<span class="is-disabled">${label}</span>` : active ? `<span aria-current="page">${label}</span>` : `<a href="#" data-page="${target}">${label}</a>`;
+  pagination.innerHTML = pageLink('‹', currentPage - 1, currentPage === 1) + Array.from({length: pageCount}, (_, i) => pageLink(i + 1, i + 1, false, i + 1 === currentPage)).join('') + pageLink('›', currentPage + 1, currentPage === pageCount);
+}
+pagination.addEventListener('click', event => {
+  const link = event.target.closest('[data-page]');
+  if (!link) return;
+  event.preventDefault();
+  currentPage = Number(link.dataset.page);
+  renderStatistics();
 });
-
-document.querySelectorAll('.filter-row button').forEach((button) => {
-  button.addEventListener('click', () => showToast('Lọc danh sách đơn hàng thành công!'));
-});
-
-document.querySelectorAll('tbody select').forEach((select) => {
-  select.addEventListener('change', () => showToast('Đã cập nhật trạng thái đơn hàng.'));
-});
-    </script>
-  </body>
+renderStatistics();
+</script>
+</body>
 </html>
 
 
