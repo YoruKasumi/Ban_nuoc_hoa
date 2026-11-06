@@ -792,3 +792,155 @@ img[hidden] {
     width: 100%;
   }
 }
+
+/* ===== 1. Ảnh sản phẩm bên trái tên trong bảng chi tiết đơn hàng Admin ===== */
+.data-table td {
+  vertical-align: middle;
+}
+.table-product {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+.table-product .thumb {
+  width: 56px;
+  height: 56px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  padding: 4px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.table-product .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== 2. Khóa select đối với đơn đã hoàn thành hoặc đã hủy ===== */
+.admin-table select:disabled,
+select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: #EFE5D4;
+  color: var(--muted);
+}
+
+/* ===== 3. Thanh cập nhật trạng thái ở cuối trang chi tiết đơn hàng ===== */
+.order-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s4);
+}
+.order-status-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  flex-wrap: wrap;
+}
+.order-status-controls select {
+  width: auto;
+  min-width: 220px;
+}
+
+/* ===== 4. Modal & Toast thuần CSS (:target) không dùng JavaScript ===== */
+.css-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(58, 37, 25, 0.52);
+  place-items: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.css-modal:target,
+.css-modal.is-open {
+  display: grid;
+}
+.css-modal-box {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow-lg);
+}
+.css-toast {
+  display: none;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 14px 20px;
+  border: 1px solid #9CC7AE;
+  border-radius: var(--r-md);
+  color: #1F4A36;
+  background: #E3F1E8;
+  box-shadow: var(--shadow-lg);
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.css-toast:target {
+  display: flex;
+}
+.css-toast-close {
+  color: #1F4A36;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== 5. Ô dung tích nhỏ gọn nằm trên cùng 1 dòng & Khu vực ảnh phụ ===== */
+.volume-inline-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+}
+input.volume-input-sm {
+  width: 90px;
+  min-width: 90px;
+  flex: 0 0 90px;
+  text-align: center;
+  padding-inline: 0.5rem;
+}
+.volume-add-btn {
+  white-space: nowrap;
+  padding-inline: 1rem;
+  min-height: 46px;
+  font-size: 0.85rem;
+  flex: none;
+}
+.sub-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+.sub-image-item {
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 10px;
+  background: var(--paper);
+}
+.sub-image-item .preview-img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  background: var(--white);
+  border: 1px solid var(--line);
+  margin-top: 0;
+  margin-bottom: 8px;
+  padding: 4px;
+}

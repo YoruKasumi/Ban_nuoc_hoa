@@ -73,8 +73,14 @@
 .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);margin-top:var(--s5)}
 .notes div{background:var(--paper);border-radius:var(--r-md);padding:var(--s4)}
 .notes h3{font-size:1.15rem;margin-bottom:var(--s1)} .notes p{margin:0;font-size:.9rem;color:var(--muted)}
-.desc{max-width:68ch;margin-top:var(--s6)}
-
+.desc {
+  max-width: 100%;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: var(--s4);
+  text-align: justify;
+  line-height: 1.85;
+}
 .search-hero{background:var(--paper);padding-block:var(--s6);border-bottom:1.5px solid var(--line)}
 .search-big{display:flex;gap:var(--s3);max-width:720px;flex-wrap:wrap}
 .search-big input{flex:1 1 280px;width:auto}
@@ -373,13 +379,36 @@ fieldset.group legend{font:600 1.35rem var(--font-display);margin-bottom:var(--s
 }
 
 /* ===== 2. Bỏ bo tròn vòm & bấm xem ảnh thu nhỏ ở trang Chi tiết sản phẩm ===== */
-.detail-media .thumb {
-  border-radius: 0; /* Bỏ hoàn toàn bo tròn (đổi thành var(--r-sm) nếu muốn bo góc nhẹ 8px) */
+/* ===== Bỏ bo tròn vòm & đưa khung ảnh chính về hình vuông ===== */
+.detail-media .thumb.detail-main-thumb {
+  border-radius: var(--r-sm);
+  aspect-ratio: 1 / 1;
+  padding: var(--s3);
+  background: var(--white);
 }
 
-/* Ẩn/hiện ảnh lớn khi nhấn vào ảnh thu nhỏ bên dưới bằng CSS thuần */
-.detail-main-thumb img {
+/* ===== Đồng bộ khung ảnh thật ở trang chi tiết, giỏ hàng, đơn hàng ===== */
+.detail-media .thumb,
+.cart-item .thumb,
+.order-lines .thumb {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.detail-media .thumb img,
+.cart-item .thumb img,
+.order-lines .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== Ẩn/hiện ảnh lớn khi nhấn vào ảnh thu nhỏ bằng CSS thuần (Đặt ở cuối để không bị ghi đè) ===== */
+.detail-media .thumb.detail-main-thumb img {
   display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 #gal-1:checked ~ .detail-main-thumb .gal-img-1,
 #gal-2:checked ~ .detail-main-thumb .gal-img-2,
@@ -391,6 +420,8 @@ fieldset.group legend{font:600 1.35rem var(--font-display);margin-bottom:var(--s
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color .2s;
+  padding: var(--s2);
+  background: var(--white);
 }
 .thumb-row label.thumb:hover {
   border-color: var(--peach);
@@ -400,7 +431,6 @@ fieldset.group legend{font:600 1.35rem var(--font-display);margin-bottom:var(--s
 #gal-3:checked ~ .thumb-row label[for="gal-3"] {
   border-color: var(--coral-dark);
 }
-
 /* ===== Định dạng ô nhập tiền tệ VNĐ ===== */
 .input-vnd {
   position: relative;
@@ -421,18 +451,28 @@ fieldset.group legend{font:600 1.35rem var(--font-display);margin-bottom:var(--s
   font-size: .92rem;
 }
 
-/* ===== Đồng bộ khung ảnh thật ở trang chi tiết, giỏ hàng, đơn hàng ===== */
-.detail-media .thumb,
-.cart-item .thumb,
-.order-lines .thumb {
-  padding-bottom: 0;
-  overflow: hidden;
+/* ===== Hiển thị ảnh sản phẩm bên trái tên trong bảng chi tiết đơn hàng ===== */
+.data-table td {
+  vertical-align: middle;
 }
-.detail-media .thumb img,
-.cart-item .thumb img,
-.order-lines .thumb img {
+.table-product {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+.table-product .thumb {
+  width: 56px;
+  height: 56px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  padding: var(--s1);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.table-product .thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }

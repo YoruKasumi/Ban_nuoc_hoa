@@ -89,29 +89,39 @@
       </div>
       <div class="detail">
         <div class="detail-media">
-          <!-- Các nút chọn ẩn điều khiển việc đổi ảnh bằng CSS -->
+          <!-- 1. Đặt các input radio lên TRÊN CÙNG để bộ chọn CSS ~ hoạt động chính xác -->
           <input class="visually-hidden" type="radio" name="gallery" id="gal-1" checked>
           <input class="visually-hidden" type="radio" name="gallery" id="gal-2">
           <input class="visually-hidden" type="radio" name="gallery" id="gal-3">
 
-          <!-- Khung hiển thị ảnh lớn -->
-          <div class="thumb detail-main-thumb">
+          <!-- 2. Khung ảnh chính: Định dạng hình vuông (aspect-ratio: 1), cố định và không bị kéo dài/phóng to -->
+          <div class="thumb detail-main-thumb"
+            style="aspect-ratio: 1 / 1; position: relative; overflow: hidden; border-radius: var(--r-md); background: var(--white); display: flex; align-items: center; justify-content: center;">
             <img class="gal-img-1" src="../images/dior-miss-dior-edp-2021_2.jpg"
-              alt="Dior Miss Dior EDP - góc chính diện">
-            <img class="gal-img-2" src="../images/gucci-bloom-edp_2.jpg" alt="Dior Miss Dior EDP - ảnh thực tế 2">
-            <img class="gal-img-3" src="../images/marc-jacob-daisy_2.jpg" alt="Dior Miss Dior EDP - ảnh thực tế 3">
+              alt="Dior Miss Dior EDP - góc chính diện"
+              style="width: 100%; height: 100%; object-fit: contain; position: absolute; inset: 0; padding: 10px;">
+            <img class="gal-img-2" src="../images/MissDiorEDP_1.png" alt="Dior Miss Dior EDP - ảnh thực tế 2"
+              style="width: 100%; height: 100%; object-fit: contain; position: absolute; inset: 0; padding: 10px;">
+            <img class="gal-img-3" src="../images/MissDiorEDP_2.png" alt="Dior Miss Dior EDP - ảnh thực tế 3"
+              style="width: 100%; height: 100%; object-fit: contain; position: absolute; inset: 0; padding: 10px;">
           </div>
 
-          <!-- Hàng ảnh thu nhỏ bên dưới (nhấn vào để đổi ảnh lớn) -->
-          <div class="thumb-row">
-            <label for="gal-1" class="thumb" aria-label="Xem ảnh 1">
-              <img src="../images/dior-miss-dior-edp-2021_2.jpg" alt="Dior Miss Dior EDP - thu nhỏ 1">
+          <!-- 3. Hàng ảnh thu nhỏ (khi click sẽ kích hoạt radio tương ứng) -->
+          <div class="thumb-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s3);">
+            <label for="gal-1" class="thumb" aria-label="Xem ảnh 1"
+              style="cursor: pointer; border-radius: var(--r-sm); overflow: hidden; aspect-ratio: 1; border: 2px solid transparent; background: var(--white); display: flex; align-items: center; justify-content: center;">
+              <img src="../images/dior-miss-dior-edp-2021_2.jpg" alt="Thu nhỏ 1"
+                style="width: 100%; height: 100%; object-fit: contain; padding: 4px;">
             </label>
-            <label for="gal-2" class="thumb" aria-label="Xem ảnh 2">
-              <img src="../images/gucci-bloom-edp_2.jpg" alt="Dior Miss Dior EDP - thu nhỏ 2">
+            <label for="gal-2" class="thumb" aria-label="Xem ảnh 2"
+              style="cursor: pointer; border-radius: var(--r-sm); overflow: hidden; aspect-ratio: 1; border: 2px solid transparent; background: var(--white); display: flex; align-items: center; justify-content: center;">
+              <img src="../images/MissDiorEDP_1.png" alt="Thu nhỏ 2"
+                style="width: 100%; height: 100%; object-fit: contain; padding: 4px;">
             </label>
-            <label for="gal-3" class="thumb" aria-label="Xem ảnh 3">
-              <img src="../images/marc-jacob-daisy_2.jpg" alt="Dior Miss Dior EDP - thu nhỏ 3">
+            <label for="gal-3" class="thumb" aria-label="Xem ảnh 3"
+              style="cursor: pointer; border-radius: var(--r-sm); overflow: hidden; aspect-ratio: 1; border: 2px solid transparent; background: var(--white); display: flex; align-items: center; justify-content: center;">
+              <img src="../images/MissDiorEDP_2.png" alt="Thu nhỏ 3"
+                style="width: 100%; height: 100%; object-fit: contain; padding: 4px;">
             </label>
           </div>
         </div>
@@ -136,6 +146,12 @@
           </dl>
           <form action="product-detail.html#da-them" method="get">
             <input type="hidden" name="ma" value="FP-001">
+            <fieldset class="size-options">
+              <legend>Dung tích</legend>
+              <label><input type="radio" name="dung-tich" value="30ml"><span>30ml</span></label>
+              <label><input type="radio" name="dung-tich" value="50ml" checked><span>50ml</span></label>
+              <label><input type="radio" name="dung-tich" value="100ml"><span>100ml</span></label>
+            </fieldset>
             <div class="buy-row">
               <div class="field"><label for="sl">Số lượng</label><input id="sl" type="number" name="so-luong" value="1"
                   min="1" max="24"></div>
@@ -144,7 +160,7 @@
           </form>
           <div class="alert-success" id="da-them" role="status">
             <span class="tick-sm" aria-hidden="true"></span>
-            <div><strong>Đã thêm Dior Miss Dior EDP vào giỏ hàng</strong>
+            <div><strong>Đã thêm sản phẩm vào giỏ hàng</strong>
               <p>Bạn có thể ở lại trang này để tiếp tục xem sản phẩm.</p>
               <div class="alert-actions"><a class="btn btn-outline" href="cart.html">Xem giỏ hàng</a><a
                   class="btn btn-text" href="#da-dong">Đóng thông báo</a></div>
@@ -155,23 +171,17 @@
       <div class="detail" style="margin-top:var(--s7);grid-template-columns:1fr">
         <section aria-labelledby="h-desc">
           <h2 id="h-desc">Mô tả sản phẩm</h2>
-          <p class="desc" style="margin-top:0">Dior Miss Dior EDP mở đầu bằng vị đào chín và cam bergamot, sau đó nhường
-            chỗ cho hoa hồng Damask mềm mại như cánh hoa còn sương sớm. Phần cuối ấm nhẹ của xạ hương trắng và gỗ tuyết
-            tùng, lưu hương khoảng 6–8 giờ trên da.</p>
-          <div class="notes">
-            <div>
-              <h3>Hương đầu</h3>
-              <p>Đào, cam bergamot, hạt tiêu hồng</p>
-            </div>
-            <div>
-              <h3>Hương giữa</h3>
-              <p>Hoa hồng Damask, mẫu đơn, hoa nhài</p>
-            </div>
-            <div>
-              <h3>Hương cuối</h3>
-              <p>Xạ hương trắng, gỗ tuyết tùng</p>
-            </div>
-          </div>
+          <p class="desc">
+            Dior Miss Dior Eau de Parfum (EDP) là bản giao hưởng hương thơm đầy chất thơ, tôn vinh vẻ đẹp nữ tính, thanh lịch nhưng không kém phần rạng rỡ của người phụ nữ hiện đại. Ngay từ khoảnh khắc chạm lên làn da, mùi hương mở ra một không gian ngập tràn ánh nắng ban mai với vị ngọt thanh tao của trái đào chín mọng quyện cùng sự sảng khoái, tươi mới từ cam Bergamot vùng Calabria và chút cay nhẹ tinh tế của hạt tiêu hồng. Sự khởi đầu mượt mà ấy nhanh chóng đánh thức mọi giác quan, mang lại cảm giác trẻ trung, tràn đầy năng lượng tích cực như một buổi dạo bước giữa khu vườn xuân đang độ nở rộ.
+          </p>
+          <p class="desc">
+            Khi tầng hương đầu dần lắng xuống, trái tim của Miss Dior EDP bung tỏa rực rỡ với sự lên ngôi của hoa hồng Damask và hoa hồng Grasse trăm cánh quý giá — biểu tượng vượt thời gian của nhà mốt Christian Dior. Những cánh hồng mềm mại như còn đọng sương sớm được bao bọc khéo léo bởi nét kiêu sa của hoa mẫu đơn và sắc thái thanh khiết, quyến rũ từ hoa nhài trắng. Ở tầng hương cuối, sự ấm áp của xạ hương trắng kết hợp cùng chiều sâu trầm lắng của gỗ tuyết tùng tạo nên một lớp nền mịn màng, ôm ấp lấy làn da và giữ cho mùi hương lưu luyến bền bỉ từ 6 đến 8 giờ. Với độ tỏa hương vừa phải, tinh tế, đây là lựa chọn hoàn hảo cho cả những ngày làm việc nơi công sở, những buổi hẹn hò lãng mạn hay các sự kiện trang trọng.
+          </p>
+          <p class="desc" style="margin-bottom:0">
+            Hương đầu: Đào chín, cam Bergamot, hạt tiêu hồng.<br>
+            Hương giữa: Hoa hồng Damask, hoa mẫu đơn, hoa nhài.<br>
+            Hương cuối: Xạ hương trắng, gỗ tuyết tùng.
+          </p>
         </section>
       </div>
     </div>
@@ -202,7 +212,7 @@
               <p class="card-cat">Unisex</p>
               <h3><a href="product-detail.html">Calvin Klein CK One</a></h3>
               <p class="price">1.650.000₫</p>
-              <div class="card-actions"><a class="btn btn-primary" href="#them-fp003"
+              <div class="card-actions"><a class="btn btn-primary" href="#them-fp005"
                   aria-label="Thêm Calvin Klein CK One vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
                   href="product-detail.html">Xem chi tiết</a></div>
             </div>
@@ -215,7 +225,7 @@
               <p class="card-cat">Unisex</p>
               <h3><a href="product-detail.html">Calvin Klein CK Be</a></h3>
               <p class="price">1.590.000₫</p>
-              <div class="card-actions"><a class="btn btn-primary" href="#them-fp007"
+              <div class="card-actions"><a class="btn btn-primary" href="#them-fp005"
                   aria-label="Thêm Calvin Klein CK Be vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
                   href="product-detail.html">Xem chi tiết</a></div>
             </div>
@@ -229,7 +239,7 @@
               <p class="card-cat">Nước hoa cao cấp</p>
               <h3><a href="product-detail.html">Diptyque Fleur De Peau EDP</a></h3>
               <p class="price">3.890.000₫</p>
-              <div class="card-actions"><a class="btn btn-primary" href="#them-fp008"
+              <div class="card-actions"><a class="btn btn-primary" href="#them-fp005"
                   aria-label="Thêm Diptyque Fleur De Peau EDP vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
                   href="product-detail.html">Xem chi tiết</a></div>
             </div>
@@ -240,25 +250,7 @@
     <div class="toasts">
       <div class="toast" id="them-fp005" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Gucci Bloom EDP</p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp003" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Calvin Klein CK One</p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp007" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Calvin Klein CK Be</p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp008" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Diptyque Fleur De Peau EDP</p>
+          <p><strong>Đã thêm sản phẩm vào giỏ hàng</strong><br></p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>

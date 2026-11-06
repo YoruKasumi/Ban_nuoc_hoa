@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Thêm dung tích sản phẩm | FLORA PERFUME</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
+      <p class="side-label">CỬA HÀNG</p>
+      <nav class="side-nav">
+        <a href="index.html"><span class="nav-icon">⌂</span>Tổng quan</a>
+        <a href="users.html"><span class="nav-icon">♙</span>Khách hàng</a>
+        <a aria-current="page" href="products.html"><span class="nav-icon">◇</span>Sản phẩm</a>
+        <a href="orders.html"><span class="nav-icon">▤</span>Đơn hàng</a>
+        <a href="statistics.html"><span class="nav-icon">▥</span>Thống kê</a>
+      </nav>
+      <div class="side-bottom"><a href="login.html">↪ Đăng xuất</a></div>
+    </aside>
+    <main class="admin-main">
+      <header class="topbar">
+        <span>Xin chào, <strong>Admin Flora</strong></span>
+        <span class="avatar">AF</span>
+      </header>
+
+      <div class="css-modal is-open" role="dialog" aria-labelledby="add-dialog-title">
+        <div class="css-modal-box">
+          <div class="dialog-head">
+            <h2 id="add-dialog-title">Thêm sản phẩm</h2>
+            <a class="icon-close" href="products.html" aria-label="Đóng" style="text-decoration:none">×</a>
+          </div>
+
+          <form action="products.html#toast-added" method="get" class="form-grid">
+            <div class="field">
+              <label>Phân loại</label>
+              <select name="category">
+                <option selected>Nước hoa nữ</option>
+                <option>Nước hoa nam</option>
+                <option>Unisex</option>
+                <option>Nước hoa cao cấp</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Tên sản phẩm</label>
+              <input name="name" placeholder="Nhập tên sản phẩm">
+            </div>
+            <div class="field">
+              <label>Thương hiệu</label>
+              <input name="brand" placeholder="Nhập thương hiệu">
+            </div>
+            <div class="field">
+              <label>Giá tiền (VNĐ)</label>
+              <input name="price" type="number" placeholder="0">
+            </div>
+
+            <!-- 2 ô dung tích nhỏ gọn + 1 dấu cộng nằm trên cùng 1 dòng và dừng lại -->
+            <div class="field full">
+              <label>Dung tích (ml)</label>
+              <div class="volume-inline-row">
+                <input class="volume-input-sm" name="volume_1" type="number" placeholder="50" aria-label="Dung tích 1">
+                <span class="btn btn-outline volume-add-btn" aria-disabled="true">＋ Thêm dung tích khác</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Nhóm hương</label>
+              <input name="notes" placeholder="Ví dụ: Hoa cỏ, trái cây">
+            </div>
+            <div class="field">
+              <label>Phong cách</label>
+              <input name="style" placeholder="Ví dụ: Thanh lịch, tươi mát">
+            </div>
+            <div class="field">
+              <label>Đối tượng</label>
+              <input name="audience" placeholder="Ví dụ: Nữ độ tuổi 20-40">
+            </div>
+            <div class="field">
+              <label>Xuất xứ</label>
+              <input name="origin" placeholder="Ví dụ: Pháp">
+            </div>
+            <div class="field full">
+              <label>Mô tả</label>
+              <textarea name="description" placeholder="Nhập mô tả chi tiết sản phẩm"></textarea>
+            </div>
+            <div class="field">
+              <label>Tồn kho</label>
+              <input name="stock" type="number" placeholder="0">
+            </div>
+            <div class="field">
+              <label>Trạng thái</label>
+              <select name="status">
+                <option selected>Đang bán</option>
+                <option>Đã ẩn</option>
+              </select>
+            </div>
+
+            <div class="field full upload-box">
+              <label><strong>1. Chọn hình ảnh chủ đạo (Ảnh đại diện)</strong></label>
+              <input type="file" accept="image/*">
+            </div>
+
+            <div class="field full upload-box">
+              <label><strong>2. Hình ảnh phụ (Đã thêm 1 ảnh phụ minh họa)</strong></label>
+              <div class="sub-images-grid">
+                <div class="sub-image-item">
+                  <img class="preview-img" src="../images/gucci-bloom-edp_2.jpg" alt="Hình ảnh phụ 1">
+                  <label style="font-size:.82rem">Hình ảnh phụ 1</label>
+                  <input type="file" accept="image/*">
+                </div>
+              </div>
+              <label class="btn btn-outline small-btn" style="cursor:pointer;margin:0">
+                ＋ Tiếp tục thêm hình ảnh phụ
+                <input type="file" accept="image/*" multiple hidden>
+              </label>
+            </div>
+
+            <div class="field full dialog-actions">
+              <button class="btn btn-primary" type="submit">Thêm sản phẩm</button>
+              <a class="btn btn-outline" href="products.html">Hủy</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

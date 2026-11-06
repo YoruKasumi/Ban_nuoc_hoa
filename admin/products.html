@@ -1,331 +1,761 @@
 ﻿<!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>
-      Sản phẩm | FLORA PERFUME
-    </title>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin.css">
-  </head>
-  <body>
-    <aside class="sidebar">
-      <a class="logo" href="index.html">
-        FLORA
-        <span>
-          PERFUME
-        </span>
-      </a>
-      <p class="side-label">
-        CỬA HÀNG
-      </p>
-      <nav class="side-nav">
-        <a href="index.html">
-          <span class="nav-icon">
-            ⌂
-          </span>
-          Tổng quan
-        </a>
-        <a href="users.html">
-          <span class="nav-icon">
-            ♙
-          </span>
-          Khách hàng
-        </a>
-        <a aria-current="page" href="products.html">
-          <span class="nav-icon">
-            ◇
-          </span>
-          Sản phẩm
-        </a>
-        <a href="orders.html">
-          <span class="nav-icon">
-            ▤
-          </span>
-          Đơn hàng
-        </a>
-        <a href="statistics.html">
-          <span class="nav-icon">
-            ▥
-          </span>
-          Thống kê
-        </a>
-      </nav>
-      <div class="side-bottom">
-        <a href="login.html">
-          ↪ Đăng xuất
-        </a>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sản phẩm | FLORA PERFUME</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
+    <p class="side-label">CỬA HÀNG</p>
+    <nav class="side-nav">
+      <a href="index.html"><span class="nav-icon">⌂</span>Tổng quan</a>
+      <a href="users.html"><span class="nav-icon">♙</span>Khách hàng</a>
+      <a aria-current="page" href="products.html"><span class="nav-icon">◇</span>Sản phẩm</a>
+      <a href="orders.html"><span class="nav-icon">▤</span>Đơn hàng</a>
+      <a href="statistics.html"><span class="nav-icon">▥</span>Thống kê</a>
+    </nav>
+    <div class="side-bottom"><a href="login.html">↪ Đăng xuất</a></div>
+  </aside>
+  <main class="admin-main">
+    <header class="topbar">
+      <span>Xin chào, <strong>Admin Flora</strong></span>
+      <span class="avatar">AF</span>
+    </header>
+    <div class="admin-content">
+      <div class="page-title">
+        <div>
+          <p class="eyebrow">DANH MỤC CỬA HÀNG</p>
+          <h1>Sản phẩm</h1>
+          <p>Quản lý sản phẩm và phân loại hiển thị.</p>
+        </div>
+        <a class="btn btn-primary" href="#modal-add-product">＋ Thêm sản phẩm</a>
       </div>
-    </aside>
-    <main class="admin-main">
-      <header class="topbar">
-        <span>
-          Xin chào,
-          <strong>
-            Admin Flora
-          </strong>
-        </span>
-        <span class="avatar">
-          AF
-        </span>
-      </header>
-      <div class="admin-content">
-        <div class="page-title">
-          <div>
-            <p class="eyebrow">
-              DANH MỤC CỬA HÀNG
-            </p>
-            <h1>
-              Sản phẩm
-            </h1>
-            <p>
-              Quản lý sản phẩm và phân loại hiển thị.
-            </p>
+
+      <section class="panel">
+        <form class="filter-row" action="products-filtered.html" method="get">
+          <div class="field">
+            <label>Tìm sản phẩm</label>
+            <input name="q" placeholder="Tên hoặc mã sản phẩm">
           </div>
-          <button class="btn btn-primary" type="button" data-action="add-product">
-            ＋ Thêm sản phẩm
-          </button>
+          <div class="field">
+            <label>Phân loại</label>
+            <select name="category">
+              <option>Tất cả phân loại</option>
+              <option>Nước hoa nam</option>
+              <option>Nước hoa nữ</option>
+              <option>Unisex</option>
+              <option>Nước hoa cao cấp</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Trạng thái</label>
+            <select name="status">
+              <option>Tất cả sản phẩm</option>
+              <option>Đang bán</option>
+              <option>Đã ẩn</option>
+            </select>
+          </div>
+          <button class="btn btn-outline" type="submit">Lọc sản phẩm</button>
+          <a class="btn btn-outline" href="products.html">Làm mới</a>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="table-tools">
+          <h2>Danh sách sản phẩm (15 sản phẩm)</h2>
         </div>
-        <section class="panel">
-          <form class="filter-row" action="products-filtered.html" method="get">
-            <div class="field">
-              <label>
-                Tìm sản phẩm
-              </label>
-              <input name="q" placeholder="Tên hoặc mã sản phẩm">
-            </div>
-            <div class="field">
-              <label>
-                Phân loại
-              </label>
-              <select name="category">
-                <option>
-                  Tất cả phân loại
-                </option>
-                <option>
-                  Nước hoa nam
-                </option>
-                <option>
-                  Nước hoa nữ
-                </option>
-                <option>
-                  Unisex
-                </option>
-                <option>
-                  Nước hoa cao cấp
-                </option>
-              </select>
-            </div>
-            <div class="field">
-              <label>
-                Trạng thái
-              </label>
-              <select name="status">
-                <option>
-                  Tất cả sản phẩm
-                </option>
-                <option>
-                  Đang bán
-                </option>
-                <option>
-                  Đã ẩn
-                </option>
-              </select>
-            </div>
-            <button class="btn btn-outline" type="submit">
-              Lọc sản phẩm
-            </button>
-            <a class="btn btn-outline" href="products.html">Làm mới</a>
-          </form>
-        </section>
-        <section class="panel">
-          <div class="table-tools"><h2>Danh sách sản phẩm</h2></div>
-          <div class="table-wrap" tabindex="0" aria-label="Bảng sản phẩm, cuộn ngang và dọc"><table class="admin-table product-table" id="product-list"><thead><tr><th>Mã sản phẩm</th><th>Ảnh</th><th>Phân loại</th><th>Tên sản phẩm</th><th>Thương hiệu</th><th>Giá tiền</th><th>Dung tích (ml)</th><th>Nhóm hương</th><th>Phong cách</th><th>Đối tượng</th><th>Xuất xứ</th><th>Mô tả</th><th>Tồn kho</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody><tr><td><strong>FP-001</strong></td><td><img class="product-table-image" src="../images/calvin-klein-ck-be_2-1.jpg" alt="Ảnh FP-001" loading="lazy"></td><td>Nước hoa nữ</td><td>Rosé Aurore</td><td>Maison Flora</td><td>1.890.000₫</td><td>50</td><td>Hoa cỏ, trái cây</td><td>Dịu dàng, tươi sáng, dùng ban ngày</td><td>Nữ độ tuổi 20-40</td><td>Pháp</td><td>null</td><td>24</td><td><span class="pill warn">Đã ẩn</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-002</strong></td><td><img class="product-table-image" src="../images/calvin-klein-ck-one_2-1.jpg" alt="Ảnh FP-002" loading="lazy"></td><td>Nước hoa nam</td><td>Bois Ambré</td><td>Atelier Nord</td><td>2.350.000₫</td><td>100</td><td>Gỗ, hổ phách</td><td>Ấm áp, lịch lãm</td><td>Nam độ tuổi 25-45</td><td>Pháp</td><td>Hương gỗ trầm ấm cho buổi tối.</td><td>12</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-003</strong></td><td><img class="product-table-image" src="../images/carolina-herrera-good-girl_2.jpg" alt="Ảnh FP-003" loading="lazy"></td><td>Unisex</td><td>Ciel Blanc</td><td>Maison Flora</td><td>1.650.000₫</td><td>50</td><td>Cam chanh, xạ hương</td><td>Thanh sạch, tối giản</td><td>Mọi đối tượng</td><td>Ý</td><td>Mùi hương nhẹ nhàng mỗi ngày.</td><td>8</td><td><span class="pill warn">Đã ẩn</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-004</strong></td><td><img class="product-table-image" src="../images/chanel-allure-homme-sport-edt_2.jpg" alt="Ảnh FP-004" loading="lazy"></td><td>Nước hoa cao cấp</td><td>Oud Impérial</td><td>Étoile</td><td>4.980.000₫</td><td>75</td><td>Trầm hương, gia vị</td><td>Sang trọng, bí ẩn</td><td>Mọi đối tượng trên 30</td><td>UAE</td><td>Trầm hương quý và gia vị phương Đông.</td><td>6</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-005</strong></td><td><img class="product-table-image" src="../images/chanel-bleu-de-chanel-edp_2.jpg" alt="Ảnh FP-005" loading="lazy"></td><td>Nước hoa nữ</td><td>Jardin de Lune</td><td>Maison Flora</td><td>2.100.000₫</td><td>50</td><td>Hoa nhài, lê</td><td>Lãng mạn, thanh lịch</td><td>Nữ độ tuổi 22-40</td><td>Pháp</td><td>Hoa trắng dịu ngọt trên nền gỗ.</td><td>31</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-006</strong></td><td><img class="product-table-image" src="../images/dior-miss-dior-edp-2021_2.jpg" alt="Ảnh FP-006" loading="lazy"></td><td>Nước hoa nam</td><td>Cèdre Noir</td><td>Bois &amp; Co.</td><td>2.750.000₫</td><td>100</td><td>Gỗ tuyết tùng, tiêu</td><td>Mạnh mẽ, hiện đại</td><td>Nam độ tuổi 25-50</td><td>Thụy Sĩ</td><td>Hương gỗ khô với điểm nhấn tiêu đen.</td><td>17</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-007</strong></td><td><img class="product-table-image" src="../images/dior-sauvage-edp_2.jpg" alt="Ảnh FP-007" loading="lazy"></td><td>Unisex</td><td>Thé Vert Matin</td><td>Maison Flora</td><td>1.490.000₫</td><td>30</td><td>Trà xanh, cam bergamot</td><td>Tươi mát, thư thái</td><td>Mọi đối tượng</td><td>Nhật Bản</td><td>Trà xanh thanh mát cho ngày mới.</td><td>42</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-008</strong></td><td><img class="product-table-image" src="../images/diptyque-fleur-de-peau-edp_2.jpg" alt="Ảnh FP-008" loading="lazy"></td><td>Nước hoa nữ</td><td>Velours Rose</td><td>Lumière</td><td>3.200.000₫</td><td>75</td><td>Hoa hồng, vanilla</td><td>Quyến rũ, ngọt ngào</td><td>Nữ độ tuổi 25-45</td><td>Pháp</td><td>Hoa hồng nồng nàn trên nền vanilla.</td><td>0</td><td><span class="pill danger">Đã xóa</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-009</strong></td><td><img class="product-table-image" src="../images/dolce-gabbana-light-blue-eau-intense-for-women_2.jpg" alt="Ảnh FP-009" loading="lazy"></td><td>Nước hoa nam</td><td>Marin Profond</td><td>Atelier Nord</td><td>1.980.000₫</td><td>100</td><td>Muối biển, xô thơm</td><td>Năng động, phóng khoáng</td><td>Nam độ tuổi 20-40</td><td>Tây Ban Nha</td><td>Làn gió biển mặn mà và sảng khoái.</td><td>19</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-010</strong></td><td><img class="product-table-image" src="../images/giorgio-armani-acqua-di-gio-edp_2.jpg" alt="Ảnh FP-010" loading="lazy"></td><td>Unisex</td><td>Ambre Doux</td><td>Étoile</td><td>2.890.000₫</td><td>50</td><td>Hổ phách, vani</td><td>Ấm áp, tinh tế</td><td>Mọi đối tượng trên 25</td><td>Pháp</td><td>Hổ phách mềm mại dùng cả ngày lẫn tối.</td><td>7</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-011</strong></td><td><img class="product-table-image" src="../images/gucci-bloom-edp_2.jpg" alt="Ảnh FP-011" loading="lazy"></td><td>Nước hoa nữ</td><td>Fleur de Pêche</td><td>Maison Flora</td><td>1.750.000₫</td><td>50</td><td>Đào, hoa mẫu đơn</td><td>Trẻ trung, vui tươi</td><td>Nữ độ tuổi 18-35</td><td>Hàn Quốc</td><td>Hương đào chín và hoa mẫu đơn.</td><td>26</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-012</strong></td><td><img class="product-table-image" src="../images/jean-paul-gaultier-so-scandal_2.jpg" alt="Ảnh FP-012" loading="lazy"></td><td>Nước hoa nam</td><td>Cuir Élégant</td><td>Bois &amp; Co.</td><td>3.450.000₫</td><td>75</td><td>Da thuộc, hoắc hương</td><td>Cổ điển, lịch lãm</td><td>Nam độ tuổi 30-55</td><td>Anh</td><td>Da thuộc mềm kết hợp hoắc hương.</td><td>4</td><td><span class="pill warn">Đã ẩn</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-013</strong></td><td><img class="product-table-image" src="../images/le-labo-another-13_2.jpg" alt="Ảnh FP-013" loading="lazy"></td><td>Nước hoa cao cấp</td><td>Nuit Étoilée</td><td>Étoile</td><td>5.600.000₫</td><td>100</td><td>Hoa diên vĩ, trầm</td><td>Sang trọng, nổi bật</td><td>Mọi đối tượng trên 30</td><td>Pháp</td><td>Tầng hương sâu dành cho dịp đặc biệt.</td><td>3</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-014</strong></td><td><img class="product-table-image" src="../images/marc-jacob-daisy_2.jpg" alt="Ảnh FP-014" loading="lazy"></td><td>Unisex</td><td>Musc de Peau</td><td>Lumière</td><td>2.250.000₫</td><td>30</td><td>Xạ hương, cotton</td><td>Gần gũi, nhẹ nhàng</td><td>Mọi đối tượng</td><td>Thụy Điển</td><td>Xạ hương sạch như hương thơm trên da.</td><td>15</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr>
-<tr><td><strong>FP-015</strong></td><td><img class="product-table-image" src="../images/versace-pour-homme_3.jpg" alt="Ảnh FP-015" loading="lazy"></td><td>Nước hoa nữ</td><td>Soleil d’Agrumes</td><td>Maison Flora</td><td>1.590.000₫</td><td>50</td><td>Cam bergamot, neroli</td><td>Rạng rỡ, tươi sáng</td><td>Nữ độ tuổi 20-40</td><td>Ý</td><td>Cam chanh rạng rỡ cho mùa hè.</td><td>22</td><td><span class="pill ok">Đang bán</span></td><td><div class="inline-actions"><button class="btn btn-outline small-btn" type="button" data-action="edit-product">Sửa</button><button class="btn btn-outline small-btn" type="button" data-action="delete-product">Xóa</button></div></td></tr></tbody></table></div>
-        </section>
-      </div>
-    </main>
-    
-<dialog class="admin-dialog edit-dialog" id="product-dialog">
 
-  <div class="dialog-head">
-    <h2 id="product-dialog-title">Sửa sản phẩm</h2>
-    <button class="icon-close" type="button" data-close aria-label="Đóng"></button>
-  </div>
-
-  <form id="product-edit-form" class="form-grid">
-    <div class="field">
-      <label>Phân loại</label>
-      <select name="category">
-        <option>Nước hoa nữ</option><option>Nước hoa nam</option>
-        <option>Unisex</option><option>Nước hoa cao cấp</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Tên sản phẩm</label>
-      <input name="name">
-    </div>
-    <div class="field">
-      <label>Thương hiệu</label>
-      <input name="brand">
-    </div>
-    <div class="field">
-      <label>Giá tiền</label>
-      <input name="price" type="number">
-    </div>
-    <div class="field">
-      <label>Dung tích (ml)</label>
-      <input name="volume" type="number">
-    </div>
-    <div class="field">
-      <label>Nhóm hương</label>
-      <input name="notes">
-    </div>
-    <div class="field">
-      <label>Phong cách</label>
-      <input name="style">
-    </div>
-    <div class="field">
-      <label>Đối tượng</label>
-      <input name="audience">
-    </div>
-    <div class="field">
-      <label>Xuất xứ</label>
-      <input name="origin">
-    </div>
-    <div class="field full">
-      <label>Mô tả</label>
-      <textarea name="description"></textarea>
-    </div>
-    <div class="field">
-      <label>Tồn kho</label>
-      <input name="stock" type="number">
-    </div>
-    <div class="field">
-      <label>Trạng thái</label>
-      <select name="status">
-        <option>Đang bán</option>
-        <option>Đã ẩn</option>
-        <option>Đã xóa</option>
-      </select>
-    </div>
-    <div class="field full upload-box">
-      <label>Hình ảnh cũ: Rosé Aurore</label>
-      <div class="product-image-stack">
-        <div class="preview-placeholder" id="product-image-placeholder">
-          <img id="product-image-old" src="../images/marc-jacob-daisy_2.jpg" alt="Ảnh cũ của Rosé Aurore">
+        <div class="table-wrap" tabindex="0" aria-label="Bảng sản phẩm, cuộn ngang và dọc">
+          <table class="admin-table product-table" id="product-list">
+            <thead>
+              <tr>
+                <th>Mã sản phẩm</th>
+                <th>Ảnh</th>
+                <th>Phân loại</th>
+                <th>Tên sản phẩm</th>
+                <th>Thương hiệu</th>
+                <th>Giá tiền</th>
+                <th>Dung tích (ml)</th>
+                <th>Nhóm hương</th>
+                <th>Phong cách</th>
+                <th>Đối tượng</th>
+                <th>Xuất xứ</th>
+                <th>Mô tả</th>
+                <th>Tồn kho</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>FP-001</strong></td>
+                <td><img class="product-table-image" src="../images/calvin-klein-ck-be_2-1.jpg" alt="Ảnh FP-001"
+                    loading="lazy"></td>
+                <td>Nước hoa nữ</td>
+                <td>Rosé Aurore</td>
+                <td>Maison Flora</td>
+                <td>1.890.000₫</td>
+                <td>30ml, 50ml, 100ml</td>
+                <td>Hoa cỏ, trái cây</td>
+                <td>Dịu dàng, tươi sáng, dùng ban ngày</td>
+                <td>Nữ độ tuổi 20-40</td>
+                <td>Pháp</td>
+                <td>Hương hoa hồng Damask và đào chín dịu dàng.</td>
+                <td>24</td>
+                <td><span class="pill warn">Đã ẩn</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-002</strong></td>
+                <td><img class="product-table-image" src="../images/calvin-klein-ck-one_2-1.jpg" alt="Ảnh FP-002"
+                    loading="lazy"></td>
+                <td>Nước hoa nam</td>
+                <td>Bois Ambré</td>
+                <td>Atelier Nord</td>
+                <td>2.350.000₫</td>
+                <td>50ml, 100ml</td>
+                <td>Gỗ, hổ phách</td>
+                <td>Ấm áp, lịch lãm</td>
+                <td>Nam độ tuổi 25-45</td>
+                <td>Pháp</td>
+                <td>Hương gỗ trầm ấm cho buổi tối.</td>
+                <td>12</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-003</strong></td>
+                <td><img class="product-table-image" src="../images/carolina-herrera-good-girl_2.jpg" alt="Ảnh FP-003"
+                    loading="lazy"></td>
+                <td>Unisex</td>
+                <td>Ciel Blanc</td>
+                <td>Maison Flora</td>
+                <td>1.650.000₫</td>
+                <td>10ml, 30ml, 50ml</td>
+                <td>Cam chanh, xạ hương</td>
+                <td>Thanh sạch, tối giản</td>
+                <td>Mọi đối tượng</td>
+                <td>Ý</td>
+                <td>Mùi hương nhẹ nhàng mỗi ngày.</td>
+                <td>8</td>
+                <td><span class="pill warn">Đã ẩn</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-004</strong></td>
+                <td><img class="product-table-image" src="../images/chanel-allure-homme-sport-edt_2.jpg"
+                    alt="Ảnh FP-004" loading="lazy"></td>
+                <td>Nước hoa cao cấp</td>
+                <td>Oud Impérial</td>
+                <td>Étoile</td>
+                <td>4.980.000₫</td>
+                <td>75ml</td>
+                <td>Trầm hương, gia vị</td>
+                <td>Sang trọng, bí ẩn</td>
+                <td>Mọi đối tượng trên 30</td>
+                <td>UAE</td>
+                <td>Trầm hương quý và gia vị phương Đông.</td>
+                <td>6</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-005</strong></td>
+                <td><img class="product-table-image" src="../images/chanel-bleu-de-chanel-edp_2.jpg" alt="Ảnh FP-005"
+                    loading="lazy"></td>
+                <td>Nước hoa nữ</td>
+                <td>Jardin de Lune</td>
+                <td>Maison Flora</td>
+                <td>2.100.000₫</td>
+                <td>20ml, 50ml, 100ml</td>
+                <td>Hoa nhài, lê</td>
+                <td>Lãng mạn, thanh lịch</td>
+                <td>Nữ độ tuổi 22-40</td>
+                <td>Pháp</td>
+                <td>Hoa trắng dịu ngọt trên nền gỗ.</td>
+                <td>31</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-006</strong></td>
+                <td><img class="product-table-image" src="../images/dior-miss-dior-edp-2021_2.jpg" alt="Ảnh FP-006"
+                    loading="lazy"></td>
+                <td>Nước hoa nam</td>
+                <td>Cèdre Noir</td>
+                <td>Bois &amp; Co.</td>
+                <td>2.750.000₫</td>
+                <td>50ml, 100ml</td>
+                <td>Gỗ tuyết tùng, tiêu</td>
+                <td>Mạnh mẽ, hiện đại</td>
+                <td>Nam độ tuổi 25-50</td>
+                <td>Thụy Sĩ</td>
+                <td>Hương gỗ khô với điểm nhấn tiêu đen.</td>
+                <td>17</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-007</strong></td>
+                <td><img class="product-table-image" src="../images/dior-sauvage-edp_2.jpg" alt="Ảnh FP-007"
+                    loading="lazy"></td>
+                <td>Unisex</td>
+                <td>Thé Vert Matin</td>
+                <td>Maison Flora</td>
+                <td>1.490.000₫</td>
+                <td>10ml, 30ml</td>
+                <td>Trà xanh, cam bergamot</td>
+                <td>Tươi mát, thư thái</td>
+                <td>Mọi đối tượng</td>
+                <td>Nhật Bản</td>
+                <td>Trà xanh thanh mát cho ngày mới.</td>
+                <td>42</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-008</strong></td>
+                <td><img class="product-table-image" src="../images/diptyque-fleur-de-peau-edp_2.jpg" alt="Ảnh FP-008"
+                    loading="lazy"></td>
+                <td>Nước hoa nữ</td>
+                <td>Velours Rose</td>
+                <td>Lumière</td>
+                <td>3.200.000₫</td>
+                <td>75ml</td>
+                <td>Hoa hồng, vanilla</td>
+                <td>Quyến rũ, ngọt ngào</td>
+                <td>Nữ độ tuổi 25-45</td>
+                <td>Pháp</td>
+                <td>Hoa hồng nồng nàn trên nền vanilla.</td>
+                <td>0</td>
+                <td><span class="pill danger">Đã xóa</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-009</strong></td>
+                <td><img class="product-table-image"
+                    src="../images/dolce-gabbana-light-blue-eau-intense-for-women_2.jpg" alt="Ảnh FP-009"
+                    loading="lazy"></td>
+                <td>Nước hoa nam</td>
+                <td>Marin Profond</td>
+                <td>Atelier Nord</td>
+                <td>1.980.000₫</td>
+                <td>30ml, 50ml, 100ml</td>
+                <td>Muối biển, xô thơm</td>
+                <td>Năng động, phóng khoáng</td>
+                <td>Nam độ tuổi 20-40</td>
+                <td>Tây Ban Nha</td>
+                <td>Làn gió biển mặn mà và sảng khoái.</td>
+                <td>19</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-010</strong></td>
+                <td><img class="product-table-image" src="../images/giorgio-armani-acqua-di-gio-edp_2.jpg"
+                    alt="Ảnh FP-010" loading="lazy"></td>
+                <td>Unisex</td>
+                <td>Ambre Doux</td>
+                <td>Étoile</td>
+                <td>2.890.000₫</td>
+                <td>20ml, 50ml</td>
+                <td>Hổ phách, vani</td>
+                <td>Ấm áp, tinh tế</td>
+                <td>Mọi đối tượng trên 25</td>
+                <td>Pháp</td>
+                <td>Hổ phách mềm mại dùng cả ngày lẫn tối.</td>
+                <td>7</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-011</strong></td>
+                <td><img class="product-table-image" src="../images/gucci-bloom-edp_2.jpg" alt="Ảnh FP-011"
+                    loading="lazy"></td>
+                <td>Nước hoa nữ</td>
+                <td>Fleur de Pêche</td>
+                <td>Maison Flora</td>
+                <td>1.750.000₫</td>
+                <td>10ml, 30ml, 50ml</td>
+                <td>Đào, hoa mẫu đơn</td>
+                <td>Trẻ trung, vui tươi</td>
+                <td>Nữ độ tuổi 18-35</td>
+                <td>Hàn Quốc</td>
+                <td>Hương đào chín và hoa mẫu đơn.</td>
+                <td>26</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-012</strong></td>
+                <td><img class="product-table-image" src="../images/jean-paul-gaultier-so-scandal_2.jpg"
+                    alt="Ảnh FP-012" loading="lazy"></td>
+                <td>Nước hoa nam</td>
+                <td>Cuir Élégant</td>
+                <td>Bois &amp; Co.</td>
+                <td>3.450.000₫</td>
+                <td>75ml</td>
+                <td>Da thuộc, hoắc hương</td>
+                <td>Cổ điển, lịch lãm</td>
+                <td>Nam độ tuổi 30-55</td>
+                <td>Anh</td>
+                <td>Da thuộc mềm kết hợp hoắc hương.</td>
+                <td>4</td>
+                <td><span class="pill warn">Đã ẩn</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-013</strong></td>
+                <td><img class="product-table-image" src="../images/le-labo-another-13_2.jpg" alt="Ảnh FP-013"
+                    loading="lazy"></td>
+                <td>Nước hoa cao cấp</td>
+                <td>Nuit Étoilée</td>
+                <td>Étoile</td>
+                <td>5.600.000₫</td>
+                <td>50ml, 100ml</td>
+                <td>Hoa diên vĩ, trầm</td>
+                <td>Sang trọng, nổi bật</td>
+                <td>Mọi đối tượng trên 30</td>
+                <td>Pháp</td>
+                <td>Tầng hương sâu dành cho dịp đặc biệt.</td>
+                <td>3</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-014</strong></td>
+                <td><img class="product-table-image" src="../images/marc-jacob-daisy_2.jpg" alt="Ảnh FP-014"
+                    loading="lazy"></td>
+                <td>Unisex</td>
+                <td>Musc de Peau</td>
+                <td>Lumière</td>
+                <td>2.250.000₫</td>
+                <td>10ml, 20ml, 30ml</td>
+                <td>Xạ hương, cotton</td>
+                <td>Gần gũi, nhẹ nhàng</td>
+                <td>Mọi đối tượng</td>
+                <td>Thụy Điển</td>
+                <td>Xạ hương sạch như hương thơm trên da.</td>
+                <td>15</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>FP-015</strong></td>
+                <td><img class="product-table-image" src="../images/versace-pour-homme_3.jpg" alt="Ảnh FP-015"
+                    loading="lazy"></td>
+                <td>Nước hoa nữ</td>
+                <td>Soleil d’Agrumes</td>
+                <td>Maison Flora</td>
+                <td>1.590.000₫</td>
+                <td>50ml</td>
+                <td>Cam bergamot, neroli</td>
+                <td>Rạng rỡ, tươi sáng</td>
+                <td>Nữ độ tuổi 20-40</td>
+                <td>Ý</td>
+                <td>Cam chanh rạng rỡ cho mùa hè.</td>
+                <td>22</td>
+                <td><span class="pill ok">Đang bán</span></td>
+                <td>
+                  <div class="inline-actions"><a class="btn btn-outline small-btn" href="#modal-edit-product">Sửa</a><a
+                      class="btn btn-outline small-btn" href="#toast-deleted">Xóa</a></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <img id="product-image-preview" class="product-edit-preview" alt="Ảnh sản phẩm mới xem trước" hidden>
+
+        <nav class="pagination" aria-label="Phân trang danh sách sản phẩm">
+          <span class="is-disabled" aria-disabled="true">‹</span>
+          <a href="products.html?trang=1" aria-current="page">1</a>
+          <a href="products.html?trang=2">2</a>
+          <a href="products.html?trang=3">3</a>
+          <a href="products.html?trang=2" aria-label="Trang sau">›</a>
+        </nav>
+      </section>
+    </div>
+
+    <!-- ================= 1. MODAL SỬA SẢN PHẨM (Sẵn 3 ô dung tích, 1 hình chủ đạo, 2 hình phụ) ================= -->
+    <div class="css-modal" id="modal-edit-product" role="dialog" aria-labelledby="edit-dialog-title">
+      <div class="css-modal-box">
+        <div class="dialog-head">
+          <h2 id="edit-dialog-title">Sửa sản phẩm</h2>
+          <a class="icon-close" href="#" aria-label="Đóng" style="text-decoration:none">×</a>
+        </div>
+
+        <form action="#toast-saved" method="get" class="form-grid">
+          <div class="field">
+            <label>Phân loại</label>
+            <select name="category">
+              <option selected>Nước hoa nữ</option>
+              <option>Nước hoa nam</option>
+              <option>Unisex</option>
+              <option>Nước hoa cao cấp</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Tên sản phẩm</label>
+            <input name="name" value="Rosé Aurore">
+          </div>
+          <div class="field">
+            <label>Thương hiệu</label>
+            <input name="brand" value="Maison Flora">
+          </div>
+          <div class="field">
+            <label>Giá tiền (VNĐ)</label>
+            <input name="price" type="number" value="1890000">
+          </div>
+
+          <!-- 3 ô dung tích nhỏ gọn nằm trên cùng 1 dòng + nút bấm vẫn nhấn được nhưng không chạy chức năng -->
+          <div class="field full">
+            <label>Dung tích (ml)</label>
+            <div class="volume-inline-row">
+              <input class="volume-input-sm" name="volume_1" type="number" value="30" aria-label="Dung tích 1">
+              <input class="volume-input-sm" name="volume_2" type="number" value="50" aria-label="Dung tích 2">
+              <input class="volume-input-sm" name="volume_3" type="number" value="100" aria-label="Dung tích 3">
+              <a class="btn btn-outline volume-add-btn" href="#modal-edit-product">＋ Thêm dung tích khác</a>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Nhóm hương</label>
+            <input name="notes" value="Hoa cỏ, trái cây">
+          </div>
+          <div class="field">
+            <label>Phong cách</label>
+            <input name="style" value="Dịu dàng, tươi sáng, dùng ban ngày">
+          </div>
+          <div class="field">
+            <label>Đối tượng</label>
+            <input name="audience" value="Nữ độ tuổi 20-40">
+          </div>
+          <div class="field">
+            <label>Xuất xứ</label>
+            <input name="origin" value="Pháp">
+          </div>
+          <div class="field full">
+            <label>Mô tả</label>
+            <textarea name="description">Hương hoa hồng Damask và đào chín dịu dàng.</textarea>
+          </div>
+          <div class="field">
+            <label>Tồn kho</label>
+            <input name="stock" type="number" value="24">
+          </div>
+          <div class="field">
+            <label>Trạng thái</label>
+            <select name="status">
+              <option>Đang bán</option>
+              <option selected>Đã ẩn</option>
+              <option>Đã xóa</option>
+            </select>
+          </div>
+
+          <!-- 1 Hình ảnh chủ đạo (Ảnh đại diện) -->
+          <div class="field full upload-box">
+            <label><strong>1. Hình ảnh chủ đạo (Ảnh đại diện)</strong></label>
+            <div class="product-image-stack">
+              <div class="preview-placeholder">
+                <img id="product-image-old" src="../images/dior-miss-dior-edp-2021_2.jpg" alt="Ảnh chủ đạo">
+              </div>
+            </div>
+            <label>Thay đổi hình ảnh chủ đạo</label>
+            <input type="file" accept="image/*">
+          </div>
+
+          <!-- 2 Hình ảnh phụ -->
+          <div class="field full upload-box">
+            <label><strong>2. Hình ảnh phụ (2 hình ảnh chi tiết)</strong></label>
+            <div class="sub-images-grid">
+              <div class="sub-image-item">
+                <img class="preview-img" src="../images/gucci-bloom-edp_2.jpg" alt="Hình ảnh phụ 1">
+                <label style="font-size:.82rem">Hình ảnh phụ 1</label>
+                <input type="file" accept="image/*">
+              </div>
+              <div class="sub-image-item">
+                <img class="preview-img" src="../images/marc-jacob-daisy_2.jpg" alt="Hình ảnh phụ 2">
+                <label style="font-size:.82rem">Hình ảnh phụ 2</label>
+                <input type="file" accept="image/*">
+              </div>
+            </div>
+            <label class="btn btn-outline small-btn" style="cursor:pointer;margin:0">
+              ＋ Tiếp tục thêm hình ảnh phụ
+              <input type="file" accept="image/*" multiple hidden>
+            </label>
+          </div>
+
+          <div class="field full dialog-actions">
+            <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+            <a class="btn btn-outline" href="#">Hủy</a>
+          </div>
+        </form>
       </div>
-      <label>Chọn ảnh mới</label>
-      <input id="product-image-input" type="file" accept="image/*">
     </div>
-    <div class="field full dialog-actions">
-      <button class="btn btn-primary" type="submit">Lưu</button>
-      <button class="btn btn-outline" type="button" data-close>Hủy</button>
+
+    <!-- ================= 2. MODAL THÊM SẢN PHẨM MỚI (Điền sẵn thông tin cần thiết) ================= -->
+    <div class="css-modal" id="modal-add-product" role="dialog" aria-labelledby="add-dialog-title">
+      <div class="css-modal-box">
+        <div class="dialog-head">
+          <h2 id="add-dialog-title">Thêm sản phẩm mới</h2>
+          <a class="icon-close" href="#" aria-label="Đóng" style="text-decoration:none">×</a>
+        </div>
+
+        <form action="#toast-added" method="get" class="form-grid">
+          <div class="field">
+            <label>Phân loại</label>
+            <select name="category">
+              <option selected>Nước hoa nữ</option>
+              <option>Nước hoa nam</option>
+              <option>Unisex</option>
+              <option>Nước hoa cao cấp</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Tên sản phẩm</label>
+            <input name="name">
+          </div>
+          <div class="field">
+            <label>Thương hiệu</label>
+            <input name="brand">
+          </div>
+          <div class="field">
+            <label>Giá tiền (VNĐ)</label>
+            <input name="price" type="number">
+          </div>
+
+          <!-- Ô dung tích nhỏ gọn + nút bấm vẫn nhấn được nhưng không chạy chức năng -->
+          <div class="field full">
+            <label>Dung tích (ml)</label>
+            <div class="volume-inline-row">
+              <input class="volume-input-sm" name="volume_1" type="number" placeholder="50" aria-label="Dung tích 1">
+              <a class="btn btn-outline volume-add-btn" href="#modal-add">＋ Thêm dung tích khác</a>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Nhóm hương</label>
+            <input name="notes">
+          </div>
+          <div class="field">
+            <label>Phong cách</label>
+            <input name="style">
+          </div>
+          <div class="field">
+            <label>Đối tượng</label>
+            <input name="audience">
+          </div>
+          <div class="field">
+            <label>Xuất xứ</label>
+            <input name="origin" placeholder="Ví dụ: Pháp">
+          </div>
+          <div class="field full">
+            <label>Mô tả</label>
+            <textarea name="description" placeholder="Nhập mô tả chi tiết sản phẩm"></textarea>
+          </div>
+          <div class="field">
+            <label>Tồn kho</label>
+            <input name="stock" type="number" placeholder="0">
+          </div>
+          <div class="field">
+            <label>Trạng thái</label>
+            <select name="status">
+              <option selected>Đang bán</option>
+              <option>Đã ẩn</option>
+            </select>
+          </div>
+
+          <div class="field full upload-box">
+            <label><strong>1. Chọn hình ảnh chủ đạo (Ảnh đại diện)</strong></label>
+            <input type="file" accept="image/*">
+          </div>
+
+          <div class="field full upload-box">
+            <label><strong>2. Hình ảnh phụ</strong></label>
+            <input type="file" accept="image/*">
+            <label class="btn btn-outline small-btn" style="cursor:pointer;margin:0">
+              ＋ Tiếp tục thêm hình ảnh phụ
+              <input type="file" accept="image/*" multiple hidden>
+            </label>
+          </div>
+
+          <div class="field full dialog-actions">
+            <button class="btn btn-primary" type="submit">Thêm sản phẩm</button>
+            <a class="btn btn-outline" href="#">Hủy</a>
+          </div>
+        </form>
+      </div>
     </div>
-  </form>
 
-</dialog>
-<div class="admin-toast" role="status" aria-live="polite" hidden></div>
+    <!-- ================= 3. MODAL THÊM SẢN PHẨM MỚI +dung tích (Điền sẵn thông tin cần thiết) ================= -->
+    <div class="css-modal" id="modal-add" role="dialog" aria-labelledby="add-dialog-title">
+      <div class="css-modal-box">
+        <div class="dialog-head">
+          <h2 id="add-dialog-title">Thêm sản phẩm mới</h2>
+          <a class="icon-close" href="#" aria-label="Đóng" style="text-decoration:none">×</a>
+        </div>
 
-<script>
+        <form action="#toast-added" method="get" class="form-grid">
+          <div class="field">
+            <label>Phân loại</label>
+            <select name="category">
+              <option selected>Nước hoa nữ</option>
+              <option>Nước hoa nam</option>
+              <option>Unisex</option>
+              <option>Nước hoa cao cấp</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Tên sản phẩm</label>
+            <input name="name" value="Nước hoa mẫu mới">
+          </div>
+          <div class="field">
+            <label>Thương hiệu</label>
+            <input name="brand" value="Maison Flora">
+          </div>
+          <div class="field">
+            <label>Giá tiền (VNĐ)</label>
+            <input name="price" type="number" value="1500000">
+          </div>
 
-function showToast(message,type='success') {
-  const t=document.querySelector('.admin-toast');
-  t.textContent=message;t.className='admin-toast is-'+type;t.hidden=false;
-  clearTimeout(window.toastTimer);
-  window.toastTimer=setTimeout(()=>t.hidden=true,3000)
-}
-let productDialogMode='edit',currentProductRow;
-document.addEventListener('click', (event) => {
-  const closeButton = event.target.closest('[data-close]');
-  if (closeButton) {
-    closeButton.closest('dialog').close();
-    return;
-  }
+          <!-- Ô dung tích nhỏ gọn + nút bấm vẫn nhấn được nhưng không chạy chức năng -->
+          <div class="field full">
+            <label>Dung tích (ml)</label>
+            <div class="volume-inline-row">
+              <input class="volume-input-sm" name="volume_1" type="number" value="50" aria-label="Dung tích 1">
+              <input class="volume-input-sm" name="volume_2" type="number" placeholder="100" aria-label="Dung tích 2">
+              <span class="btn btn-outline volume-add-btn">＋ Thêm dung tích khác</span>
+            </div>
+          </div>
 
-  if (event.target.matches('dialog')) {
-    event.target.close();
-    return;
-  }
+          <div class="field">
+            <label>Nhóm hương</label>
+            <input name="notes" value="Hoa cỏ, tươi mát">
+          </div>
+          <div class="field">
+            <label>Phong cách</label>
+            <input name="style" value="Thanh lịch, nhẹ nhàng">
+          </div>
+          <div class="field">
+            <label>Đối tượng</label>
+            <input name="audience" value="Nữ độ tuổi 20-35">
+          </div>
+          <div class="field">
+            <label>Xuất xứ</label>
+            <input name="origin" value="Pháp">
+          </div>
+          <div class="field full">
+            <label>Mô tả</label>
+            <textarea name="description">Mùi hương tinh tế cho phái đẹp.</textarea>
+          </div>
+          <div class="field">
+            <label>Tồn kho</label>
+            <input name="stock" type="number" value="20">
+          </div>
+          <div class="field">
+            <label>Trạng thái</label>
+            <select name="status">
+              <option selected>Đang bán</option>
+              <option>Đã ẩn</option>
+            </select>
+          </div>
 
-  if (event.target.closest('[data-action="add-product"]')) {
-    productDialogMode = 'add';
-    currentProductRow = null;
-    const form = document.querySelector('#product-edit-form');
-    form.reset();
-    document.querySelector('#product-dialog-title').textContent = 'Thêm sản phẩm';
-    form.querySelector('button[type="submit"]').textContent = 'Thêm sản phẩm';
-    document.querySelector('.upload-box > label:first-child').textContent = 'Chọn hình ảnh sản phẩm';
-    document.querySelector('#product-image-old').hidden = true;
-    document.querySelector('#product-dialog').showModal();
-    return;
-  }
+          <div class="field full upload-box">
+            <label><strong>1. Hình ảnh chủ đạo (Ảnh đại diện)</strong></label>
+            <div class="sub-images-grid">
+              <div class="sub-image-item">
+                <img class="preview-img" src="../images/dior-sauvage-edp_2.jpg" alt="Hình ảnh phụ mẫu">
+                <input type="file" accept="image/*">
+              </div>
+            </div>
+          </div>
 
-  const editButton = event.target.closest('[data-action="edit-product"]');
-  if (editButton) {
-    productDialogMode = 'edit';
-    currentProductRow = editButton.closest('tr');
-    const form = document.querySelector('#product-edit-form');
-    const sample = {
-      category: 'Nước hoa nữ', name: 'Rosé Aurore', brand: 'Maison Flora',
-      price: '1890000', volume: '50', notes: 'Hoa cỏ, trái cây',
-      style: 'Dịu dàng, tươi sáng, dùng ban ngày', audience: 'Nữ độ tuổi 20-40',
-      origin: 'Pháp', description: 'null', stock: '24', status: 'Đã ẩn'
-    };
-    Object.entries(sample).forEach(([name, value]) => {
-      form.elements.namedItem(name).value = value;
-    });
-    document.querySelector('#product-dialog-title').textContent = 'Sửa sản phẩm';
-    form.querySelector('button[type="submit"]').textContent = 'Lưu';
-    document.querySelector('.upload-box > label:first-child').textContent = 'Hình ảnh cũ: Rosé Aurore';
-    document.querySelector('#product-image-old').hidden = false;
-    document.querySelector('#product-dialog').showModal();
-    return;
-  }
+          <div class="field full upload-box">
+            <label><strong>2. Hình ảnh phụ</strong></label>
+            <div class="sub-images-grid">
+              <div class="sub-image-item">
+                <img class="preview-img" src="../images/gucci-bloom-edp_2.jpg" alt="Hình ảnh phụ mẫu">
+                <label style="font-size:.82rem">Hình ảnh phụ 1</label>
+                <input type="file" accept="image/*">
+              </div>
+            </div>
+            <label class="btn btn-outline small-btn" style="cursor:pointer;margin:0">
+              ＋ Tiếp tục thêm hình ảnh phụ
+              <input type="file" accept="image/*" multiple hidden>
+            </label>
+          </div>
 
-  if (event.target.closest('[data-action="delete-product"]')) {
-    showToast('Đã xóa sản phẩm thành công!');
-  }
-});
+          <div class="field full dialog-actions">
+            <button class="btn btn-primary" type="submit">Thêm sản phẩm</button>
+            <a class="btn btn-outline" href="#">Hủy</a>
+          </div>
+        </form>
+      </div>
+    </div>
 
-    document.querySelector('#product-edit-form').addEventListener('submit',e=>{e.preventDefault();document.querySelector('#product-dialog').close();
-    showToast(productDialogMode==='add'?'Thêm sản phẩm thành công!':'Đã sửa thành công!')});
-    const imageInput=document.querySelector('#product-image-input'),imagePreview=document.querySelector('#product-image-preview'),imagePlaceholder=document.querySelector('#product-image-placeholder');
-    imageInput.addEventListener('change',()=>{const file=imageInput.files&&imageInput.files[0];if(!file)return;
-    if(imagePreview.dataset.objectUrl)URL.revokeObjectURL(imagePreview.dataset.objectUrl);
-    const url=URL.createObjectURL(file);
-    imagePreview.dataset.objectUrl=url;
-    imagePreview.src=url;imagePreview.hidden=false;
-    imagePlaceholder.hidden=true});
-    document.querySelector('#product-dialog').addEventListener('close',()=>{imageInput.value='';imagePreview.removeAttribute('src');
-    imagePreview.hidden=true;imagePlaceholder.hidden=false;
-    document.querySelector('#product-image-old').hidden=productDialogMode==='add';
-    if(imagePreview.dataset.objectUrl){URL.revokeObjectURL(imagePreview.dataset.objectUrl);
-    delete imagePreview.dataset.objectUrl}});
-    document.querySelectorAll('.filter-row button').forEach(x=>x.addEventListener('click',()=>showToast('Lọc danh sách sản phẩm thành công!')));
-    
-</script>
-
+    <!-- Thông báo Toast bằng CSS :target -->
+    <div id="toast-saved" class="css-toast" role="status">
+      <span>Đã sửa thông tin sản phẩm thành công!</span>
+      <a href="#" class="css-toast-close">Đóng</a>
+    </div>
+    <div id="toast-added" class="css-toast" role="status">
+      <span>Thêm sản phẩm mới thành công!</span>
+      <a href="#" class="css-toast-close">Đóng</a>
+    </div>
+    <div id="toast-deleted" class="css-toast" role="status">
+      <span>Đã xóa sản phẩm thành công!</span>
+      <a href="#" class="css-toast-close">Đóng</a>
+    </div>
+  </main>
 </body>
+
 </html>
-
-
-
-

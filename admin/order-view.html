@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Chi tiết đơn hàng | FLORA PERFUME</title>
+    <title>Chi tiết đơn hàng FL-2026-0042 | FLORA PERFUME</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/customer.css">
+    <link rel="stylesheet" href="../css/admin.css">
   </head>
   <body>
     <aside class="sidebar">
@@ -28,60 +28,120 @@
         <div class="page-title">
           <div>
             <p class="eyebrow">THÔNG TIN ĐƠN HÀNG</p>
-            <h1 id="order-title">Chi tiết đơn hàng</h1>
-            <p id="order-date-status"></p>
+            <h1>Đơn hàng FL-2026-0042</h1>
+            <p>Đặt lúc 23/10/2026, 14:35 · <span class="pill warn">Chưa xác nhận</span></p>
           </div>
           <a class="btn btn-outline" href="orders.html">Quay lại danh sách đơn hàng</a>
         </div>
+
         <section class="panel" aria-labelledby="progress-heading">
           <h2 id="progress-heading">Tiến trình đơn hàng</h2>
-          <ol class="steps" id="order-steps"><li>Chưa xác nhận</li><li>Đã xác nhận</li><li>Đã giao thành công</li></ol>
-          <p class="hint" id="progress-note" style="margin:var(--s3) 0 0"></p>
+          <ol class="steps">
+            <li class="is-current">Chưa xác nhận</li>
+            <li>Đã xác nhận</li>
+            <li>Đã giao thành công</li>
+          </ol>
+          <p class="hint" style="margin:var(--s3) 0 0">Trạng thái đơn hàng được quản trị viên cập nhật.</p>
         </section>
+
         <div class="info-grid">
-          <section class="panel"><h2>Người mua</h2><p id="buyer-info"></p></section>
-          <section class="panel"><h2>Địa chỉ giao hàng</h2><p id="shipping-info"></p></section>
-          <section class="panel"><h2>Thanh toán</h2><p id="payment-info"></p></section>
+          <section class="panel">
+            <h2>Người mua</h2>
+            <p>Nguyễn Minh Anh<br>minhanh@example.com<br>0901 234 567</p>
+          </section>
+          <section class="panel">
+            <h2>Địa chỉ giao hàng</h2>
+            <p>12 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</p>
+          </section>
+          <section class="panel">
+            <h2>Thanh toán</h2>
+            <p>Tiền mặt khi nhận hàng</p>
+          </section>
         </div>
+
         <section class="panel">
           <h2>Sản phẩm</h2>
-          <div class="table-scroll"><table class="data-table">
-            <thead><tr><th>Sản phẩm</th><th>Dung tích</th><th class="num">Đơn giá</th><th class="num">Số lượng</th><th class="num">Thành tiền</th></tr></thead>
-            <tbody id="order-items"></tbody>
-            <tfoot><tr><td colspan="4" class="num">Tạm tính</td><td class="num" id="subtotal"></td></tr><tr><td colspan="4" class="num">Phí vận chuyển</td><td class="num" id="shipping-fee"></td></tr><tr class="grand"><td colspan="4" class="num">Tổng tiền</td><td class="num" id="order-total"></td></tr></tfoot>
-          </table></div>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Dung tích</th>
+                  <th class="num">Đơn giá</th>
+                  <th class="num">Số lượng</th>
+                  <th class="num">Thành tiền</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="table-product">
+                      <div class="thumb">
+                        <img src="../images/dior-miss-dior-edp-2021_2.jpg" alt="Dior Miss Dior EDP">
+                      </div>
+                      <div>
+                        <strong>Dior Miss Dior EDP</strong><br>
+                        <span class="hint">FP-001</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>50ml</td>
+                  <td class="num">1.890.000₫</td>
+                  <td class="num">1</td>
+                  <td class="num">1.890.000₫</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-product">
+                      <div class="thumb">
+                        <img src="../images/chanel-bleu-de-chanel-edp_2.jpg" alt="Chanel Bleu De Chanel EDP">
+                      </div>
+                      <div>
+                        <strong>Chanel Bleu De Chanel EDP</strong><br>
+                        <span class="hint">FP-002</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>100ml</td>
+                  <td class="num">2.350.000₫</td>
+                  <td class="num">2</td>
+                  <td class="num">4.700.000₫</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="4" class="num">Tạm tính</td><td class="num">6.590.000₫</td></tr>
+                <tr><td colspan="4" class="num">Phí vận chuyển</td><td class="num">30.000₫</td></tr>
+                <tr class="grand"><td colspan="4" class="num">Tổng tiền</td><td class="num">6.620.000₫</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+        <!-- Mục thay đổi trạng thái đơn hàng ở phía dưới -->
+        <section class="panel" aria-labelledby="update-status-heading">
+          <form class="order-status-bar" action="#da-cap-nhat" method="get">
+            <div>
+              <h2 id="update-status-heading" style="margin-bottom:4px">Cập nhật trạng thái đơn hàng</h2>
+              <p class="hint" style="margin:0">Đơn đang ở trạng thái "Chưa xác nhận", chỉ có thể chuyển sang các trạng thái tiếp theo hợp lệ.</p>
+            </div>
+            <div class="order-status-controls">
+              <label for="status-select" class="visually-hidden">Trạng thái mới</label>
+              <select id="status-select" name="trang-thai" aria-label="Chọn trạng thái mới">
+                <option value="chua-xac-nhan" selected disabled>Chưa xác nhận (Hiện tại)</option>
+                <option value="da-xac-nhan">Đã xác nhận</option>
+                <option value="da-huy">Đã hủy</option>
+              </select>
+              <button class="btn btn-primary" type="submit">Cập nhật trạng thái</button>
+            </div>
+          </form>
         </section>
       </div>
+
+      <!-- Thông báo tĩnh bằng CSS :target -->
+      <div id="da-cap-nhat" class="css-toast" role="status">
+        <span>Đã cập nhật trạng thái đơn hàng thành công!</span>
+        <a href="#" class="css-toast-close">Đóng</a>
+      </div>
     </main>
-    <script>
-      const orderDetails = {
-        'FL-2026-0042': {customer:'Nguyễn Minh Anh',email:'minhanh@example.com',phone:'0901 234 567',address:'12 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh',payment:'Tiền mặt khi nhận hàng',date:'23/10/2026, 14:35',status:'Chưa xác nhận',subtotal:'6.590.000₫',shipping:'30.000₫',total:'6.620.000₫',items:[['Rosé Aurore','50ml','1.890.000₫','1','1.890.000₫'],['Bois Ambré','100ml','2.350.000₫','2','4.700.000₫']]},
-        'FL-2026-0043': {customer:'Trần Hoàng Nam',email:'nam.tran@email.vn',phone:'0912 345 678',address:'Quận Hải Châu, Đà Nẵng',payment:'Tiền mặt khi nhận hàng',date:'23/10/2026, 13:20',status:'Chờ xác nhận',total:'2.350.000₫',items:[['Bois Ambré','100ml','2.350.000₫','1','2.350.000₫']]},
-        'FL-2026-0044': {customer:'Lê Thu Hà',email:'thuha@email.vn',phone:'0934 567 890',address:'Quận Ba Đình, Hà Nội',payment:'Thanh toán trực tuyến',date:'22/10/2026, 10:10',status:'Đã giao thành công',total:'4.980.000₫',items:[['Rosé Aurore','50ml','1.890.000₫','1','1.890.000₫'],['Bois Ambré','100ml','2.350.000₫','1','2.350.000₫'],['Ciel Blanc','50ml','740.000₫','1','740.000₫']]},
-        'FL-2026-0045': {customer:'Phạm Gia Bảo',email:'giabao@email.vn',phone:'0908 123 456',address:'TP. Thủ Đức, TP. Hồ Chí Minh',payment:'Tiền mặt khi nhận hàng',date:'21/10/2026, 16:05',status:'Đã hủy',total:'1.650.000₫',items:[['Ciel Blanc','50ml','1.650.000₫','1','1.650.000₫']]},
-        'FL-2026-0046': {customer:'Võ Ngọc Linh',email:'ngoclinh@example.com',phone:'0903 111 222',address:'Hải Châu, Đà Nẵng',payment:'Thanh toán trực tuyến',date:'20/10/2026, 11:40',status:'Đã xác nhận',total:'2.100.000₫',items:[['Rosé Aurore','50ml','2.100.000₫','1','2.100.000₫']]},
-        'FL-2026-0047': {customer:'Đặng Quốc Huy',email:'quochuy@example.com',phone:'0905 333 444',address:'Ba Đình, Hà Nội',payment:'Tiền mặt khi nhận hàng',date:'19/10/2026, 09:15',status:'Đang giao',total:'2.750.000₫',items:[['Bois Ambré','100ml','2.750.000₫','1','2.750.000₫']]},
-        'FL-2026-0048': {customer:'Bùi Khánh Vy',email:'khanhvy@example.com',phone:'0911 222 333',address:'Ninh Kiều, Cần Thơ',payment:'Tiền mặt khi nhận hàng',date:'18/10/2026, 15:30',status:'Chưa xác nhận',total:'2.980.000₫',items:[['Rosé Aurore','50ml','1.490.000₫','2','2.980.000₫']]},
-        'FL-2026-0049': {customer:'Hoàng Đức Anh',email:'ducanh@example.com',phone:'0918 555 666',address:'Bình Thạnh, TP. Hồ Chí Minh',payment:'Thanh toán trực tuyến',date:'17/10/2026, 12:00',status:'Đã giao thành công',total:'3.200.000₫',items:[['Bois Ambré','100ml','3.200.000₫','1','3.200.000₫']]},
-        'FL-2026-0050': {customer:'Đỗ Mai Phương',email:'maiphuong@email.vn',phone:'0917 777 888',address:'Hoàn Kiếm, Hà Nội',payment:'Tiền mặt khi nhận hàng',date:'16/10/2026, 14:45',status:'Đã xác nhận',total:'1.980.000₫',items:[['Rosé Aurore','50ml','1.980.000₫','1','1.980.000₫']]},
-        'FL-2026-0051': {customer:'Ngô Tuấn Kiệt',email:'tuankiet@email.vn',phone:'0906 999 000',address:'Hội An, Quảng Nam',payment:'Thanh toán trực tuyến',date:'15/10/2026, 08:50',status:'Đang giao',total:'4.140.000₫',items:[['Bois Ambré','100ml','2.070.000₫','2','4.140.000₫']]}
-      };
-      const orderNumber = 'FL-2026-0042';
-      const order = orderDetails[orderNumber];
-      document.title = `Chi tiết đơn hàng ${orderNumber} | FLORA PERFUME`;
-      document.querySelector('#order-title').textContent = `Đơn hàng ${orderNumber}`;
-      document.querySelector('#order-date-status').innerHTML = `Đặt lúc ${order.date} · <span class="pill warn">${order.status}</span>`;
-      document.querySelector('#buyer-info').innerHTML = `${order.customer}<br>${order.email}<br>${order.phone}`;
-      document.querySelector('#shipping-info').textContent = order.address;
-      document.querySelector('#payment-info').textContent = order.payment;
-      document.querySelector('#order-items').innerHTML = order.items.map(item => `<tr><td>${item[0]}<br><span class="hint">${item[0] === 'Rosé Aurore' ? 'FP-001' : item[0] === 'Bois Ambré' ? 'FP-002' : 'FP-003'}</span></td><td>${item[1]}</td><td class="num">${item[2]}</td><td class="num">${item[3]}</td><td class="num">${item[4]}</td></tr>`).join('');
-      document.querySelector('#subtotal').textContent = order.subtotal;
-      document.querySelector('#shipping-fee').textContent = order.shipping;
-      document.querySelector('#order-total').textContent = order.total;
-      const stepItems = [...document.querySelectorAll('#order-steps li')];
-      const statusStep = order.status === 'Đã giao thành công' ? 2 : ['Đã xác nhận','Đang giao'].includes(order.status) ? 1 : 0;
-      stepItems.forEach((step, index) => step.classList.toggle(index === statusStep ? 'is-current' : 'is-done', index <= statusStep));
-      document.querySelector('#progress-note').textContent = order.status === 'Đã hủy' ? 'Đơn hàng đã bị hủy.' : 'Trạng thái đơn hàng được quản trị viên cập nhật.';
-    </script>
   </body>
 </html>
