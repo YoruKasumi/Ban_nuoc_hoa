@@ -39,7 +39,7 @@
               <span>SĐT: 0901 234 567</span>
             </div>
             <nav class="user-box-links" aria-label="Menu tài khoản">
-              <a href="#thong-tin-ca-nhan">Thông tin cá nhân</a>
+              <a href="profile.html">Thông tin cá nhân</a>
               <a href="order-history.html">Lịch sử đơn hàng</a>
               <a class="logout-link" href="index.html">Đăng xuất</a>
             </nav>
@@ -51,7 +51,7 @@
     </div>
     <div class="header-search">
       <div class="wrap">
-        <form class="adv-bar" action="advanced-search.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
+        <form class="adv-bar" action="advanced-search_log.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
           <div class="field">
             <label for="hs-ten">Tên sản phẩm</label>
             <input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
@@ -85,12 +85,12 @@
           </div>
           <div class="adv-actions">
             <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-            <a class="btn btn-outline" href="advanced-search.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
+            <a class="btn btn-outline" href="advanced-search_log.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
           </div>
         </form>
       </div>
     </div>
-  </header>
+</header>
   <main id="main">
     <section class="search-hero" aria-labelledby="h-search">
       <div class="wrap">
@@ -224,9 +224,9 @@
       </div>
       <nav class="pagination" aria-label="Phân trang kết quả">
         <span class="is-disabled" aria-disabled="true">Trước</span>
-        <a href="search.html?q=ros%C3%A9&amp;trang=1" aria-current="page">1</a>
-        <a href="search.html?q=ros%C3%A9&amp;trang=2">2</a>
-        <a href="search.html?q=ros%C3%A9&amp;trang=2">Sau</a>
+        <a href="search.html?trang=1" aria-current="page">1</a>
+        <a href="search.html?trang=2">2</a>
+        <a href="search.html?trang=2">Sau</a>
       </nav>
 
       <section style="margin-top:var(--s7)" aria-labelledby="h-empty">
@@ -246,57 +246,49 @@
     <div class="toasts">
       <div class="toast" id="them-fp001" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Rosé Aurore · 50ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
+          <p><strong>Đã thêm vào giỏ hàng</strong><br>Rosé Aurore · 50ml</p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>
       <div class="toast" id="them-fp002" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Bois Ambré · 100ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
+          <p><strong>Đã thêm vào giỏ hàng</strong><br>Bois Ambré · 100ml</p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>
       <div class="toast" id="them-fp003" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Ciel Blanc · 50ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
+          <p><strong>Đã thêm vào giỏ hàng</strong><br>Ciel Blanc · 50ml</p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>
       <div class="toast" id="them-fp004" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Oud Impérial · 75ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
+          <p><strong>Đã thêm vào giỏ hàng</strong><br>Oud Impérial · 75ml</p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>
       <div class="toast" id="them-fp005" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Pêche Velours · 30ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
+          <p><strong>Đã thêm vào giỏ hàng</strong><br>Pêche Velours · 30ml</p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>
       <div class="toast" id="them-fp006" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Vétiver Noir · 100ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
+          <p><strong>Đã thêm vào giỏ hàng</strong><br>Vétiver Noir · 100ml</p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>
       <div class="toast" id="them-fp007" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Fleur d’Oranger · 50ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
+          <p><strong>Đã thêm vào giỏ hàng</strong><br>Fleur d’Oranger · 50ml</p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>
       <div class="toast" id="them-fp008" role="status"><span class="tick-sm" aria-hidden="true"></span>
         <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Santal Doré · 100ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
+          <p><strong>Đã thêm vào giỏ hàng</strong><br>Santal Doré · 100ml</p>
           <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
         </div>
       </div>
@@ -306,25 +298,23 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
+          <a class="logo" href="home-log.html">FLORA<span>PERFUME</span></a>
           <p>Cửa hàng nước hoa chọn lọc cho mọi phong cách. Mỗi chai đều được kiểm tra nguồn gốc trước khi giao.</p>
         </div>
         <div>
           <h2>Mua sắm</h2>
           <ul>
-            <li><a href="products.html?loai=nam">Nước hoa nam</a></li>
-            <li><a href="products.html?loai=nu">Nước hoa nữ</a></li>
-            <li><a href="products.html?loai=unisex">Unisex</a></li>
-            <li><a href="products.html?loai=cao-cap">Nước hoa cao cấp</a></li>
+            <li><a href="products-nam-log.html">Nước hoa nam</a></li>
+            <li><a href="products-nu-log.html">Nước hoa nữ</a></li>
+            <li><a href="products-unisex-log.html">Unisex</a></li>
+            <li><a href="products-cao-cap-log.html">Nước hoa cao cấp</a></li>
           </ul>
         </div>
         <div>
           <h2>Hỗ trợ</h2>
           <ul>
-            <li><a href="index.html#chinh-sach">Chính sách giao hàng</a></li>
-            <li><a href="index.html#chinh-sach">Chính sách đổi trả</a></li>
-            <li><a href="order-history.html">Lịch sử mua hàng</a></li>
-            <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
+            <li><a href="home-log.html#chinh-sach">Chính sách giao hàng</a></li>
+            <li><a href="home-log.html#doi-tra">Chính sách đổi trả</a></li>
           </ul>
         </div>
         <div>
@@ -336,8 +326,7 @@
           </address>
         </div>
       </div>
-      <p class="footer-bottom">© 2026 FLORA PERFUME. Website minh họa bằng HTML/CSS thuần, toàn bộ dữ liệu là dữ liệu
-        mẫu.</p>
+      <p class="footer-bottom">© 2026 FLORA PERFUME.</p>
     </div>
   </footer>
 </body>

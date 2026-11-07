@@ -2,3 +2,6 @@ Lỗi chưa fix:
 Trang lọc admin chưa hiển thị sản phẩm lọc đúng, chưa có sẵn value trên thanh lọc (Sửa thứ 2)
 Khách hàng chưa chỉnh footer đúng, nhiều trang bị lỗi cũ (Ưu tiên sửa gấp)
 Nút bấm khi chuyển màu vẫn đang là màu hồng (sửa cuối)
+
+checkout.html sổ địa chỉ chưa có sdt
+admin phần sản phẩm sửa thêm xóa chưa format giá

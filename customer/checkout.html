@@ -39,7 +39,7 @@
               <span>SĐT: 0901 234 567</span>
             </div>
             <nav class="user-box-links" aria-label="Menu tài khoản">
-              <a href="#thong-tin-ca-nhan">Thông tin cá nhân</a>
+              <a href="profile.html">Thông tin cá nhân</a>
               <a href="order-history.html">Lịch sử đơn hàng</a>
               <a class="logout-link" href="index.html">Đăng xuất</a>
             </nav>
@@ -49,47 +49,7 @@
             class="cart-count">3</span></a>
       </div>
     </div>
-    <div class="header-search">
-      <div class="wrap">
-        <form class="adv-bar" action="advanced-search.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
-          <div class="field">
-            <label for="hs-ten">Tên sản phẩm</label>
-            <input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
-          </div>
-          <div class="field">
-            <label for="hs-loai">Phân loại</label>
-            <select id="hs-loai" name="loai">
-              <option value="">Tất cả phân loại</option>
-              <option value="nam">Nước hoa nam</option>
-              <option value="nu">Nước hoa nữ</option>
-              <option value="unisex">Unisex</option>
-              <option value="cao-cap">Nước hoa cao cấp</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="hs-min">Giá từ (VNĐ)</label>
-            <div class="input-vnd">
-              <input id="hs-min" type="text" name="gia-min" inputmode="numeric" spellcheck="false" placeholder="0"
-                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
-            </div>
-          </div>
 
-          <!-- Ô Giá đến trên Header -->
-          <div class="field">
-            <label for="hs-max">Giá đến (VNĐ)</label>
-            <div class="input-vnd">
-              <input id="hs-max" type="text" name="gia-max" inputmode="numeric" spellcheck="false"
-                placeholder="Không giới hạn"
-                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
-            </div>
-          </div>
-          <div class="adv-actions">
-            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-            <a class="btn btn-outline" href="advanced-search.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
-          </div>
-        </form>
-      </div>
-    </div>
   </header>
   <main id="main">
     <div class="wrap">
@@ -111,16 +71,20 @@
               <dt>Email</dt>
               <dd>minhanh@example.com</dd>
               <dt>Số điện thoại</dt>
-              <dd>0901 234 567</dd>
+              <dd>0901234567</dd>
             </dl>
             <fieldset class="group">
               <legend>Địa chỉ giao hàng</legend>
               <label class="option"><input type="radio" name="dia-chi" value="luu-1" checked>
-                <div><strong>Nhà riêng (mặc định)</strong><span>12 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí
-                    Minh</span></div>
+                <div><strong>Nhà riêng (mặc định)</strong>
+                  <span>12 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh<br></span>
+                  <span>Số điện thoại: 0901234222</span>
+                  </div>
               </label>
               <label class="option"><input type="radio" name="dia-chi" value="luu-2">
-                <div><strong>Văn phòng</strong><span>45 Lê Lợi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</span></div>
+                <div><strong>Văn phòng</strong><span>45 Lê Lợi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh<br></span>
+                                  <span>Số điện thoại: 0901 234 333</span>
+                </div>
               </label>
               <label class="option"><input type="radio" name="dia-chi" value="moi">
                 <div><strong>Nhập địa chỉ giao hàng mới</strong><span>Điền vào các trường bên dưới</span></div>
