@@ -144,7 +144,8 @@
             <dt>Xuất xứ</dt>
             <dd>Pháp</dd>
           </dl>
-          <form action="product-detail.html#da-them" method="get">
+          <!-- Yêu cầu 1: Trỏ action và nút submit gọi trực tiếp đến #them-fp001 -->
+          <form action="product-detail.html#them-fp001" method="get">
             <input type="hidden" name="ma" value="FP-001">
             <fieldset class="size-options">
               <legend>Dung tích</legend>
@@ -158,28 +159,31 @@
               <button class="btn btn-primary" type="submit">Thêm vào giỏ hàng</button>
             </div>
           </form>
-          <div class="alert-success" id="da-them" role="status">
-            <span class="tick-sm" aria-hidden="true"></span>
-            <div><strong>Đã thêm sản phẩm vào giỏ hàng</strong>
-              <p>Bạn có thể ở lại trang này để tiếp tục xem sản phẩm.</p>
-              <div class="alert-actions"><a class="btn btn-outline" href="cart.html">Xem giỏ hàng</a><a
-                  class="btn btn-text" href="#da-dong">Đóng thông báo</a></div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="detail" style="margin-top:var(--s7);grid-template-columns:1fr">
         <section aria-labelledby="h-desc">
           <h2 id="h-desc">Mô tả sản phẩm</h2>
           <p class="desc">
-            Dior Miss Dior Eau de Parfum (EDP) là bản giao hưởng hương thơm đầy chất thơ, tôn vinh vẻ đẹp nữ tính, thanh lịch nhưng không kém phần rạng rỡ của người phụ nữ hiện đại. Ngay từ khoảnh khắc chạm lên làn da, mùi hương mở ra một không gian ngập tràn ánh nắng ban mai với vị ngọt thanh tao của trái đào chín mọng quyện cùng sự sảng khoái, tươi mới từ cam Bergamot vùng Calabria và chút cay nhẹ tinh tế của hạt tiêu hồng. Sự khởi đầu mượt mà ấy nhanh chóng đánh thức mọi giác quan, mang lại cảm giác trẻ trung, tràn đầy năng lượng tích cực như một buổi dạo bước giữa khu vườn xuân đang độ nở rộ.
+            Dior Miss Dior Eau de Parfum (EDP) là bản giao hưởng hương thơm đầy chất thơ, tôn vinh vẻ đẹp nữ tính, thanh
+            lịch nhưng không kém phần rạng rỡ của người phụ nữ hiện đại. Ngay từ khoảnh khắc chạm lên làn da, mùi hương
+            mở ra một không gian ngập tràn ánh nắng ban mai với vị ngọt thanh tao của trái đào chín mọng quyện cùng sự
+            sảng khoái, tươi mới từ cam Bergamot vùng Calabria và chút cay nhẹ tinh tế của hạt tiêu hồng. Sự khởi đầu
+            mượt mà ấy nhanh chóng đánh thức mọi giác quan, mang lại cảm giác trẻ trung, tràn đầy năng lượng tích cực
+            như một buổi dạo bước giữa khu vườn xuân đang độ nở rộ.
           </p>
           <p class="desc">
-            Khi tầng hương đầu dần lắng xuống, trái tim của Miss Dior EDP bung tỏa rực rỡ với sự lên ngôi của hoa hồng Damask và hoa hồng Grasse trăm cánh quý giá — biểu tượng vượt thời gian của nhà mốt Christian Dior. Những cánh hồng mềm mại như còn đọng sương sớm được bao bọc khéo léo bởi nét kiêu sa của hoa mẫu đơn và sắc thái thanh khiết, quyến rũ từ hoa nhài trắng. Ở tầng hương cuối, sự ấm áp của xạ hương trắng kết hợp cùng chiều sâu trầm lắng của gỗ tuyết tùng tạo nên một lớp nền mịn màng, ôm ấp lấy làn da và giữ cho mùi hương lưu luyến bền bỉ từ 6 đến 8 giờ. Với độ tỏa hương vừa phải, tinh tế, đây là lựa chọn hoàn hảo cho cả những ngày làm việc nơi công sở, những buổi hẹn hò lãng mạn hay các sự kiện trang trọng.
+            Khi tầng hương đầu dần lắng xuống, trái tim của Miss Dior EDP bung tỏa rực rỡ với sự lên ngôi của hoa hồng
+            Damask và hoa hồng Grasse trăm cánh quý giá — biểu tượng vượt thời gian của nhà mốt Christian Dior. Những
+            cánh hồng mềm mại như còn đọng sương sớm được bao bọc khéo léo bởi nét kiêu sa của hoa mẫu đơn và sắc thái
+            thanh khiết, quyến rũ từ hoa nhài trắng. Ở tầng hương cuối, sự ấm áp của xạ hương trắng kết hợp cùng chiều
+            sâu trầm lắng của gỗ tuyết tùng tạo nên một lớp nền mịn màng, ôm ấp lấy làn da và giữ cho mùi hương lưu
+            luyến bền bỉ từ 6 đến 8 giờ. Với độ tỏa hương vừa phải, tinh tế, đây là lựa chọn hoàn hảo cho cả những ngày
+            làm việc nơi công sở, những buổi hẹn hò lãng mạn hay các sự kiện trang trọng.
           </p>
           <p class="desc" style="margin-bottom:0">
             Hương đầu: Đào chín, cam Bergamot, hạt tiêu hồng.<br>
-            Hương giữa: Hoa hồng Damask, hoa mẫu đơn, hoa nhài.<br>
+            Hương giữa: Hoa hồng Damask, mẫu đơn, hoa nhài.<br>
             Hương cuối: Xạ hương trắng, gỗ tuyết tùng.
           </p>
         </section>
@@ -199,6 +203,7 @@
               <p class="card-cat">Nước hoa nữ</p>
               <h3><a href="product-detail.html">Gucci Bloom EDP</a></h3>
               <p class="price">1.290.000₫</p>
+              <!-- Yêu cầu 2: Trỏ đúng thông báo toast tương ứng với sản phẩm liên quan (FP-005) -->
               <div class="card-actions"><a class="btn btn-primary" href="#them-fp005"
                   aria-label="Thêm Gucci Bloom EDP vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
                   href="product-detail.html">Xem chi tiết</a></div>
@@ -212,7 +217,7 @@
               <p class="card-cat">Unisex</p>
               <h3><a href="product-detail.html">Calvin Klein CK One</a></h3>
               <p class="price">1.650.000₫</p>
-              <div class="card-actions"><a class="btn btn-primary" href="#them-fp005"
+              <div class="card-actions"><a class="btn btn-primary" href="#them-fp003"
                   aria-label="Thêm Calvin Klein CK One vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
                   href="product-detail.html">Xem chi tiết</a></div>
             </div>
@@ -225,7 +230,7 @@
               <p class="card-cat">Unisex</p>
               <h3><a href="product-detail.html">Calvin Klein CK Be</a></h3>
               <p class="price">1.590.000₫</p>
-              <div class="card-actions"><a class="btn btn-primary" href="#them-fp005"
+              <div class="card-actions"><a class="btn btn-primary" href="#them-fp007"
                   aria-label="Thêm Calvin Klein CK Be vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
                   href="product-detail.html">Xem chi tiết</a></div>
             </div>
@@ -239,7 +244,7 @@
               <p class="card-cat">Nước hoa cao cấp</p>
               <h3><a href="product-detail.html">Diptyque Fleur De Peau EDP</a></h3>
               <p class="price">3.890.000₫</p>
-              <div class="card-actions"><a class="btn btn-primary" href="#them-fp005"
+              <div class="card-actions"><a class="btn btn-primary" href="#them-fp008"
                   aria-label="Thêm Diptyque Fleur De Peau EDP vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
                   href="product-detail.html">Xem chi tiết</a></div>
             </div>
@@ -248,13 +253,15 @@
       </div>
     </section>
     <div class="toasts">
-      <div class="toast" id="them-fp005" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm sản phẩm vào giỏ hàng</strong><br></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-    </div>
+<div class="toast" id="them-fp001" role="status"><span class="tick-sm" aria-hidden="true"></span><div><p><strong>Đã thêm vào giỏ hàng</strong><br>Rosé Aurore · 50ml</p><div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div></div></div>
+<div class="toast" id="them-fp002" role="status"><span class="tick-sm" aria-hidden="true"></span><div><p><strong>Đã thêm vào giỏ hàng</strong><br>Bois Ambré · 100ml</p><div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div></div></div>
+<div class="toast" id="them-fp003" role="status"><span class="tick-sm" aria-hidden="true"></span><div><p><strong>Đã thêm vào giỏ hàng</strong><br>Ciel Blanc · 50ml</p><div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div></div></div>
+<div class="toast" id="them-fp004" role="status"><span class="tick-sm" aria-hidden="true"></span><div><p><strong>Đã thêm vào giỏ hàng</strong><br>Oud Impérial · 75ml</p><div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div></div></div>
+<div class="toast" id="them-fp005" role="status"><span class="tick-sm" aria-hidden="true"></span><div><p><strong>Đã thêm vào giỏ hàng</strong><br>Pêche Velours · 30ml</p><div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div></div></div>
+<div class="toast" id="them-fp006" role="status"><span class="tick-sm" aria-hidden="true"></span><div><p><strong>Đã thêm vào giỏ hàng</strong><br>Vétiver Noir · 100ml</p><div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div></div></div>
+<div class="toast" id="them-fp007" role="status"><span class="tick-sm" aria-hidden="true"></span><div><p><strong>Đã thêm vào giỏ hàng</strong><br>Fleur d’Oranger · 50ml</p><div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div></div></div>
+<div class="toast" id="them-fp008" role="status"><span class="tick-sm" aria-hidden="true"></span><div><p><strong>Đã thêm vào giỏ hàng</strong><br>Santal Doré · 100ml</p><div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div></div></div>
+</div>
   </main>
   <footer class="site-footer">
     <div class="wrap">
@@ -277,8 +284,6 @@
           <ul>
             <li><a href="index.html#chinh-sach">Chính sách giao hàng</a></li>
             <li><a href="index.html#chinh-sach">Chính sách đổi trả</a></li>
-            <li><a href="order-history.html">Lịch sử mua hàng</a></li>
-            <li><a href="advanced-search.html">Tìm kiếm nâng cao</a></li>
           </ul>
         </div>
         <div>
@@ -290,9 +295,8 @@
           </address>
         </div>
       </div>
-      <p class="footer-bottom">© 2026 FLORA PERFUME. Bảo lưu mọi quyền.</p>
+      <p class="footer-bottom">© 2026 FLORA PERFUME.</p>
     </div>
   </footer>
 </body>
-
 </html>

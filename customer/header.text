@@ -32,7 +32,7 @@
     </div>
     <div class="header-search">
       <div class="wrap">
-        <form class="adv-bar" action="advanced-search.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
+        <form class="adv-bar" action="advanced-search_log.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
           <div class="field">
             <label for="hs-ten">Tên sản phẩm</label>
             <input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
@@ -66,7 +66,7 @@
           </div>
           <div class="adv-actions">
             <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-            <a class="btn btn-outline" href="advanced-search.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
+            <a class="btn btn-outline" href="advanced-search_log.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
           </div>
         </form>
       </div>
