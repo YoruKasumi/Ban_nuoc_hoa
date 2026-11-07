@@ -20,7 +20,7 @@
               <span>SĐT: 0901 234 567</span>
             </div>
             <nav class="user-box-links" aria-label="Menu tài khoản">
-              <a href="#thong-tin-ca-nhan">Thông tin cá nhân</a>
+              <a href="profile.html">Thông tin cá nhân</a>
               <a href="order-history.html">Lịch sử đơn hàng</a>
               <a class="logout-link" href="index.html">Đăng xuất</a>
             </nav>
