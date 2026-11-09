@@ -15,13 +15,14 @@
   .profile-panel {
     background: var(--paper);
     border-radius: var(--r-md);
-    padding: var(--s5);
+    padding: var(--s4) var(--s5);
     margin-bottom: var(--s5);
     box-shadow: var(--shadow);
   }
   .profile-content {
-    width: min(820px, calc(100% - 2rem));
+    width: min(780px, calc(100% - 2rem));
     margin-inline: auto;
+    font-size: 0.95rem;
   }
   .profile-head-flex {
     display: flex;
@@ -33,7 +34,7 @@
   }
   .profile-head-flex h2 {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 1.45rem;
   }
   .address-card {
     border: 1.5px solid var(--line);
@@ -59,7 +60,7 @@
     flex-wrap: wrap;
   }
   .address-name strong {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
   .address-actions {
     display: flex;
@@ -159,6 +160,13 @@
   .modal-box h2 {
     margin-top: 0;
     margin-bottom: var(--s4);
+    font-size: 1.45rem;
+  }
+  #modal-delete-address .modal-box h2 {
+    font-size: 1.3rem;
+  }
+  #modal-delete-address .modal-box > p {
+    font-size: 0.92rem;
   }
   .close-btn {
     position: absolute;
@@ -181,7 +189,8 @@
     right: var(--s4);
     background: var(--ink);
     color: var(--cream);
-    padding: var(--s4) var(--s5);
+    width: min(380px, calc(100% - 2rem));
+    padding: var(--s3) var(--s4);
     border-radius: var(--r-md);
     z-index: 1000;
     box-shadow: var(--shadow-lg);
@@ -190,15 +199,14 @@
   }
   .toast-msg:target {
     display: flex;
-    animation: slideUpFade 0.3s ease-out forwards;
+    animation: toastLife 5s ease forwards;
   }
-  .toast-dismiss-target {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+  .toast-msg p:first-child {
+    font-size: 0.95rem;
+  }
+  .toast-msg p:nth-child(2) {
+    margin: 5px 0 8px;
+    font-size: 0.88rem;
   }
   .toast-close {
     color: var(--apricot);
@@ -206,9 +214,20 @@
     font-weight: 500;
     text-decoration: none;
   }
-  @keyframes slideUpFade {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  @keyframes toastLife {
+    0% { opacity: 0; transform: translateY(20px); visibility: visible; }
+    6% { opacity: 1; transform: translateY(0); }
+    92% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .toast-msg:target {
+      animation: toastHide 5s steps(1, end) forwards !important;
+    }
+    @keyframes toastHide {
+      0%, 99% { visibility: visible; }
+      100% { visibility: hidden; }
+    }
   }
 </style>
 </head>
@@ -262,7 +281,7 @@
       <li><a href="home-log.html">Trang chủ</a></li>
       <li aria-current="page">Thông tin tài khoản</li>
     </ol>
-    <h1 style="font-size:clamp(2.2rem,5vw,3.4rem)">Tài khoản của tôi</h1>
+    <h1 style="font-size:clamp(2rem,4vw,2.8rem)">Tài khoản của tôi</h1>
     <p class="muted">Quản lý thông tin cá nhân và danh sách địa chỉ nhận hàng.</p>
   </div>
 
@@ -324,7 +343,7 @@
           <p style="margin-bottom: var(--s3);">45 Lê Lợi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</p>
         </div>
         <div class="address-foot">
-          <a class="btn btn-outline" style="min-height: 34px; padding: 0.25rem 1rem; font-size: 0.88rem;" href="#toast-success">Đặt làm mặc định</a>
+          <a class="btn btn-outline" style="min-height: 34px; padding: 0.25rem 1rem; font-size: 0.88rem;" href="#toast-default">Đặt làm mặc định</a>
         </div>
       </article>
     </div>
@@ -342,7 +361,7 @@
   <div class="modal-box">
     <a href="#" class="close-btn">&times;</a>
     <h2>Sửa thông tin cá nhân</h2>
-    <form action="#toast-success">
+    <form action="#toast-profile">
       <div class="field">
         <label>Họ và tên</label>
         <input type="text" value="Nguyễn Minh Anh" required>
@@ -368,7 +387,7 @@
   <div class="modal-box">
     <a href="#" class="close-btn">&times;</a>
     <h2>Thêm địa chỉ mới</h2>
-    <form action="#toast-success">
+    <form action="#toast-add">
       <div class="field">
         <label>Tên người nhận</label>
         <input type="text" placeholder="Nhập họ và tên" required>
@@ -394,7 +413,7 @@
   <div class="modal-box">
     <a href="#" class="close-btn">&times;</a>
     <h2>Sửa địa chỉ</h2>
-    <form action="#toast-success">
+    <form action="#toast-edit">
       <div class="field">
         <label>Tên người nhận</label>
         <input type="text" value="Nguyễn Minh Anh" required>
@@ -422,22 +441,53 @@
     <h2>Xóa địa chỉ</h2>
     <p>Bạn có chắc chắn muốn xóa địa chỉ này khỏi sổ địa chỉ không?</p>
     <div style="display: flex; gap: 10px; margin-top: var(--s5);">
-      <a href="#toast-success" class="btn btn-primary" style="background: var(--danger); border-color: var(--danger); color: white;">Xác nhận xóa</a>
+      <a href="#toast-delete" class="btn btn-primary" style="background: var(--danger); border-color: var(--danger); color: white;">Xác nhận xóa</a>
       <a href="#" class="btn btn-outline">Hủy</a>
     </div>
   </div>
 </div>
 
 <!-- ================= THÔNG BÁO THÀNH CÔNG (TOAST) ================= -->
-<div class="toast-msg" id="toast-success">
+<div class="toast-msg" id="toast-profile" role="status" aria-live="polite">
   <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
   <div>
-    <p style="margin: 0; font-weight: bold; font-size: 1.1rem;">Thành công!</p>
-    <p style="margin: 5px 0 10px; font-size: 0.95rem;">Thao tác của bạn đã được thực hiện thành công.</p>
-    <a href="#toast-dismissed" class="toast-close">Đóng</a>
+    <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
+    <p style="margin: 5px 0 8px;">Thông tin cá nhân đã được cập nhật thành công.</p>
+    <a href="#" class="toast-close">Đóng</a>
   </div>
 </div>
-<span id="toast-dismissed" class="toast-dismiss-target" aria-hidden="true"></span>
+<div class="toast-msg" id="toast-add" role="status" aria-live="polite">
+  <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
+  <div>
+    <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
+    <p style="margin: 5px 0 8px;">Địa chỉ mới đã được thêm thành công.</p>
+    <a href="#" class="toast-close">Đóng</a>
+  </div>
+</div>
+<div class="toast-msg" id="toast-edit" role="status" aria-live="polite">
+  <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
+  <div>
+    <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
+    <p style="margin: 5px 0 8px;">Địa chỉ đã được cập nhật thành công.</p>
+    <a href="#" class="toast-close">Đóng</a>
+  </div>
+</div>
+<div class="toast-msg" id="toast-delete" role="status" aria-live="polite">
+  <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
+  <div>
+    <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
+    <p style="margin: 5px 0 8px;">Địa chỉ đã được xóa thành công.</p>
+    <a href="#" class="toast-close">Đóng</a>
+  </div>
+</div>
+<div class="toast-msg" id="toast-default" role="status" aria-live="polite">
+  <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
+  <div>
+    <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
+    <p style="margin: 5px 0 8px;">Địa chỉ mặc định đã được cập nhật.</p>
+    <a href="#" class="toast-close">Đóng</a>
+  </div>
+</div>
 
 </main>
 <footer class="site-footer">
