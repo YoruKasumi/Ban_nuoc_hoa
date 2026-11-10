@@ -90,6 +90,8 @@
     padding-top: var(--s3);
     border-top: 1px dashed var(--line);
   }
+  
+  /* Căn chỉnh header */
   .profile-header-compact {
     display: flex;
     align-items: center;
@@ -134,13 +136,115 @@
     }
   }
 
+  /* =========================================
+     KỸ THUẬT DROPDOWN CSS THUẦN (KHÔNG DÙNG JS) 
+     ========================================= */
+  .user-menu-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  /* Checkbox ẩn điều khiển trạng thái bật/tắt */
+  #user-menu-toggle {
+    display: none;
+  }
+  /* Nút bấm (Tên người dùng) */
+  .user-menu-label {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    transition: background 0.2s;
+  }
+  .user-menu-label:hover {
+    background: var(--apricot);
+  }
+  .user-menu-label::after {
+    content: "▼";
+    font-size: 0.7em;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  /* Khung thông tin Dropdown */
+  .user-dropdown-box {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 260px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 1001; /* Nằm trên lớp màn ảo */
+    padding: var(--s4) 0;
+  }
+  /* Hiển thị dropdown khi checkbox được tích */
+  #user-menu-toggle:checked ~ .user-dropdown-box {
+    display: block;
+    animation: fadeInDown 0.2s ease;
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Lớp màn ảo trong suốt phủ toàn màn hình */
+  .user-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000; /* Nằm dưới dropdown, nhưng trên trang web */
+    cursor: default;
+  }
+  /* Hiển thị lớp màn khi checkbox được tích */
+  #user-menu-toggle:checked ~ .user-menu-overlay {
+    display: block;
+  }
+  
+  /* Styling bên trong hộp Dropdown (Giống hình ảnh bạn gửi) */
+  .dropdown-info {
+    padding: 0 var(--s4) var(--s3);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: var(--s2);
+  }
+  .dropdown-info strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    font-family: var(--font-display);
+  }
+  .dropdown-info span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .dropdown-links a {
+    display: block;
+    padding: var(--s2) var(--s4);
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .dropdown-links a:hover {
+    background: var(--apricot);
+  }
+  .dropdown-links .logout-link {
+    margin-top: var(--s2);
+    padding-top: var(--s2);
+    border-top: 1px solid var(--line);
+    color: var(--danger);
+  }
+
   /* Giao diện Cửa sổ nhập liệu (Modal Popup) */
   .modal-overlay {
     display: none;
     position: fixed;
     inset: 0;
     background: rgba(58, 37, 25, 0.7);
-    z-index: 1000;
+    z-index: 2000;
     justify-content: center;
     align-items: center;
     padding: var(--s4);
@@ -161,12 +265,6 @@
     margin-top: 0;
     margin-bottom: var(--s4);
     font-size: 1.45rem;
-  }
-  #modal-delete-address .modal-box h2 {
-    font-size: 1.3rem;
-  }
-  #modal-delete-address .modal-box > p {
-    font-size: 0.92rem;
   }
   .close-btn {
     position: absolute;
@@ -192,7 +290,7 @@
     width: min(380px, calc(100% - 2rem));
     padding: var(--s3) var(--s4);
     border-radius: var(--r-md);
-    z-index: 1000;
+    z-index: 2000;
     box-shadow: var(--shadow-lg);
     gap: var(--s3);
     align-items: flex-start;
@@ -220,15 +318,6 @@
     92% { opacity: 1; visibility: visible; }
     100% { opacity: 0; visibility: hidden; }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .toast-msg:target {
-      animation: toastHide 5s steps(1, end) forwards !important;
-    }
-    @keyframes toastHide {
-      0%, 99% { visibility: visible; }
-      100% { visibility: hidden; }
-    }
-  }
 </style>
 </head>
 <body>
@@ -244,21 +333,31 @@
     </form>
 
     <div class="header-actions">
-      <details class="user-menu">
-        <summary aria-label="Tài khoản Nguyễn Minh Anh">Nguyễn Minh Anh</summary>
-        <div class="user-box">
-          <div class="user-box-info">
+      <!-- 
+        KỸ THUẬT MENU KHÔNG DÙNG JS
+        Bao gồm: label bấm vào, input checkbox ẩn, lớp màn overlay (bấm để tắt) và hộp menu 
+      -->
+      <div class="user-menu-wrapper">
+        <label for="user-menu-toggle" class="user-menu-label" aria-label="Tài khoản Nguyễn Minh Anh">Nguyễn Minh Anh</label>
+        <input type="checkbox" id="user-menu-toggle">
+        
+        <!-- Bức màn vô hình: Khi menu mở, bấm vào bất kỳ đâu trên màn hình sẽ chọn trúng label này và tắt checkbox -->
+        <label for="user-menu-toggle" class="user-menu-overlay" tabindex="-1"></label>
+        
+        <div class="user-dropdown-box">
+          <div class="dropdown-info">
             <strong>Nguyễn Minh Anh</strong>
             <span>minhanh@example.com</span>
             <span>SĐT: 0901 234 567</span>
           </div>
-          <nav class="user-box-links" aria-label="Menu tài khoản">
-            <a href="profile.html" aria-current="page">Thông tin cá nhân</a>
+          <nav class="dropdown-links" aria-label="Menu tài khoản">
+            <a href="profile.html">Thông tin cá nhân</a>
             <a href="order-history.html">Lịch sử đơn hàng</a>
             <a class="logout-link" href="index.html">Đăng xuất</a>
           </nav>
         </div>
-      </details>
+      </div>
+      
       <a class="cart-link" href="cart-log.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span class="cart-count">3</span></a>
     </div>
   </div>
@@ -274,6 +373,7 @@
     </div>
   </nav>
 </header>
+
 <main id="main">
 <div class="profile-content">
   <div class="page-head">
@@ -387,18 +487,18 @@
   <div class="modal-box">
     <a href="#" class="close-btn">&times;</a>
     <h2>Thêm địa chỉ mới</h2>
-    <form action="#toast-add">
+    <form action="#toast-add" novalidate>
       <div class="field">
         <label>Tên người nhận</label>
-        <input type="text" placeholder="Nhập họ và tên" required>
+        <input type="text" placeholder="Nhập họ và tên">
       </div>
       <div class="field">
         <label>Số điện thoại</label>
-        <input type="tel" placeholder="Nhập số điện thoại" required>
+        <input type="tel" placeholder="Nhập số điện thoại">
       </div>
       <div class="field">
         <label>Địa chỉ cụ thể</label>
-        <textarea rows="3" placeholder="Số nhà, tên đường, phường/xã, quận/huyện..." required></textarea>
+        <textarea rows="3" placeholder="Số nhà, tên đường, phường/xã, quận/huyện..."></textarea>
       </div>
       <div style="display: flex; gap: 10px; margin-top: var(--s4);">
         <button type="submit" class="btn btn-primary">Lưu địa chỉ</button>
@@ -439,7 +539,7 @@
   <div class="modal-box">
     <a href="#" class="close-btn">&times;</a>
     <h2>Xóa địa chỉ</h2>
-    <p>Bạn có chắc chắn muốn xóa địa chỉ này khỏi sổ địa chỉ không?</p>
+    <p style="font-size: 0.95rem;">Bạn có chắc chắn muốn xóa địa chỉ này khỏi sổ địa chỉ không?</p>
     <div style="display: flex; gap: 10px; margin-top: var(--s5);">
       <a href="#toast-delete" class="btn btn-primary" style="background: var(--danger); border-color: var(--danger); color: white;">Xác nhận xóa</a>
       <a href="#" class="btn btn-outline">Hủy</a>
@@ -448,7 +548,7 @@
 </div>
 
 <!-- ================= THÔNG BÁO THÀNH CÔNG (TOAST) ================= -->
-<div class="toast-msg" id="toast-profile" role="status" aria-live="polite">
+<div class="toast-msg" id="toast-profile" role="status">
   <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
   <div>
     <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
@@ -456,7 +556,7 @@
     <a href="#" class="toast-close">Đóng</a>
   </div>
 </div>
-<div class="toast-msg" id="toast-add" role="status" aria-live="polite">
+<div class="toast-msg" id="toast-add" role="status">
   <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
   <div>
     <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
@@ -464,7 +564,7 @@
     <a href="#" class="toast-close">Đóng</a>
   </div>
 </div>
-<div class="toast-msg" id="toast-edit" role="status" aria-live="polite">
+<div class="toast-msg" id="toast-edit" role="status">
   <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
   <div>
     <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
@@ -472,7 +572,7 @@
     <a href="#" class="toast-close">Đóng</a>
   </div>
 </div>
-<div class="toast-msg" id="toast-delete" role="status" aria-live="polite">
+<div class="toast-msg" id="toast-delete" role="status">
   <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
   <div>
     <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
@@ -480,7 +580,7 @@
     <a href="#" class="toast-close">Đóng</a>
   </div>
 </div>
-<div class="toast-msg" id="toast-default" role="status" aria-live="polite">
+<div class="toast-msg" id="toast-default" role="status">
   <span class="tick-sm" style="margin-top: 4px;" aria-hidden="true"></span>
   <div>
     <p style="margin: 0; font-weight: bold;">Thao tác thành công</p>
