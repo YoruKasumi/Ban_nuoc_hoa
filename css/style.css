@@ -29,7 +29,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 /* Nút */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:46px;padding:.65rem 1.5rem;border:1.5px solid transparent;border-radius:999px;font:500 .95rem/1 var(--font-body);text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s}
-.btn-primary{background:var(--coral);color:var(--ink)} .btn-primary:hover{background:var(--peach)}
+.btn-primary{background:var(--coral);color:var(--ink)} .btn-primary:hover{background:#FFD2C2}
 .btn-outline{border-color:var(--ink);color:var(--ink);background:transparent} .btn-outline:hover{background:var(--apricot)}
 .btn-text{padding-inline:0;min-height:auto;border-radius:0;border-bottom:1.5px solid currentColor}
 .btn-block{width:100%}

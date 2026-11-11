@@ -18,78 +18,92 @@
 <body>
   <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
   <header class="site-header">
-    <div class="wrap header-top">
-      <a class="logo" href="home-log.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
-      <nav class="main-nav" aria-label="Danh mục sản phẩm">
-        <ul>
-          <li><a href="products-log.html" aria-current="page">Tất cả sản phẩm</a></li>
-          <li><a href="products-nam-log.html">Nước hoa nam</a></li>
-          <li><a href="products-nu-log.html">Nước hoa nữ</a></li>
-          <li><a href="products-unisex-log.html">Unisex</a></li>
-          <li><a href="products-cao-cap-log.html">Nước hoa cao cấp</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <details class="user-menu">
-          <summary aria-label="Tài khoản người dùng">Nguyễn Minh Anh</summary>
-          <div class="user-box">
-            <div class="user-box-info">
-              <strong>Nguyễn Minh Anh</strong>
-              <span>minhanh@example.com</span>
-              <span>SĐT: 0901 234 567</span>
-            </div>
-            <nav class="user-box-links" aria-label="Menu tài khoản">
-              <a href="profile.html">Thông tin cá nhân</a>
-              <a href="order-history.html">Lịch sử đơn hàng</a>
-              <a class="logout-link" href="index.html">Đăng xuất</a>
-            </nav>
-          </div>
-        </details>
-        <a class="cart-link" href="cart-log.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span
-            class="cart-count">3</span></a>
-      </div>
-    </div>
-    <div class="header-search">
-      <div class="wrap">
-        <form class="adv-bar" action="advanced-search_log.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
-          <div class="field">
-            <label for="hs-ten">Tên sản phẩm</label>
-            <input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
-          </div>
-          <div class="field">
-            <label for="hs-loai">Phân loại</label>
-            <select id="hs-loai" name="loai">
-              <option value="">Tất cả phân loại</option>
-              <option value="nam">Nước hoa nam</option>
-              <option value="nu">Nước hoa nữ</option>
-              <option value="unisex">Unisex</option>
-              <option value="cao-cap">Nước hoa cao cấp</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="hs-min">Giá từ (VNĐ)</label>
-            <div class="input-vnd">
-              <input id="hs-min" type="text" name="gia-min" inputmode="numeric" spellcheck="false" placeholder="0"
-                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
-            </div>
-          </div>
+  <div class="wrap header-top">
+    <a class="logo" href="home-log.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
 
-          <!-- Ô Giá đến trên Header -->
-          <div class="field">
-            <label for="hs-max">Giá đến (VNĐ)</label>
-            <div class="input-vnd">
-              <input id="hs-max" type="text" name="gia-max" inputmode="numeric" spellcheck="false"
-                placeholder="Không giới hạn"
-                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
+    <div class="header-search-container">
+      <form class="search-form" action="search-log.html" method="get" role="search">
+        <label class="visually-hidden" for="q-header-log">Tìm nước hoa theo tên</label>
+        <input id="q-header-log" type="search" name="q" placeholder="Nhập tên nước hoa cần tìm...">
+        <button type="submit">Tìm kiếm</button>
+      </form>
+
+      <details class="adv-dropdown">
+        <summary class="adv-toggle-btn">⚙ Nâng cao ▾</summary>
+        <div class="adv-panel-dropdown">
+          <form action="advanced-search_log.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
+            <div class="field">
+              <label for="hs-ten-log">Tên sản phẩm</label>
+              <input id="hs-ten-log" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
             </div>
-          </div>
-          <div class="adv-actions">
-            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-            <a class="btn btn-outline" href="advanced-search_log.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
-          </div>
-        </form>
-      </div>
+
+            <div class="adv-row-3cols">
+              <div class="field">
+                <label for="hs-loai-log">Phân loại</label>
+                <select id="hs-loai-log" name="loai">
+                  <option value="">Tất cả phân loại</option>
+                  <option value="nam">Nước hoa nam</option>
+                  <option value="nu">Nước hoa nữ</option>
+                  <option value="unisex">Unisex</option>
+                  <option value="cao-cap">Nước hoa cao cấp</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="hs-min-log">Giá từ (VNĐ)</label>
+                <div class="input-vnd">
+                  <input id="hs-min-log" type="text" name="gia-min" inputmode="numeric" spellcheck="false" placeholder="0"
+                    oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
+                </div>
+              </div>
+              <div class="field">
+                <label for="hs-max-log">Giá đến (VNĐ)</label>
+                <div class="input-vnd">
+                  <input id="hs-max-log" type="text" name="gia-max" inputmode="numeric" spellcheck="false" placeholder="Không giới hạn"
+                    oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
+                </div>
+              </div>
+            </div>
+
+            <div class="adv-actions">
+              <button class="btn btn-primary" type="submit">Áp dụng tìm kiếm</button>
+              <button class="btn btn-outline" type="reset">Đặt lại</button>
+            </div>
+          </form>
+        </div>
+      </details>
     </div>
+
+    <div class="header-actions">
+      <details class="user-menu">
+        <summary aria-label="Tài khoản người dùng">Nguyễn Minh Anh</summary>
+        <div class="user-box">
+          <div class="user-box-info">
+            <strong>Nguyễn Minh Anh</strong>
+            <span>minhanh@example.com</span>
+            <span>SĐT: 0901 234 567</span>
+          </div>
+          <nav class="user-box-links" aria-label="Menu tài khoản">
+            <a href="profile.html">Thông tin cá nhân</a>
+            <a href="order-history.html">Lịch sử đơn hàng</a>
+            <a class="logout-link" href="index.html">Đăng xuất</a>
+          </nav>
+        </div>
+      </details>
+      <a class="cart-link" href="cart-log.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span class="cart-count">3</span></a>
+    </div>
+  </div>
+
+  <nav class="main-nav" aria-label="Danh mục sản phẩm">
+    <div class="wrap">
+      <ul>
+        <li><a href="products-log.html">Tất cả sản phẩm</a></li>
+        <li><a href="products-nam-log.html">Nước hoa nam</a></li>
+        <li><a href="products-nu-log.html">Nước hoa nữ</a></li>
+        <li><a href="products-unisex-log.html">Unisex</a></li>
+        <li><a href="products-cao-cap-log.html">Nước hoa cao cấp</a></li>
+      </ul>
+    </div>
+  </nav>
 </header>
   <main id="main">
     <div class="wrap">

@@ -35,7 +35,7 @@
           </div>
         </div>
         <section class="panel">
-          <form class="filter-row orders-filter-row" action="orders-filtered.html" method="get">
+          <form class="filter-row orders-filter-row" action="orders-filtered.html#toast-filtered" method="get">
             <div class="field">
               <label>Trạng thái đơn</label>
               <select name="status">
@@ -83,7 +83,7 @@
                   <td><strong>FL-2026-0042</strong></td><td>Nguyễn Minh Anh</td><td>23/10/2026</td><td>Quận 1, TP. HCM</td><td>3.780.000₫</td><td>Thanh toán trực tuyến</td>
                   <td><span class="pill warn">Chưa xác nhận</span></td>
                   <td>
-                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0042">
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0042" onchange="location.hash='toast-updated'">
                       <option selected disabled>Chưa xác nhận</option>
                       <option>Đã xác nhận</option>
                       <option>Đã hủy</option>
@@ -95,7 +95,7 @@
                   <td><strong>FL-2026-0043</strong></td><td>Trần Hoàng Nam</td><td>23/10/2026</td><td>Quận Hải Châu, Đà Nẵng</td><td>2.350.000₫</td><td>Tiền mặt khi nhận hàng</td>
                   <td><span class="pill">Đang giao</span></td>
                   <td>
-                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0043">
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0043" onchange="location.hash='toast-updated'">
                       <option selected disabled>Đang giao</option>
                       <option>Đã giao thành công</option>
                     </select>
@@ -126,7 +126,7 @@
                   <td><strong>FL-2026-0046</strong></td><td>Võ Ngọc Linh</td><td>20/10/2026</td><td>Hải Châu, Đà Nẵng</td><td>2.100.000₫</td><td>Thanh toán trực tuyến</td>
                   <td><span class="pill">Đã xác nhận</span></td>
                   <td>
-                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0046">
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0046" onchange="location.hash='toast-updated'">
                       <option selected disabled>Đã xác nhận</option>
                       <option>Đang giao</option>
                       <option>Đã hủy</option>
@@ -138,7 +138,7 @@
                   <td><strong>FL-2026-0047</strong></td><td>Đặng Quốc Huy</td><td>19/10/2026</td><td>Ba Đình, Hà Nội</td><td>2.750.000₫</td><td>Tiền mặt khi nhận hàng</td>
                   <td><span class="pill">Đang giao</span></td>
                   <td>
-                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0047">
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0047" onchange="location.hash='toast-updated'">
                       <option selected disabled>Đang giao</option>
                       <option>Đã giao thành công</option>
                     </select>
@@ -149,7 +149,7 @@
                   <td><strong>FL-2026-0048</strong></td><td>Bùi Khánh Vy</td><td>18/10/2026</td><td>Ninh Kiều, Cần Thơ</td><td>2.980.000₫</td><td>Tiền mặt khi nhận hàng</td>
                   <td><span class="pill warn">Chưa xác nhận</span></td>
                   <td>
-                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0048">
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0048" onchange="location.hash='toast-updated'">
                       <option selected disabled>Chưa xác nhận</option>
                       <option>Đã xác nhận</option>
                       <option>Đã hủy</option>
@@ -171,7 +171,7 @@
                   <td><strong>FL-2026-0050</strong></td><td>Đỗ Mai Phương</td><td>16/10/2026</td><td>Hoàn Kiếm, Hà Nội</td><td>1.980.000₫</td><td>Tiền mặt khi nhận hàng</td>
                   <td><span class="pill">Đã xác nhận</span></td>
                   <td>
-                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0050">
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0050" onchange="location.hash='toast-updated'">
                       <option selected disabled>Đã xác nhận</option>
                       <option>Đang giao</option>
                       <option>Đã hủy</option>
@@ -183,7 +183,7 @@
                   <td><strong>FL-2026-0051</strong></td><td>Ngô Tuấn Kiệt</td><td>15/10/2026</td><td>Hội An, Quảng Nam</td><td>4.140.000₫</td><td>Thanh toán trực tuyến</td>
                   <td><span class="pill">Đang giao</span></td>
                   <td>
-                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0051">
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0051" onchange="location.hash='toast-updated'">
                       <option selected disabled>Đang giao</option>
                       <option>Đã giao thành công</option>
                     </select>
@@ -195,6 +195,10 @@
           </div>
         </section>
       </div>
+
+      <!-- Thông báo chuẩn định dạng ban đầu -->
+      <div id="toast-updated" class="admin-toast is-success css-toast" role="status" aria-live="polite">Đã cập nhật trạng thái đơn hàng.</div>
+      <div id="toast-filtered" class="admin-toast is-success css-toast" role="status" aria-live="polite">Lọc danh sách đơn hàng thành công!</div>
     </main>
   </body>
 </html>

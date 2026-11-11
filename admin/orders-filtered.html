@@ -3,152 +3,75 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>
-      Đơn hàng | FLORA PERFUME
-    </title>
+    <title>Đơn hàng | FLORA PERFUME</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/admin.css">
   </head>
   <body>
     <aside class="sidebar">
-      <a class="logo" href="index.html">
-        FLORA
-        <span>
-          PERFUME
-        </span>
-      </a>
-      <p class="side-label">
-        CỬA HÀNG
-      </p>
+      <a class="logo" href="index.html">FLORA<span>PERFUME</span></a>
+      <p class="side-label">CỬA HÀNG</p>
       <nav class="side-nav">
-        <a href="index.html">
-          <span class="nav-icon">
-            ⌂
-          </span>
-          Tổng quan
-        </a>
-        <a href="users.html">
-          <span class="nav-icon">
-            ♙
-          </span>
-          Khách hàng
-        </a>
-        <a href="products.html">
-          <span class="nav-icon">
-            ◇
-          </span>
-          Sản phẩm
-        </a>
-        <a aria-current="page" href="orders.html">
-          <span class="nav-icon">
-            ▤
-          </span>
-          Đơn hàng
-        </a>
-        <a href="statistics.html">
-          <span class="nav-icon">
-            ▥
-          </span>
-          Thống kê
-        </a>
+        <a href="index.html"><span class="nav-icon">⌂</span>Tổng quan</a>
+        <a href="users.html"><span class="nav-icon">♙</span>Khách hàng</a>
+        <a href="products.html"><span class="nav-icon">◇</span>Sản phẩm</a>
+        <a aria-current="page" href="orders.html"><span class="nav-icon">▤</span>Đơn hàng</a>
+        <a href="statistics.html"><span class="nav-icon">▥</span>Thống kê</a>
       </nav>
-      <div class="side-bottom">
-        <a href="login.html">
-          ↪ Đăng xuất
-        </a>
-      </div>
+      <div class="side-bottom"><a href="login.html">↪ Đăng xuất</a></div>
     </aside>
     <main class="admin-main">
       <header class="topbar">
-        <span>
-          Xin chào,
-          <strong>
-            Admin Flora
-          </strong>
-        </span>
-        <span class="avatar">
-          AF
-        </span>
+        <span>Xin chào, <strong>Admin Flora</strong></span>
+        <span class="avatar">AF</span>
       </header>
       <div class="admin-content">
         <div class="page-title">
           <div>
-            <p class="eyebrow">
-              XỬ LÝ VÀ THEO DÕI
-            </p>
-            <h1>
-              Đơn hàng
-            </h1>
-            <p>
-              Cập nhật tiến trình và xem thông tin giao hàng.
-            </p>
+            <p class="eyebrow">XỬ LÝ VÀ THEO DÕI</p>
+            <h1>Đơn hàng</h1>
+            <p>Cập nhật tiến trình và xem thông tin giao hàng.</p>
           </div>
         </div>
         <section class="panel">
-          <form class="filter-row orders-filter-row" action="orders-filtered.html" method="get">
+          <form class="filter-row orders-filter-row" action="orders-filtered.html#toast-filtered" method="get">
             <div class="field">
-              <label>
-                Trạng thái đơn
-              </label>
+              <label>Trạng thái đơn</label>
               <select name="status">
-                <option>
-                  Tất cả trạng thái
-                </option>
-                <option>
-                  Chưa xác nhận
-                </option>
-                <option>
-                  Đã xác nhận
-                </option>
-                <option>
-                  Đang giao
-                </option>
-                <option>
-                  Đã giao thành công
-                </option>
-                <option>
-                  Đã hủy
-                </option>
+                <option>Tất cả trạng thái</option>
+                <option>Chưa xác nhận</option>
+                <option>Đã xác nhận</option>
+                <option>Đang giao</option>
+                <option>Đã giao thành công</option>
+                <option>Đã hủy</option>
               </select>
             </div>
             <div class="field">
-              <label for="order-customer-search">
-                Tìm khách hàng
-              </label>
+              <label for="order-customer-search">Tìm khách hàng</label>
               <input id="order-customer-search" name="customer" type="search" placeholder="Tên hoặc email khách hàng">
             </div>
             <div class="field">
-              <label>
-                Từ ngày đặt
-              </label>
+              <label>Từ ngày đặt</label>
               <input type="date" name="from" value="2026-10-01">
             </div>
             <div class="field">
-              <label>
-                Đến ngày
-              </label>
+              <label>Đến ngày</label>
               <input type="date" name="to" value="2026-10-23">
             </div>
             <div class="field">
-              <label>
-                Địa điểm giao hàng
-              </label>
+              <label>Địa điểm giao hàng</label>
               <input name="destination" placeholder="Quận, huyện, thành phố">
             </div>
             <div class="orders-filter-actions">
-              <button class="btn btn-outline" type="submit">
-                Lọc đơn hàng
-              </button>
+              <button class="btn btn-outline" type="submit">Lọc đơn hàng</button>
               <a class="btn btn-outline" href="orders.html">Làm mới</a>
             </div>
           </form>
         </section>
         <section class="panel">
           <div class="table-tools">
-            <h2>
-              3 đơn hàng phù hợp
-            </h2>
+            <h2>3 đơn hàng phù hợp</h2>
           </div>
           <div class="table-wrap" tabindex="0" aria-label="Bảng đơn hàng, cuộn ngang và dọc">
             <table class="admin-table" id="orders-table">
@@ -156,50 +79,48 @@
                 <tr><th>Mã đơn</th><th>Khách hàng</th><th>Ngày đặt</th><th>Địa điểm giao</th><th>Tổng tiền</th><th>Phương thức thanh toán</th><th>Trạng thái</th><th>Cập nhật</th><th>Chi tiết</th></tr>
               </thead>
               <tbody>
-<tr><td><strong>FL-2026-0042</strong></td><td>Nguyễn Minh Anh</td><td>23/10/2026</td><td>Quận 1, TP. HCM</td><td>3.780.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill warn">Chưa xác nhận</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0042"><option selected>Chưa xác nhận</option><option>Đã xác nhận</option><option>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><a class="btn btn-outline small-btn" href="order-view.html?order=FL-2026-0042">Xem chi tiết</a></td></tr>
-<tr><td><strong>FL-2026-0043</strong></td><td>Trần Hoàng Nam</td><td>23/10/2026</td><td>Quận Hải Châu, Đà Nẵng</td><td>2.350.000₫</td><td>Tiền mặt khi nhận hàng</td><td><span class="pill ">Đang giao</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0043"><option selected>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><a class="btn btn-outline small-btn" href="order-view.html?order=FL-2026-0043">Xem chi tiết</a></td></tr>
-<tr><td><strong>FL-2026-0044</strong></td><td>Lê Thu Hà</td><td>22/10/2026</td><td>Quận Ba Đình, Hà Nội</td><td>4.980.000₫</td><td>Thanh toán trực tuyến</td><td><span class="pill ok">Đã giao thành công</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0044"><option selected>Đã giao thành công</option></select></td><td><a class="btn btn-outline small-btn" href="order-view.html?order=FL-2026-0044">Xem chi tiết</a></td></tr>
+                <tr>
+                  <td><strong>FL-2026-0042</strong></td><td>Nguyễn Minh Anh</td><td>23/10/2026</td><td>Quận 1, TP. HCM</td><td>3.780.000₫</td><td>Thanh toán trực tuyến</td>
+                  <td><span class="pill warn">Chưa xác nhận</span></td>
+                  <td>
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0042" onchange="location.hash='toast-updated'">
+                      <option selected disabled>Chưa xác nhận</option>
+                      <option>Đã xác nhận</option>
+                      <option>Đã hủy</option>
+                    </select>
+                  </td>
+                  <td><a class="btn btn-outline small-btn" href="order-view.html">Xem chi tiết</a></td>
+                </tr>
+                <tr>
+                  <td><strong>FL-2026-0043</strong></td><td>Trần Hoàng Nam</td><td>23/10/2026</td><td>Quận Hải Châu, Đà Nẵng</td><td>2.350.000₫</td><td>Tiền mặt khi nhận hàng</td>
+                  <td><span class="pill">Đang giao</span></td>
+                  <td>
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0043" onchange="location.hash='toast-updated'">
+                      <option selected disabled>Đang giao</option>
+                      <option>Đã giao thành công</option>
+                    </select>
+                  </td>
+                  <td><a class="btn btn-outline small-btn" href="order-view.html">Xem chi tiết</a></td>
+                </tr>
+                <tr>
+                  <td><strong>FL-2026-0044</strong></td><td>Lê Thu Hà</td><td>22/10/2026</td><td>Quận Ba Đình, Hà Nội</td><td>4.980.000₫</td><td>Thanh toán trực tuyến</td>
+                  <td><span class="pill ok">Đã giao thành công</span></td>
+                  <td>
+                    <select aria-label="Cập nhật trạng thái đơn FL-2026-0044" disabled>
+                      <option selected>Đã giao thành công</option>
+                    </select>
+                  </td>
+                  <td><a class="btn btn-outline small-btn" href="order-finished-detail.html">Xem chi tiết</a></td>
+                </tr>
               </tbody>
             </table>
           </div>
         </section>
-
       </div>
+
+      <!-- Thông báo chuẩn định dạng ban đầu -->
+      <div id="toast-updated" class="admin-toast is-success css-toast" role="status" aria-live="polite">Đã cập nhật trạng thái đơn hàng.</div>
+      <div id="toast-filtered" class="admin-toast is-success css-toast" role="status" aria-live="polite">Lọc danh sách đơn hàng thành công!</div>
     </main>
-    
-<div class="admin-toast" role="status" aria-live="polite" hidden></div>
-    <script>
-function showToast(message) {
-  const toast = document.querySelector('.admin-toast');
-  toast.textContent = message;
-  toast.hidden = false;
-  clearTimeout(window.toastTimer);
-  window.toastTimer = setTimeout(() => {
-    toast.hidden = true;
-  }, 3000);
-}
-
-if (new URLSearchParams(location.search).get('source') === 'dashboard') {
-  const dashboardSource = document.createElement('input');
-  dashboardSource.type = 'hidden';
-  dashboardSource.name = 'source';
-  dashboardSource.value = 'dashboard';
-  document.querySelector('.orders-filter-row').append(dashboardSource);
-  document.querySelector('#order-customer-search').value = 'Trần Hoàng Nam';
-  document.querySelector('.table-tools h2').textContent = '1 đơn hàng phù hợp';
-  document.querySelector('#orders-table tbody').innerHTML = '<tr><td><strong>FL-2026-0043</strong></td><td>Trần Hoàng Nam</td><td>23/10/2026</td><td>Quận Hải Châu, Đà Nẵng</td><td>2.350.000₫</td><td>Tiền mặt khi nhận hàng</td><td><span class="pill warn">Chờ xác nhận</span></td><td><select aria-label="Cập nhật trạng thái đơn FL-2026-0043"><option selected>Chờ xác nhận</option><option>Đã xác nhận</option><option>Đang giao</option><option>Đã giao thành công</option><option>Đã hủy</option></select></td><td><a class="btn btn-outline small-btn" href="order-view.html?order=FL-2026-0043">Xem chi tiết</a></td></tr>';
-}
-
-document.querySelectorAll('.filter-row button').forEach((button) => {
-  button.addEventListener('click', () => showToast('Lọc danh sách đơn hàng thành công!'));
-});
-
-document.querySelectorAll('tbody select').forEach((select) => {
-  select.addEventListener('change', () => showToast('Đã cập nhật trạng thái đơn hàng.'));
-});
-    </script>
   </body>
 </html>
-
-
-

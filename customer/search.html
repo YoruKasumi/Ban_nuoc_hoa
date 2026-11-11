@@ -18,67 +18,81 @@
 <body>
   <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
   <header class="site-header">
-    <div class="wrap header-top">
-      <a class="logo" href="index.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
-      <nav class="main-nav" aria-label="Danh mục sản phẩm">
-        <ul>
-          <li><a href="products.html">Tất cả sản phẩm</a></li>
-          <li><a href="products-nam.html">Nước hoa nam</a></li>
-          <li><a href="products-nu.html">Nước hoa nữ</a></li>
-          <li><a href="products-unisex.html">Unisex</a></li>
-          <li><a href="products-cao-cap.html">Nước hoa cao cấp</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <a class="hide-sm" href="login.html">Đăng nhập</a>
-        <a class="hide-sm" href="register.html">Đăng ký</a>
-        <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span
-            class="cart-count">3</span></a>
-      </div>
-    </div>
-    <div class="header-search">
-      <div class="wrap">
-        <form class="adv-bar" action="advanced-search.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
-          <div class="field">
-            <label for="hs-ten">Tên sản phẩm</label>
-            <input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
-          </div>
-          <div class="field">
-            <label for="hs-loai">Phân loại</label>
-            <select id="hs-loai" name="loai">
-              <option value="">Tất cả phân loại</option>
-              <option value="nam">Nước hoa nam</option>
-              <option value="nu">Nước hoa nữ</option>
-              <option value="unisex">Unisex</option>
-              <option value="cao-cap">Nước hoa cao cấp</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="hs-min">Giá từ (VNĐ)</label>
-            <div class="input-vnd">
-              <input id="hs-min" type="text" name="gia-min" inputmode="numeric" spellcheck="false" placeholder="0"
-                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
-            </div>
-          </div>
+  <div class="wrap header-top">
+    <a class="logo" href="index.html" aria-label="FLORA PERFUME - Trang chủ">FLORA<span>PERFUME</span></a>
 
-          <!-- Ô Giá đến trên Header -->
-          <div class="field">
-            <label for="hs-max">Giá đến (VNĐ)</label>
-            <div class="input-vnd">
-              <input id="hs-max" type="text" name="gia-max" inputmode="numeric" spellcheck="false"
-                placeholder="Không giới hạn"
-                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
+    <div class="header-search-container">
+      <form class="search-form" action="search.html" method="get" role="search">
+        <label class="visually-hidden" for="q-header">Tìm nước hoa theo tên</label>
+        <input id="q-header" type="search" name="q" value="rosé" placeholder="Nhập tên nước hoa cần tìm...">
+        <button type="submit">Tìm kiếm</button>
+      </form>
+
+      <details class="adv-dropdown">
+        <summary class="adv-toggle-btn">⚙ Nâng cao ▾</summary>
+        <div class="adv-panel-dropdown">
+          <form action="advanced-search.html" method="get" role="search" aria-label="Tìm kiếm nâng cao">
+            <div class="field">
+              <label for="hs-ten">Tên sản phẩm</label>
+              <input id="hs-ten" type="search" name="ten" placeholder="Ví dụ: Dior, Chanel...">
             </div>
-          </div>
-          <div class="adv-actions">
-            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-            <a class="btn btn-outline" href="advanced-search.html" aria-label="Đặt lại điều kiện tìm kiếm">Đặt lại</a>
-          </div>
-        </form>
-      </div>
+
+            <div class="adv-row-3cols">
+              <div class="field">
+                <label for="hs-loai">Phân loại</label>
+                <select id="hs-loai" name="loai">
+                  <option value="">Tất cả phân loại</option>
+                  <option value="nam">Nước hoa nam</option>
+                  <option value="nu">Nước hoa nữ</option>
+                  <option value="unisex">Unisex</option>
+                  <option value="cao-cap">Nước hoa cao cấp</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="hs-min">Giá từ (VNĐ)</label>
+                <div class="input-vnd">
+                  <input id="hs-min" type="text" name="gia-min" inputmode="numeric" spellcheck="false" placeholder="0"
+                    oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
+                </div>
+              </div>
+              <div class="field">
+                <label for="hs-max">Giá đến (VNĐ)</label>
+                <div class="input-vnd">
+                  <input id="hs-max" type="text" name="gia-max" inputmode="numeric" spellcheck="false" placeholder="Không giới hạn"
+                    oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
+                </div>
+              </div>
+            </div>
+
+            <div class="adv-actions">
+              <button class="btn btn-primary" type="submit">Áp dụng tìm kiếm</button>
+              <button class="btn btn-outline" type="reset">Đặt lại</button>
+            </div>
+          </form>
+        </div>
+      </details>
     </div>
-  </header>
-  <main id="main">
+
+    <div class="header-actions">
+      <a class="hide-sm" href="login.html">Đăng nhập</a>
+      <a class="hide-sm" href="register.html">Đăng ký</a>
+      <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 3 sản phẩm">Giỏ hàng <span class="cart-count">3</span></a>
+    </div>
+  </div>
+
+  <nav class="main-nav" aria-label="Danh mục sản phẩm">
+    <div class="wrap">
+      <ul>
+        <li><a href="products.html">Tất cả sản phẩm</a></li>
+        <li><a href="products-nam.html">Nước hoa nam</a></li>
+        <li><a href="products-nu.html">Nước hoa nữ</a></li>
+        <li><a href="products-unisex.html">Unisex</a></li>
+        <li><a href="products-cao-cap.html">Nước hoa cao cấp</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+    <main id="main">
     <section class="search-hero" aria-labelledby="h-search">
       <div class="wrap">
         <h1 id="h-search" style="font-size:clamp(2rem,4vw,3rem)">Kết quả cho “rosé”</h1>
@@ -87,209 +101,120 @@
           <input id="q-main" type="search" name="q" value="rosé" placeholder="Nhập tên nước hoa">
           <button class="btn btn-primary" type="submit">Tìm kiếm</button>
         </form>
-        <p class="muted" style="margin:var(--s3) 0 0">Cần lọc theo phân loại hoặc khoảng giá? Dùng <a
-            href="advanced-search.html">tìm kiếm nâng cao</a>.</p>
+        <p class="muted" style="margin:var(--s3) 0 0">Cần lọc theo phân loại hoặc khoảng giá? Dùng <a href="advanced-search.html">tìm kiếm nâng cao</a>.</p>
       </div>
     </section>
-
     <div class="wrap section" style="padding-top:var(--s6)">
-      <p class="notice notice-demo">Dữ liệu mẫu: trang tĩnh không thể tìm trong cơ sở dữ liệu. Tìm tương đối theo tên
-        cần xử lý ở backend.</p>
       <div class="result-bar">
-        <p style="margin:0"><strong>Tìm thấy 12 sản phẩm</strong> có tên chứa “rosé”</p>
+        <p style="margin:0"><strong>8 sản phẩm</strong> đang được hiển thị</p>
         <p class="muted" style="margin:0">Trang 1 / 2</p>
       </div>
       <div class="product-grid">
         <article class="card">
-          <a class="card-media" href="product-detail.html" tabindex="-1" aria-hidden="true">
-            <div class="thumb">
-              <div class="bottle round liq-coral" role="img" aria-label="Chai nước hoa Rosé Aurore"><span
-                  class="cap"></span><span class="neck"></span><span class="glass"><span
-                    class="label">FLORA</span></span></div>
-            </div>
+          <a class="card-media" href="product-detail.html" aria-label="Xem Dior Miss Dior EDP">
+            <div class="thumb"><img src="../images/dior-miss-dior-edp-2021_2.jpg" alt="Dior Miss Dior EDP" loading="lazy"></div>
           </a>
           <div class="card-body">
             <p class="card-cat">Nước hoa nữ</p>
-            <h3><a href="product-detail.html">Rosé Aurore</a></h3>
+            <h3><a href="product-detail.html">Dior Miss Dior EDP</a></h3>
             <p class="card-meta">Dung tích 50ml</p>
             <p class="price">1.890.000₫</p>
-            <div class="card-actions"><a class="btn btn-primary" href="#them-fp001"
-                aria-label="Thêm Rosé Aurore vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
-                href="product-detail.html">Xem chi tiết</a></div>
+            <div class="card-actions"><a class="btn btn-text" href="product-detail.html">Xem chi tiết</a></div>
           </div>
         </article>
         <article class="card">
-          <a class="card-media" href="product-detail.html" tabindex="-1" aria-hidden="true">
-            <div class="thumb">
-              <div class="bottle round liq-peach" role="img" aria-label="Chai nước hoa Pêche Velours"><span
-                  class="cap"></span><span class="neck"></span><span class="glass"><span
-                    class="label">FLORA</span></span></div>
-            </div>
-          </a>
-          <div class="card-body">
-            <p class="card-cat">Nước hoa nữ</p>
-            <h3><a href="product-detail.html">Pêche Velours</a></h3>
-            <p class="card-meta">Dung tích 30ml</p>
-            <p class="price">1.290.000₫</p>
-            <div class="card-actions"><a class="btn btn-primary" href="#them-fp005"
-                aria-label="Thêm Pêche Velours vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
-                href="product-detail.html">Xem chi tiết</a></div>
-          </div>
-        </article>
-        <article class="card">
-          <a class="card-media" href="product-detail.html" tabindex="-1" aria-hidden="true">
-            <div class="thumb">
-              <div class="bottle  liq-cream" role="img" aria-label="Chai nước hoa Ciel Blanc"><span
-                  class="cap"></span><span class="neck"></span><span class="glass"><span
-                    class="label">FLORA</span></span></div>
-            </div>
-          </a>
-          <div class="card-body">
-            <p class="card-cat">Unisex</p>
-            <h3><a href="product-detail.html">Ciel Blanc</a></h3>
-            <p class="card-meta">Dung tích 50ml</p>
-            <p class="price">1.650.000₫</p>
-            <div class="card-actions"><a class="btn btn-primary" href="#them-fp003"
-                aria-label="Thêm Ciel Blanc vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
-                href="product-detail.html">Xem chi tiết</a></div>
-          </div>
-        </article>
-        <article class="card">
-          <a class="card-media" href="product-detail.html" tabindex="-1" aria-hidden="true">
-            <div class="thumb">
-              <div class="bottle round liq-cream" role="img" aria-label="Chai nước hoa Fleur d’Oranger"><span
-                  class="cap"></span><span class="neck"></span><span class="glass"><span
-                    class="label">FLORA</span></span></div>
-            </div>
-          </a>
-          <div class="card-body">
-            <p class="card-cat">Unisex</p>
-            <h3><a href="product-detail.html">Fleur d’Oranger</a></h3>
-            <p class="card-meta">Dung tích 50ml</p>
-            <p class="price">1.590.000₫</p>
-            <div class="card-actions"><a class="btn btn-primary" href="#them-fp007"
-                aria-label="Thêm Fleur d’Oranger vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
-                href="product-detail.html">Xem chi tiết</a></div>
-          </div>
-        </article>
-        <article class="card">
-          <a class="card-media" href="product-detail.html" tabindex="-1" aria-hidden="true">
-            <div class="thumb">
-              <div class="bottle tall liq-amber" role="img" aria-label="Chai nước hoa Bois Ambré"><span
-                  class="cap"></span><span class="neck"></span><span class="glass"><span
-                    class="label">FLORA</span></span></div>
-            </div>
+          <a class="card-media" href="product-detail.html" aria-label="Xem Chanel Bleu De Chanel EDP">
+            <div class="thumb"><img src="../images/chanel-bleu-de-chanel-edp_2.jpg" alt="Chanel Bleu De Chanel EDP" loading="lazy"></div>
           </a>
           <div class="card-body">
             <p class="card-cat">Nước hoa nam</p>
-            <h3><a href="product-detail.html">Bois Ambré</a></h3>
+            <h3><a href="product-detail.html">Chanel Bleu De Chanel EDP</a></h3>
             <p class="card-meta">Dung tích 100ml</p>
             <p class="price">2.350.000₫</p>
-            <div class="card-actions"><a class="btn btn-primary" href="#them-fp002"
-                aria-label="Thêm Bois Ambré vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
-                href="product-detail.html">Xem chi tiết</a></div>
+            <div class="card-actions"><a class="btn btn-text" href="product-detail.html">Xem chi tiết</a></div>
           </div>
         </article>
         <article class="card">
-          <a class="card-media" href="product-detail.html" tabindex="-1" aria-hidden="true">
-            <div class="thumb">
-              <div class="bottle  liq-amber" role="img" aria-label="Chai nước hoa Santal Doré"><span
-                  class="cap"></span><span class="neck"></span><span class="glass"><span
-                    class="label">FLORA</span></span></div>
-            </div>
+          <a class="card-media" href="product-detail.html" aria-label="Xem Calvin Klein CK One">
+            <div class="thumb"><img src="../images/calvin-klein-ck-one_2-1.jpg" alt="Calvin Klein CK One" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="card-cat">Unisex</p>
+            <h3><a href="product-detail.html">Calvin Klein CK One</a></h3>
+            <p class="card-meta">Dung tích 50ml</p>
+            <p class="price">1.650.000₫</p>
+            <div class="card-actions"><a class="btn btn-text" href="product-detail.html">Xem chi tiết</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card-media" href="product-detail.html" aria-label="Xem Le Labo Another 13">
+            <div class="thumb"><img src="../images/le-labo-another-13_2.jpg" alt="Le Labo Another 13" loading="lazy"></div>
           </a>
           <div class="card-body">
             <p class="card-cat">Nước hoa cao cấp</p>
-            <h3><a href="product-detail.html">Santal Doré</a></h3>
+            <h3><a href="product-detail.html">Le Labo Another 13</a></h3>
+            <p class="card-meta">Dung tích 75ml</p>
+            <p class="price">4.980.000₫</p>
+            <div class="card-actions"><a class="btn btn-text" href="product-detail.html">Xem chi tiết</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card-media" href="product-detail.html" aria-label="Xem Gucci Bloom EDP">
+            <div class="thumb"><img src="../images/gucci-bloom-edp_2.jpg" alt="Gucci Bloom EDP" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="card-cat">Nước hoa nữ</p>
+            <h3><a href="product-detail.html">Gucci Bloom EDP</a></h3>
+            <p class="card-meta">Dung tích 30ml</p>
+            <p class="price">1.290.000₫</p>
+            <div class="card-actions"><a class="btn btn-text" href="product-detail.html">Xem chi tiết</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card-media" href="product-detail.html" aria-label="Xem Dior Sauvage EDP">
+            <div class="thumb"><img src="../images/dior-sauvage-edp_2.jpg" alt="Dior Sauvage EDP" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="card-cat">Nước hoa nam</p>
+            <h3><a href="product-detail.html">Dior Sauvage EDP</a></h3>
+            <p class="card-meta">Dung tích 100ml</p>
+            <p class="price">2.150.000₫</p>
+            <div class="card-actions"><a class="btn btn-text" href="product-detail.html">Xem chi tiết</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card-media" href="product-detail.html" aria-label="Xem Calvin Klein CK Be">
+            <div class="thumb"><img src="../images/calvin-klein-ck-be_2-1.jpg" alt="Calvin Klein CK Be" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="card-cat">Unisex</p>
+            <h3><a href="product-detail.html">Calvin Klein CK Be</a></h3>
+            <p class="card-meta">Dung tích 50ml</p>
+            <p class="price">1.590.000₫</p>
+            <div class="card-actions"><a class="btn btn-text" href="product-detail.html">Xem chi tiết</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card-media" href="product-detail.html" aria-label="Xem Diptyque Fleur De Peau EDP">
+            <div class="thumb"><img src="../images/diptyque-fleur-de-peau-edp_2.jpg" alt="Diptyque Fleur De Peau EDP" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="card-cat">Nước hoa cao cấp</p>
+            <h3><a href="product-detail.html">Diptyque Fleur De Peau EDP</a></h3>
             <p class="card-meta">Dung tích 100ml</p>
             <p class="price">3.890.000₫</p>
-            <div class="card-actions"><a class="btn btn-primary" href="#them-fp008"
-                aria-label="Thêm Santal Doré vào giỏ hàng">Thêm vào giỏ hàng</a><a class="btn btn-text"
-                href="product-detail.html">Xem chi tiết</a></div>
+            <div class="card-actions"><a class="btn btn-text" href="product-detail.html">Xem chi tiết</a></div>
           </div>
         </article>
       </div>
       <nav class="pagination" aria-label="Phân trang kết quả">
         <span class="is-disabled" aria-disabled="true">Trước</span>
-        <a href="search.html?q=ros%C3%A9&amp;trang=1" aria-current="page">1</a>
-        <a href="search.html?q=ros%C3%A9&amp;trang=2">2</a>
-        <a href="search.html?q=ros%C3%A9&amp;trang=2">Sau</a>
+        <a href="search.html?q=ros%C3%A9&amp;trang=1" aria-label="Trang 1, đang chọn" aria-current="page">1</a>
+        <a href="search.html?q=ros%C3%A9&amp;trang=2" aria-label="Trang 2">2</a>
+        <a href="search.html?q=ros%C3%A9&amp;trang=2" aria-label="Trang tiếp theo">Sau</a>
       </nav>
-
-      <section style="margin-top:var(--s7)" aria-labelledby="h-empty">
-        <h2 id="h-empty" style="font-size:1.5rem">Giao diện khi không có kết quả (minh họa)</h2>
-        <div class="empty">
-          <div class="thumb">
-            <div class="bottle round liq-cream" role="img" aria-label="Chai nước hoa rỗng"><span
-                class="cap"></span><span class="neck"></span><span class="glass"><span class="label">FLORA</span></span>
-            </div>
-          </div>
-          <h3>Không tìm thấy “rosa nera”</h3>
-          <p>Hãy kiểm tra lại chính tả, thử từ khóa ngắn hơn hoặc dùng tìm kiếm nâng cao để lọc theo giá.</p>
-          <a class="btn btn-primary" href="products.html">Xem tất cả sản phẩm</a>
-        </div>
-      </section>
     </div>
-    <div class="toasts">
-      <div class="toast" id="them-fp001" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Rosé Aurore · 50ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp002" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Bois Ambré · 100ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp003" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Ciel Blanc · 50ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp004" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Oud Impérial · 75ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp005" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Pêche Velours · 30ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp006" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Vétiver Noir · 100ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp007" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Fleur d’Oranger · 50ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-      <div class="toast" id="them-fp008" role="status"><span class="tick-sm" aria-hidden="true"></span>
-        <div>
-          <p><strong>Đã thêm vào giỏ hàng</strong><br>Santal Doré · 100ml<small>Thông báo minh họa, giỏ hàng thật cần
-              backend.</small></p>
-          <div class="toast-actions"><a href="cart.html">Xem giỏ hàng</a><a href="#da-dong">Tiếp tục mua sắm</a></div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer class="site-footer">
+  </main><footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
         <div>

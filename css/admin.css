@@ -944,3 +944,60 @@ input.volume-input-sm {
   margin-bottom: 8px;
   padding: 4px;
 }
+
+/* ===== Nút X xóa ảnh ở góc trên bên trái hình ảnh phụ ===== */
+.sub-image-item {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 10px;
+  background: var(--paper);
+}
+.sub-img-remove {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--danger);
+  color: var(--white) !important;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.sub-img-remove:hover {
+  background: #82281C;
+  transform: scale(1.08);
+}
+
+/* Giữ popup đang mở khi nhấn nút X hiện thông báo xóa ảnh phụ bên trong popup */
+.css-modal:has(:target) {
+  display: grid;
+}
+
+/* ===== Định dạng ô nhập giá tiền tự động phân cách dấu chấm (VNĐ) ===== */
+.input-vnd {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-vnd input {
+  padding-right: 2.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.input-vnd::after {
+  content: "₫";
+  position: absolute;
+  right: .85rem;
+  font-weight: 600;
+  color: var(--muted);
+  pointer-events: none;
+  font-size: .92rem;
+}

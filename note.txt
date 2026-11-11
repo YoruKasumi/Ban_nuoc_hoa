@@ -1,7 +1,14 @@
 Lỗi chưa fix:
 Trang lọc admin chưa hiển thị sản phẩm lọc đúng, chưa có sẵn value trên thanh lọc (Sửa thứ 2)
-Khách hàng chưa chỉnh footer đúng, nhiều trang bị lỗi cũ (Ưu tiên sửa gấp)
-Nút bấm khi chuyển màu vẫn đang là màu hồng (sửa cuối)
 
-checkout.html sổ địa chỉ chưa có sdt
-admin phần sản phẩm sửa thêm xóa chưa format giá
+Chỉnh banner: section hero vẫn chưa được căn giữa.
+Chỉnh header Tôi cần:
+Logo - Thanh tìm kiếm (bao gồm 2 nút: Nút tìm kiếm + Nút mở rộng, khi nhấn nút này thì sẽ mở pop-up để lựa chọn các mục tìm kiếm nâng cao.)
+Chỉnh màu nền trang sản phẩm nhạt hơn: Sử dụng lại màu của header-search ban đầu cho các trang product.
+
+Chỉnh lại trang search, search-log
+
+Chỉnh kích thước trang thêm padding, trang web scale theo màn hình thiết bị, vì khi tôi test 2 thiết bị có màn hình khác nhau. Web bên tôi hiển thị lề rất dài còn web bên máy bạn hiển thị không có lề
+
+1. Order-success chưa liên kết hình ảnh
+2. Xóa Mã sản phẩm
