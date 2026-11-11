@@ -1,14 +1,11 @@
 Lỗi chưa fix:
-Trang lọc admin chưa hiển thị sản phẩm lọc đúng, chưa có sẵn value trên thanh lọc (Sửa thứ 2)
-
-Chỉnh banner: section hero vẫn chưa được căn giữa.
-Chỉnh header Tôi cần:
-Logo - Thanh tìm kiếm (bao gồm 2 nút: Nút tìm kiếm + Nút mở rộng, khi nhấn nút này thì sẽ mở pop-up để lựa chọn các mục tìm kiếm nâng cao.)
-Chỉnh màu nền trang sản phẩm nhạt hơn: Sử dụng lại màu của header-search ban đầu cho các trang product.
-
-Chỉnh lại trang search, search-log
-
-Chỉnh kích thước trang thêm padding, trang web scale theo màn hình thiết bị, vì khi tôi test 2 thiết bị có màn hình khác nhau. Web bên tôi hiển thị lề rất dài còn web bên máy bạn hiển thị không có lề
-
-1. Order-success chưa liên kết hình ảnh
+Customer:
+1. Order-success chưa liên kết hình ảnh, xóa mã sản phẩm
 2. Xóa Mã sản phẩm
+3. Giỏ hàng thiếu dung tích
+4. Thông tin sản phẩm xóa mã sản phẩm
+5. search, search-log chưa đồng bộ giao diện với các trang khác
+
+Admin:
+6. Xem thống kê: thanh tìm kiếm chưa đúng dữ liệu tìm, nút phân trang hoạt động được
+7. Đơn hàng chưa xác nhận: khi nhấn cập nhật trạng thái cần hiển thị thông báo và thoát về trang chính
